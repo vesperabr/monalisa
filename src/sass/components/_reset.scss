@@ -19,7 +19,7 @@ time, mark, audio, video {
     padding: 0;
     border: 0;
     font-size: 100%;
-    font: inherit;
+    // font: inherit;
     vertical-align: baseline;
 }
 // HTML5 display-role reset for older browsers
@@ -29,9 +29,6 @@ footer, header, hgroup, menu, nav, section {
 }
 body {
     line-height: 1;
-}
-ol, ul {
-    list-style: none;
 }
 blockquote, q {
     quotes: none;
@@ -59,6 +56,7 @@ button:focus {
 
 // KUBO
 * {
+    outline: 0;
     -webkit-font-smoothing: antialiased;
     -webkit-overflow-scrolling: touch;
 }

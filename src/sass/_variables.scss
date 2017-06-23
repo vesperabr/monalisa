@@ -48,10 +48,56 @@ $base-line: 1.5;
 $text-margin-bottom: $font-size * $base-line !default;
 
 
+// HEADINGS
+// ---------------------------------------------------------------------------
+
+// Font Size
+// By default: 60, 48, 36, 24, 21, 18, 16
+$heading-font-size-1: 48px !default;
+$heading-font-size-2: 36px !default;
+$heading-font-size-3: 24px !default;
+$heading-font-size-4: 21px !default;
+$heading-font-size-5: 18px !default;
+$heading-font-size-6: 16px !default;
+
+// Baseline
+$heading-base-line: 1 !default;
+
+// Margin
+$heading-margin-bottom: $text-margin-bottom !default;
 
 
+// BREAKPOINTS
+// ---------------------------------------------------------------------------
+$sm: 768px !default;
+$md: 1024px !default;
+$lg: 1200px !default;
 
 
+// GRID
+// ---------------------------------------------------------------------------
+$grid-columns: 12 !default;
+$grid-gutter: 2% !default;
+
+
+// TABLES
+// ---------------------------------------------------------------------------
+
+// Font Size
+$table-font-size: $font-size-small !default;
+
+// Baseline
+$table-base-line: $base-line !default;
+
+// Padding
+$table-padding-tb: 1rem !default;
+$table-padding-rl: 1rem !default;
+
+// Border
+$table-border: 1px solid rgba(0, 0, 0, .05) !default;
+
+// Striped
+$table-background-striped: #f8f8f8 !default;
 
 
 
