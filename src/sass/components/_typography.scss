@@ -1,0 +1,14 @@
+html,
+body {
+    font-size: $font-size;
+    line-height: $base-line;
+}
+body {
+    font-family: $text-font-family;
+    color: $color-text;
+    background-color: transparent;
+}
+
+p {
+    margin-bottom: $text-margin-bottom;
+}

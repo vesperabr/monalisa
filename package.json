@@ -1,0 +1,14 @@
+{
+  "private": true,
+  "devDependencies": {
+    "gulp": "^3.9.1"
+  },
+  "dependencies": {
+    "gulp-install": "^0.6.0",
+    "laravel-elixir": "^3.0.0"
+  },
+  "name": "Kubo",
+  "version": "1.0.0",
+  "main": "gulpfile.js",
+  "author": "VESPERA"
+}
