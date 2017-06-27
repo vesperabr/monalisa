@@ -157,8 +157,6 @@ sub {
 	bottom: 1px;
 }
 
-
-
 // Preformatted
 pre, code, samp, var, kbd {
 	font-family: $monospace-font-family;
@@ -168,6 +166,7 @@ pre, code, samp, var, kbd, mark {
 }
 pre,
 pre code {
+    background: #f8f8f8;
 	padding: 0;
 	top: 0;
     display: block;
@@ -237,17 +236,8 @@ a.muted {
 a.muted:hover {
     opacity: 1;
 }
-.smaller {
-	font-size: $font-size-smaller;
-}
 .small {
 	font-size: $font-size-small;
-}
-.big {
-	font-size: $font-size-big;
-}
-.large {
-	font-size: $font-size-large;
 }
 .end {
     margin-bottom: 0 !important;

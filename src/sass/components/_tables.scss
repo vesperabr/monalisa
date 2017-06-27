@@ -9,7 +9,7 @@ table {
 }
 table caption {
     text-align: left;
-    font-size: $font-size-small;
+    font-size: $font-size - 2px;
     font-weight: 500;
     color: rgba($color-text, .5);
 }

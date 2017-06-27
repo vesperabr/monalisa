@@ -36,10 +36,7 @@ $input-font-family: $text-font-family !default;
 
 // Font Size
 $font-size: 16px !default;
-$font-size-smaller: $font-size - 4px !default;
 $font-size-small: $font-size - 2px !default;
-$font-size-big: $font-size + 2px !default;
-$font-size-large: $font-size + 4px !default;
 
 // Baseline
 $base-line: 1.5;
@@ -100,4 +97,65 @@ $table-border: 1px solid rgba(0, 0, 0, .05) !default;
 $table-background-striped: #f8f8f8 !default;
 
 
+// BUTTONS
+// ---------------------------------------------------------------------------
+
+// Font Size
+$button-font-size: 15px !default;
+
+// Height
+$button-height: 40px !default;
+
+// Baseline
+$button-base-line: $button-height - 2px !default;
+
+// Padding
+$button-padding-rl: 20px !default;
+
+// Weight
+$button-font-weight: 500 !default;
+
+// Radius
+$button-border-radius: 3px !default;
+
+
+// INPUTS
+// ---------------------------------------------------------------------------
+
+// Font Size
+$input-font-size: 15px !default;
+
+// Baseline
+$textarea-base-line: $base-line !default;
+
+// Height
+$input-height: 40px !default;
+
+// Padding
+$input-padding-rl: 12px !default;
+$input-textarea-padding-tb: 8px !default;
+
+// States
+$input-border-width: 1px !default;
+$input-border-color: #d4d4d4 !default;
+$input-background-color: #fff !default;
+$input-box-shadow: none !default;
+
+$input-focus-background-color: #fff !default;
+$input-focus-border-color: $color-focus !default;
+$input-focus-box-shadow: 0 0 1px $color-focus inset !default;
+
+$input-error-background-color: $color-error !default;
+$input-error-border-color: $color-error !default;
+$input-error-focus-box-shadow: 0 0 1px $color-error inset !default;
+
+$input-success-background-color: $color-success !default;
+$input-success-border-color: $color-success !default;
+$input-success-focus-box-shadow: 0 0 1px $color-success inset !default;
+
+$input-disabled-opacity: .6;
+$input-disabled-color: rgba(0, 0, 0, .5);
+
+// Radius
+$input-border-radius: 3px !default;
 
