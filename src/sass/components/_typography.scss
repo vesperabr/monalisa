@@ -152,9 +152,11 @@ sup {
 }
 sup {
 	top: 0;
+    vertical-align: super;
 }
 sub {
 	bottom: 1px;
+    vertical-align: sub;
 }
 
 // Preformatted

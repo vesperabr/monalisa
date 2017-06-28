@@ -448,10 +448,12 @@ sup {
 
 sup {
   top: 0;
+  vertical-align: super;
 }
 
 sub {
   bottom: 1px;
+  vertical-align: sub;
 }
 
 pre,
@@ -1250,6 +1252,18 @@ form,
 .form.horizontal .form-item > div,
 .form.horizontal .form-item .input {
   width: 70%;
+}
+
+@media (max-width: 768px) {
+  .form.horizontal .form-item {
+    display: block;
+  }
+
+  .form.horizontal .form-item label,
+  .form.horizontal .form-item > div,
+  .form.horizontal .form-item .input {
+    width: 100%;
+  }
 }
 
 button,

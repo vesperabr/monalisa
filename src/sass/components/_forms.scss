@@ -254,3 +254,18 @@ form,
         }
     }
 }
+
+@include breakpoint(sm) {
+    .form.horizontal {
+        .form-item {
+            display: block;
+
+            label,
+            > div,
+            .input {
+                width: 100%;
+            }
+        }
+    }
+
+}
