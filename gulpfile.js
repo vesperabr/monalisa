@@ -6,7 +6,7 @@ elixir.config.publicPath = 'assets';
 
 elixir(function(mix) {
 
-    mix.sass('kubo.scss');
+    mix.sass('monalisa.scss');
     mix.sass('./docs/docs.scss', './docs/docs.css');
 
 });

@@ -567,14 +567,17 @@ a.muted:hover {
   white-space: nowrap;
 }
 
+.tal,
 .text-left {
   text-align: left;
 }
 
+.tac,
 .text-center {
   text-align: center;
 }
 
+.tar,
 .text-right {
   text-align: right;
 }
