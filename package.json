@@ -1,14 +1,17 @@
 {
   "private": true,
+  "name": "Monalisa",
+  "version": "0.1.0",
+  "main": "gulpfile.js",
+  "author": "VESPERA",
   "devDependencies": {
     "gulp": "^3.9.1"
   },
   "dependencies": {
-    "gulp-install": "^0.6.0",
-    "laravel-elixir": "^3.0.0"
-  },
-  "name": "Kubo",
-  "version": "1.0.0",
-  "main": "gulpfile.js",
-  "author": "VESPERA"
+    "gulp-sass": "^3.1.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-uglify": "^3.0.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-clean-css": "^3.5.0"
+  }
 }

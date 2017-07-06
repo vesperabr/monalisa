@@ -66,6 +66,7 @@ $heading-margin-bottom: $text-margin-bottom !default;
 
 // BREAKPOINTS
 // ---------------------------------------------------------------------------
+$xs: 480px !default;
 $sm: 768px !default;
 $md: 1024px !default;
 $lg: 1200px !default;
@@ -153,8 +154,8 @@ $input-success-background-color: $color-success !default;
 $input-success-border-color: $color-success !default;
 $input-success-focus-box-shadow: 0 0 1px $color-success inset !default;
 
-$input-disabled-opacity: .6;
-$input-disabled-color: rgba(0, 0, 0, .5);
+$input-disabled-opacity: .6 !default;
+$input-disabled-color: rgba(0, 0, 0, .5) !default;
 
 // Radius
 $input-border-radius: 3px !default;
