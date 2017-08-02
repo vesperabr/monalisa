@@ -134,3 +134,22 @@
         right: 1rem;
     }
 }
+
+// Alinhamento
+.mid {
+    display: inline-block;
+    position: absolute;
+    top: 50%;
+    left: 0%;
+
+    -webkit-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+            transform: translateY(-50%);
+}
+
+// Margem
+.mb0  {margin-bottom: 0px !important;}
+.mb10 {margin-bottom: 10px !important;}
+.mb20 {margin-bottom: 20px !important;}
+.mb40 {margin-bottom: 40px !important;}
+.mb80 {margin-bottom: 80px !important;}
