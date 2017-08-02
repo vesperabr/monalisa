@@ -12,6 +12,7 @@ $color-link-hover: #2980b9 !default;
 // Button
 $color-button-primary: #1c86f2 !default;
 $color-button-primary-text: #fff !default;
+$color-button-hover: #313439 !default;
 $color-button-secondary: #313439 !default;
 $color-button-secondary-text: #fff !default;
 
@@ -39,7 +40,7 @@ $font-size: 16px !default;
 $font-size-small: $font-size - 2px !default;
 
 // Baseline
-$base-line: 1.5;
+$base-line: 1.5 !default;
 
 // Margin
 $text-margin-bottom: $font-size * $base-line !default;
@@ -49,7 +50,6 @@ $text-margin-bottom: $font-size * $base-line !default;
 // ---------------------------------------------------------------------------
 
 // Font Size
-// By default: 60, 48, 36, 24, 21, 18, 16
 $heading-font-size-1: 48px !default;
 $heading-font-size-2: 36px !default;
 $heading-font-size-3: 24px !default;
@@ -68,7 +68,7 @@ $heading-margin-bottom: $text-margin-bottom !default;
 // ---------------------------------------------------------------------------
 $xs: 480px !default;
 $sm: 768px !default;
-$md: 1024px !default;
+$md: 992px !default;
 $lg: 1200px !default;
 
 
@@ -98,36 +98,11 @@ $table-border: 1px solid rgba(0, 0, 0, .05) !default;
 $table-background-striped: #f8f8f8 !default;
 
 
-// BUTTONS
-// ---------------------------------------------------------------------------
-
-// Font Size
-$button-font-size: 15px !default;
-
-// Height
-$button-height: 40px !default;
-
-// Baseline
-$button-base-line: $button-height - 2px !default;
-
-// Padding
-$button-padding-rl: 20px !default;
-
-// Weight
-$button-font-weight: 500 !default;
-
-// Radius
-$button-border-radius: 3px !default;
-
-
 // INPUTS
 // ---------------------------------------------------------------------------
 
 // Font Size
-$input-font-size: 15px !default;
-
-// Baseline
-$textarea-base-line: $base-line !default;
+$input-font-size: $font-size - 2 !default;
 
 // Height
 $input-height: 40px !default;
@@ -159,6 +134,28 @@ $input-disabled-color: rgba(0, 0, 0, .5) !default;
 
 // Radius
 $input-border-radius: 3px !default;
+
+
+// BUTTONS
+// ---------------------------------------------------------------------------
+
+// Font Size
+$button-font-size: $font-size - 2 !default;
+
+// Height
+$button-height: $input-height !default;
+
+// Baseline
+$button-base-line: $button-height !default;
+
+// Padding
+$button-padding-rl: 20px !default;
+
+// Weight
+$button-font-weight: bold !default;
+
+// Radius
+$button-border-radius: 3px !default;
 
 
 @mixin breakpoint($min: 0, $max: 0) {
@@ -2146,10 +2143,11 @@ button,
     border-radius: $button-border-radius;
     color: $color-button-primary-text;
     font-size: $button-font-size;
-    font-family: $text-font-family;
+    font-family: $buttons-font-family;
     font-weight: $button-font-weight;
     line-height: $button-base-line;
     text-decoration: none;
+    text-align: center;
     cursor: pointer;
 	vertical-align: middle;
     transition: 200ms;
@@ -2161,12 +2159,22 @@ button,
         margin: 0 2px;
 	}
 }
+
 button:hover,
-.button:hover {
+.button:hover,
+button:focus,
+.button:focus {
     outline: none;
-	text-decoration: none;
-	color: $color-button-primary-text;
-	background-color: lighten($color-button-primary, 10%);
+    text-decoration: none;
+    color: $color-button-primary-text;
+    background-color: lighten($color-button-primary, 10%);
+}
+
+button.hover:hover,
+.button.hover:hover,
+button.hover:focus,
+.button.hover:focus {
+	background-color: $color-button-hover;
 }
 
 // Disabled
@@ -2196,6 +2204,12 @@ button:hover,
         color: rgba($color-button-primary, .7);
     	border-color: rgba($color-button-primary, .5);
     }
+
+    &.hover:hover {
+        color: $color-button-primary-text;
+        border-color: $color-button-hover;
+        background-color: $color-button-hover;
+    }
 }
 
 // White
@@ -2217,7 +2231,6 @@ button:hover,
     text-transform: uppercase;
     letter-spacing: .04em;
 }
-
 
 // Round
 .button.round {
@@ -2264,7 +2277,7 @@ textarea,
 select {
     display: block;
     width: 100%;
-	font-family: inherit;
+	font-family: $input-font-family;
 	font-size: $input-font-size;
 	height: $input-height;
     outline: none;
@@ -2325,7 +2338,6 @@ select[multiple] {
 textarea {
     height: auto;
     padding: $input-textarea-padding-tb $input-padding-rl;
-    line-height: $textarea-base-line;
     vertical-align: top;
 }
 input[type="file"] {

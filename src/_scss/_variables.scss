@@ -12,6 +12,7 @@ $color-link-hover: #2980b9 !default;
 // Button
 $color-button-primary: #1c86f2 !default;
 $color-button-primary-text: #fff !default;
+$color-button-hover: #313439 !default;
 $color-button-secondary: #313439 !default;
 $color-button-secondary-text: #fff !default;
 
@@ -39,7 +40,7 @@ $font-size: 16px !default;
 $font-size-small: $font-size - 2px !default;
 
 // Baseline
-$base-line: 1.5;
+$base-line: 1.5 !default;
 
 // Margin
 $text-margin-bottom: $font-size * $base-line !default;
@@ -49,7 +50,6 @@ $text-margin-bottom: $font-size * $base-line !default;
 // ---------------------------------------------------------------------------
 
 // Font Size
-// By default: 60, 48, 36, 24, 21, 18, 16
 $heading-font-size-1: 48px !default;
 $heading-font-size-2: 36px !default;
 $heading-font-size-3: 24px !default;
@@ -68,7 +68,7 @@ $heading-margin-bottom: $text-margin-bottom !default;
 // ---------------------------------------------------------------------------
 $xs: 480px !default;
 $sm: 768px !default;
-$md: 1024px !default;
+$md: 992px !default;
 $lg: 1200px !default;
 
 
@@ -98,36 +98,11 @@ $table-border: 1px solid rgba(0, 0, 0, .05) !default;
 $table-background-striped: #f8f8f8 !default;
 
 
-// BUTTONS
-// ---------------------------------------------------------------------------
-
-// Font Size
-$button-font-size: 15px !default;
-
-// Height
-$button-height: 40px !default;
-
-// Baseline
-$button-base-line: $button-height - 2px !default;
-
-// Padding
-$button-padding-rl: 20px !default;
-
-// Weight
-$button-font-weight: 500 !default;
-
-// Radius
-$button-border-radius: 3px !default;
-
-
 // INPUTS
 // ---------------------------------------------------------------------------
 
 // Font Size
-$input-font-size: 15px !default;
-
-// Baseline
-$textarea-base-line: $base-line !default;
+$input-font-size: $font-size - 2 !default;
 
 // Height
 $input-height: 40px !default;
@@ -159,4 +134,26 @@ $input-disabled-color: rgba(0, 0, 0, .5) !default;
 
 // Radius
 $input-border-radius: 3px !default;
+
+
+// BUTTONS
+// ---------------------------------------------------------------------------
+
+// Font Size
+$button-font-size: $font-size - 2 !default;
+
+// Height
+$button-height: $input-height !default;
+
+// Baseline
+$button-base-line: $button-height !default;
+
+// Padding
+$button-padding-rl: 20px !default;
+
+// Weight
+$button-font-weight: bold !default;
+
+// Radius
+$button-border-radius: 3px !default;
 

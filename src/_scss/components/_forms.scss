@@ -21,7 +21,7 @@ textarea,
 select {
     display: block;
     width: 100%;
-	font-family: inherit;
+	font-family: $input-font-family;
 	font-size: $input-font-size;
 	height: $input-height;
     outline: none;
@@ -82,7 +82,6 @@ select[multiple] {
 textarea {
     height: auto;
     padding: $input-textarea-padding-tb $input-padding-rl;
-    line-height: $textarea-base-line;
     vertical-align: top;
 }
 input[type="file"] {
