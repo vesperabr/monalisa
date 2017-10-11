@@ -124,10 +124,6 @@ input[type="search"]::-webkit-search-cancel-button {
         .Row._gutters > .col,
         .Row._gutters > .Row > .col {
           margin-left: 0; } }
-  .Row._around {
-    justify-content: space-around; }
-  .Row._between {
-    justify-content: space-between; }
   .Row._auto .col {
     flex: 1 1 0%; }
 
@@ -294,3 +290,249 @@ input[type="search"]::-webkit-search-cancel-button {
     order: -1; }
   ._last-sm {
     order: 1; } }
+
+html,
+body {
+  font-size: 16px;
+  line-height: 1.5; }
+
+body {
+  font-family: Arial, sans-serif;
+  color: #313439;
+  background-color: transparent; }
+
+p {
+  line-height: 1.5; }
+
+a {
+  color: #3498db; }
+
+a:hover {
+  color: #2980b9; }
+
+h1, h2, h3, h4, h5, h6 {
+  margin-bottom: 24px;
+  color: #0d0d0e;
+  font-family: Arial, sans-serif;
+  font-weight: bold;
+  text-rendering: optimizeLegibility;
+  line-height: 1; }
+
+h1, ._h1 {
+  font-size: 48px; }
+
+h2, ._h2 {
+  font-size: 36px; }
+
+h3, ._h3 {
+  font-size: 24px; }
+
+h4, ._h4 {
+  font-size: 21px; }
+
+h5, ._h5 {
+  font-size: 18px; }
+
+h6, ._h6 {
+  font-size: 16px; }
+
+h1 a, ._h1 a,
+h2 a, ._h2 a,
+h3 a, ._h3 a,
+h4 a, ._h4 a,
+h5 a, ._h5 a,
+h6 a, ._h6 a {
+  color: inherit; }
+
+ul,
+ul ul,
+ul ol,
+ol,
+ol ul,
+ol ol {
+  margin: 0 0 0 24px; }
+
+ol ol li {
+  list-style-type: lower-alpha; }
+
+ol ol ol li {
+  list-style-type: lower-roman; }
+
+nav ul,
+nav ol {
+  margin: 0;
+  list-style: none; }
+  nav ul ul,
+  nav ul ol,
+  nav ol ul,
+  nav ol ol {
+    margin-left: 24px; }
+
+dl dt {
+  font-weight: bold; }
+
+dd {
+  margin-left: 24px; }
+
+p, blockquote, hr, pre, ol, ul, dl, table, fieldset, figure, address, form {
+  margin-bottom: 24px; }
+
+hr {
+  border: none;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  margin-top: -1px; }
+
+blockquote {
+  padding-left: 1rem;
+  border-left: 4px solid rgba(0, 0, 0, 0.1);
+  font-style: italic;
+  color: rgba(49, 52, 57, 0.65); }
+  blockquote p {
+    margin-bottom: .5rem; }
+
+time, cite, small, figcaption {
+  font-size: 87.5%; }
+
+cite {
+  opacity: .6; }
+
+abbr[title], dfn[title] {
+  border-bottom: 1px dotted rgba(0, 0, 0, 0.5);
+  cursor: help; }
+
+var {
+  font-size: 16px;
+  opacity: .6;
+  font-style: normal; }
+
+mark, code, samp, kbd {
+  position: relative;
+  top: -1px;
+  padding: 4px 4px 2px 4px;
+  display: inline-block;
+  line-height: 1;
+  color: rgba(49, 52, 57, 0.85); }
+
+kbd {
+  border: 1px solid rgba(0, 0, 0, 0.1); }
+
+sub,
+sup {
+  font-size: x-small;
+  line-height: 0;
+  margin-left: 1rem/4;
+  position: relative; }
+
+sup {
+  top: 0;
+  vertical-align: super; }
+
+sub {
+  bottom: 1px;
+  vertical-align: sub; }
+
+pre, code, samp, var, kbd {
+  font-family: Consolas, Monaco, "Courier New", monospace; }
+
+pre, code, samp, var, kbd, mark {
+  font-size: 87.5%; }
+
+pre,
+pre code {
+  background: #f8f8f8;
+  padding: 0;
+  top: 0;
+  display: block;
+  line-height: 1.5;
+  color: rgba(49, 52, 57, 0.85);
+  overflow: none;
+  white-space: pre-wrap; }
+
+pre {
+  padding: 1rem; }
+
+figcaption {
+  opacity: .6; }
+
+figure figcaption {
+  position: relative;
+  top: -1rem/2; }
+
+figure pre {
+  background: none;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 4px; }
+
+figure .video-container,
+figure pre {
+  margin-bottom: 12px; }
+
+._tal,
+._text-left {
+  text-align: left; }
+
+._tac,
+._text-center {
+  text-align: center; }
+
+._tar,
+._text-right {
+  text-align: right; }
+
+ul._unstyled {
+  margin-left: 0; }
+
+ul._unstyled,
+ul._unstyled ul {
+  list-style: none; }
+
+._monospace {
+  font-family: Consolas, Monaco, "Courier New", monospace; }
+
+._upper {
+  text-transform: uppercase; }
+
+._lower {
+  text-transform: lowercase; }
+
+._italic {
+  font-style: italic !important; }
+
+._strong {
+  font-weight: bold !important; }
+
+._normal {
+  font-weight: normal !important; }
+
+._muted {
+  opacity: .55; }
+
+a._muted {
+  color: #313439; }
+
+a._muted:hover {
+  opacity: 1; }
+
+._small {
+  font-size: 14px; }
+
+._end {
+  margin-bottom: 0 !important; }
+
+._nowrap,
+._nowrap td {
+  white-space: nowrap; }
+
+._columns-2,
+._columns-3,
+._columns-4 {
+  column-gap: 24px; }
+
+._columns-2 {
+  column-count: 2; }
+
+._columns-3 {
+  column-count: 3; }
+
+._columns-4 {
+  column-count: 4; }
