@@ -50,4 +50,4 @@
     <? include 'data/grid/exe_8.php'; ?>
     <pre data-src="data/grid/cod_8.html"></pre>
 
-<? include '_footer.php'; ?>s
+<? include '_footer.php'; ?>
