@@ -25,7 +25,7 @@
 			</tr>
 			<tr>
 				<td>
-					<a href="#" class="_black">Black link</a>
+					<span class="_black">Black link</span>
 				</td>
 				<td>
 					<code>_black</code>
@@ -33,7 +33,7 @@
 			</tr>
 			<tr>
 				<td>
-					<a href="#" class="_highlight">Highlight</a>
+					<span class="_highlight">Highlight</span>
 				</td>
 				<td>
 					<code>_highlight</code>
@@ -41,7 +41,7 @@
 			</tr>
 			<tr>
 				<td>
-					<a href="#" class="_upper">upper</a>
+					<span class="_upper">upper</span>
 				</td>
 				<td>
 					<code>_upper</code>
@@ -49,7 +49,7 @@
 			</tr>
 			<tr>
 				<td>
-					<a href="#" class="_lower">LOWER</a>
+					<span class="_lower">LOWER</span>
 				</td>
 				<td>
 					<code>_lower</code>
@@ -57,7 +57,7 @@
 			</tr>
 			<tr>
 				<td>
-					<a href="#" class="_italic">Italic</a>
+					<span class="_italic">Italic</span>
 				</td>
 				<td>
 					<code>_italic</code>
@@ -65,7 +65,7 @@
 			</tr>
 			<tr>
 				<td>
-					<a href="#" class="_strong">Strong</a>
+					<span class="_strong">Strong</span>
 				</td>
 				<td>
 					<code>_strong</code>
@@ -73,7 +73,7 @@
 			</tr>
 			<tr>
 				<td>
-					<a href="#" class="_normal">Not strong</a>
+					<span class="_normal">Not strong</span>
 				</td>
 				<td>
 					<code>_normal</code>
@@ -81,7 +81,7 @@
 			</tr>
 			<tr>
 				<td>
-					<a href="#" class="_monospace">Monospace</a>
+					<span class="_monospace">Monospace</span>
 				</td>
 				<td>
 					<code>_monospace</code>
@@ -89,7 +89,7 @@
 			</tr>
 			<tr>
 				<td>
-					<a href="#" class="_nowrap">Nowrap</a>
+					<span class="_nowrap">Nowrap</span>
 				</td>
 				<td>
 					<code>_nowrap</code>
@@ -97,7 +97,7 @@
 			</tr>
 			<tr>
 				<td>
-					<a href="#" class="_end">Remove margin bottom</a>
+					<span class="_end">Remove margin bottom</span>
 				</td>
 				<td>
 					<code>_end</code>
@@ -105,7 +105,7 @@
 			</tr>
 			<tr>
 				<td>
-					<a href="#" class="_small">Small</a>
+					<span class="_small">Small</span>
 				</td>
 				<td>
 					<code>_small</code>
@@ -113,7 +113,7 @@
 			</tr>
 			<tr>
 				<td>
-					<a href="#" class="_smaller">Smaller</a>
+					<span class="_smaller">Smaller</span>
 				</td>
 				<td>
 					<code>_smaller</code>
@@ -121,7 +121,7 @@
 			</tr>
 			<tr>
 				<td>
-					<a href="#" class="_large">Large</a>
+					<span class="_large">Large</span>
 				</td>
 				<td>
 					<code>_large</code>
@@ -129,7 +129,7 @@
 			</tr>
 			<tr>
 				<td>
-					<a href="#" class="_big">Big</a>
+					<span class="_big">Big</span>
 				</td>
 				<td>
 					<code>_big</code>
@@ -137,7 +137,7 @@
 			</tr>
 			<tr>
 				<td>
-					<a href="#" class="_text-left">Text left</a>
+					<span class="_text-left">Text left</span>
 				</td>
 				<td>
 					<code>_text-left</code>
@@ -145,7 +145,7 @@
 			</tr>
 			<tr>
 				<td>
-					<a href="#" class="_text-center">Text center</a>
+					<span class="_text-center">Text center</span>
 				</td>
 				<td>
 					<code>_text-center</code>
@@ -153,7 +153,7 @@
 			</tr>
 			<tr>
 				<td>
-					<a href="#" class="_text-right">Text right</a>
+					<span class="_text-right">Text right</span>
 				</td>
 				<td>
 					<code>_text-right</code>
