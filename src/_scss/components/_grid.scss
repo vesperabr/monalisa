@@ -19,12 +19,6 @@
             }
         }
     }
-    &._around {
-        @include flex-items-space-around;
-    }
-    &._between {
-        @include flex-items-space-between;
-    }
     &._auto {
         & .col {
             flex: 1 1 0%;
