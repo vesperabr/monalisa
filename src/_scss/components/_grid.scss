@@ -1,10 +1,10 @@
 // Grid Row
-.Row {
+.row {
     @include grid-row;
 
     // Gutters
-    &._gutters,
-    &._gutters > .Row {
+    &.gutters,
+    &.gutters > .row {
         margin-left: -$grid-gutter;
 
         @include breakpoint(sm) {
@@ -19,41 +19,47 @@
             }
         }
     }
-    &._around {
-        @include flex-items-space-around;
-    }
-    &._between {
-        @include flex-items-space-between;
-    }
-    &._auto {
-        & .col {
+	&.around {
+		@include flex-items-space-around;
+	}
+	&.between {
+		@include flex-items-space-between;
+	}
+	&.auto {
+    	& .col {
             flex: 1 1 0%;
         }
-    }
+	}
 }
 
 // Grid Columns
 @include generate-grid-columns;
 
 // Offset
-[class^='_offset-'],
-[class*=' _offset-'] {
+[class^='offset-'],
+[class*=' offset-'] {
     @include breakpoint(sm) {
         margin-left: 0;
     }
 }
 
 // Ordering
-._first    { order: -1; }
-._last     { order: 1;  }
+.first    { order: -1; }
+.last     { order: 1;  }
 
 @include breakpoint(sm) {
-    .Row {
+    .row {
+
         & .col {
             margin-left: 0;
             width: 100%;
         }
+        &.gutters {
+            & .col {
+                margin-bottom: $text-margin-bottom;
+            }
+        }
     }
-    ._first-sm { order: -1; }
-    ._last-sm  { order: 1;  }
+	.first-sm { order: -1; }
+	.last-sm  { order: 1;  }
 }

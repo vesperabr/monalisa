@@ -1,5 +1,12 @@
+@import '../src/sass/variables';
+
 body {
   font-family: Lato, sans-serif; }
+
+.container {
+  width: 900px;
+  margin: 0 auto;
+}
 
 h1.title, h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
   font-family: Lato, sans-serif; }
@@ -102,11 +109,11 @@ button, .button {
   background: #d8e9fa;
   margin-bottom: 4px; }
 
-.demo-grid .Row {
+.demo-grid .row {
   margin-bottom: 4px;
   background: #ebf4fc; }
 
-.demo-grid .Row._gutters {
+.demo-grid .row.gutters {
   background: none; }
 
 .demo-grid .col {
@@ -119,7 +126,7 @@ button, .button {
 .demo-grid .demo-col-nested {
   border-left: none;
   padding: 0; }
-  .demo-grid .demo-col-nested .Row {
+  .demo-grid .demo-col-nested .row {
     margin-bottom: 0; }
 
 #demo-container {
@@ -384,28 +391,20 @@ button, .button {
   margin-bottom: 8px; }
 
 .swatch-bg-headings {
-  background: #0d0d0e; }
+  background: $color-headings; }
 
 .swatch-bg-text {
-  background: #313439; }
+  background: $color-text; }
 
 .swatch-bg-link {
-  background: #3794de; }
+  background: $color-link; }
 
 .swatch-bg-link-hover {
-  background: #f03c69; }
+  background: $color-link-hover; }
 
 .swatch-bg-button-primary {
-  background: #1c86f2; }
+  background: $color-button-primary; }
 
 .swatch-bg-button-secondary {
-  background: #313439; }
+  background: $color-button-secondary; }
 
-.swatch-bg-inverted {
-  background: #fff; }
-
-.swatch-bg-inverted {
-  position: relative;
-  bottom: -8px;
-  margin-top: -8px;
-  border: 8px solid #f8f8f8; }

@@ -1,0 +1,109 @@
+button,
+.button, {
+	display: inline-block;
+    width: auto;
+    height: $button-height;
+    padding: 0 $button-padding-rl;
+    background-color: $color-button-primary;
+	border: 1px solid transparent;
+    border-radius: $button-border-radius;
+    color: $color-button-primary-text;
+    font-size: $button-font-size;
+    font-family: $buttons-font-family;
+    font-weight: $button-font-weight;
+    line-height: $button-base-line;
+    text-decoration: none;
+    text-align: center;
+    cursor: pointer;
+	vertical-align: middle;
+    transition: 200ms;
+	-webkit-appearance: none;
+
+	& i {
+        position: relative;
+        top: 1px;
+        margin: 0 2px;
+	}
+}
+
+button:hover,
+.button:hover,
+button:focus,
+.button:focus {
+    outline: none;
+    text-decoration: none;
+    color: $color-button-primary-text;
+    background-color: lighten($color-button-primary, 10%);
+}
+
+button.hover:hover,
+.button.hover:hover,
+button.hover:focus,
+.button.hover:focus {
+	background-color: $color-button-hover;
+}
+
+// Disabled
+.button:disabled,
+.button.disabled {
+	cursor: default;
+	font-style: normal;
+	color: rgba($color-button-primary-text, .7);
+	background-color: rgba($color-button-primary, .7);
+}
+
+// Outline
+.button.outline {
+    background: none;
+    border-width: 2px;
+    border-color: $color-button-primary;
+    color: $color-button-primary;
+
+    &:hover {
+        background: none;
+        color: rgba($color-button-primary, .6);
+        border-color: rgba($color-button-primary, .5);
+    }
+    &:disabled,
+    &.disabled {
+        background: none;
+        color: rgba($color-button-primary, .7);
+    	border-color: rgba($color-button-primary, .5);
+    }
+
+    &.hover:hover {
+        color: $color-button-primary-text;
+        border-color: $color-button-hover;
+        background-color: $color-button-hover;
+    }
+}
+
+// White
+.button.inverted {
+    @include button(#000, #fff);
+
+    &:hover {
+        opacity: .7;
+    }
+}
+
+// Raised
+.button.raised {
+    box-shadow: 0 1px 3px rgba(0, 0, 0, .3);
+}
+
+// Upper
+.button.upper {
+    text-transform: uppercase;
+    letter-spacing: .04em;
+}
+
+// Round
+.button.round {
+    border-radius: $button-height / 2 ;
+}
+
+// Secondary
+.button.secondary {
+	@include button($color-button-secondary-text, $color-button-secondary);
+}

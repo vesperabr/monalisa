@@ -1,16 +1,159 @@
-// GRID
-// ============================================================================
-$grid-columns: 12 !default;
-$grid-gutter: 2% !default;
+// COLORS
+// ---------------------------------------------------------------------------
+
+// Text
+$color-text: #313439 !default;
+$color-headings: #0d0d0e !default;
+
+// Links
+$color-link: #3498db !default;
+$color-link-hover: #2980b9 !default;
+
+// Button
+$color-button-primary: #1c86f2 !default;
+$color-button-primary-text: #fff !default;
+$color-button-hover: #313439 !default;
+$color-button-secondary: #313439 !default;
+$color-button-secondary-text: #fff !default;
+
+// States
+$color-error: #e74c3c !default;
+$color-success: #35beb1 !default;
+$color-warning: #f7ba45 !default;
+$color-focus: #3498db !default;
+
+
+// FONT FAMILY
+// ---------------------------------------------------------------------------
+$text-font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif !default;
+$monospace-font-family: Consolas, Monaco, 'Courier New', monospace !default;
+$headings-font-family: $text-font-family !default;
+$buttons-font-family: $text-font-family !default;
+$input-font-family: $text-font-family !default;
+
+
+// TEXT
+// ---------------------------------------------------------------------------
+
+// Font Size
+$font-size: 16px !default;
+$font-size-small: $font-size - 2px !default;
+
+// Baseline
+$base-line: 1.5 !default;
+
+// Margin
+$text-margin-bottom: $font-size * $base-line !default;
+
+
+// HEADINGS
+// ---------------------------------------------------------------------------
+
+// Font Size
+$heading-font-size-1: 48px !default;
+$heading-font-size-2: 36px !default;
+$heading-font-size-3: 24px !default;
+$heading-font-size-4: 21px !default;
+$heading-font-size-5: 18px !default;
+$heading-font-size-6: 16px !default;
+
+// Baseline
+$heading-base-line: 1 !default;
+
+// Margin
+$heading-margin-bottom: $text-margin-bottom !default;
 
 
 // BREAKPOINTS
-// ============================================================================
+// ---------------------------------------------------------------------------
 $xs: 480px !default;
 $sm: 768px !default;
 $md: 992px !default;
 $lg: 1200px !default;
 
 
-// COLORS
-// ============================================================================
+// GRID
+// ---------------------------------------------------------------------------
+$grid-columns: 12 !default;
+$grid-gutter: 2% !default;
+
+
+// TABLES
+// ---------------------------------------------------------------------------
+
+// Font Size
+$table-font-size: $font-size-small !default;
+
+// Baseline
+$table-base-line: $base-line !default;
+
+// Padding
+$table-padding-tb: 1rem !default;
+$table-padding-rl: 1rem !default;
+
+// Border
+$table-border: 1px solid rgba(0, 0, 0, .05) !default;
+
+// Striped
+$table-background-striped: #f8f8f8 !default;
+
+
+// INPUTS
+// ---------------------------------------------------------------------------
+
+// Font Size
+$input-font-size: $font-size - 2 !default;
+
+// Height
+$input-height: 40px !default;
+
+// Padding
+$input-padding-rl: 12px !default;
+$input-textarea-padding-tb: 8px !default;
+
+// States
+$input-border-width: 1px !default;
+$input-border-color: #d4d4d4 !default;
+$input-background-color: #fff !default;
+$input-box-shadow: none !default;
+
+$input-focus-background-color: #fff !default;
+$input-focus-border-color: $color-focus !default;
+$input-focus-box-shadow: 0 0 1px $color-focus inset !default;
+
+$input-error-background-color: $color-error !default;
+$input-error-border-color: $color-error !default;
+$input-error-focus-box-shadow: 0 0 1px $color-error inset !default;
+
+$input-success-background-color: $color-success !default;
+$input-success-border-color: $color-success !default;
+$input-success-focus-box-shadow: 0 0 1px $color-success inset !default;
+
+$input-disabled-opacity: .6 !default;
+$input-disabled-color: rgba(0, 0, 0, .5) !default;
+
+// Radius
+$input-border-radius: 3px !default;
+
+
+// BUTTONS
+// ---------------------------------------------------------------------------
+
+// Font Size
+$button-font-size: $font-size - 2 !default;
+
+// Height
+$button-height: $input-height !default;
+
+// Baseline
+$button-base-line: $button-height !default;
+
+// Padding
+$button-padding-rl: 20px !default;
+
+// Weight
+$button-font-weight: bold !default;
+
+// Radius
+$button-border-radius: 3px !default;
+

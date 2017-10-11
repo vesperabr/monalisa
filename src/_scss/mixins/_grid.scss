@@ -15,24 +15,24 @@
 
     @for $i from 1 through $grid-columns
     {
-        ._col-#{$i} {
+        .col-#{$i} {
             width: 100% / $grid-columns * $i;
         }
-        ._offset-#{$i} {
+        .offset-#{$i} {
             $width: 100% / $grid-columns * $i;
             margin-left: $width;
         }
 
     }
 
-    ._gutters {
+    .gutters {
         @for $i from 1 through $grid-columns
         {
-            & > ._col-#{$i} {
+            & > .col-#{$i} {
                 $width: 100% / $grid-columns * $i;
                 width: calc(#{$width} - #{$grid-gutter});
             }
-            & > ._offset-#{$i} {
+            & > .offset-#{$i} {
                 $width: 100% / $grid-columns * $i;
                 margin-left: calc(#{$width} + #{$grid-gutter}) !important;
             }
