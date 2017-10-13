@@ -390,6 +390,32 @@ $box-shadow-input-focus-success: 0 0 1px $color-success inset !default;
 		column-count: 1;
     }
 }
+@mixin reset()
+{
+    width: auto;
+    height: auto;
+    margin: 0;
+    padding: 0;
+    border: none;
+    border-radius: 0;
+    background: transparent;
+    color: inherit;
+    font: inherit;
+    font-size: 100%;
+
+    &:hover {
+        width: auto;
+        height: auto;
+        margin: 0;
+        padding: 0;
+        border: none;
+        border-radius: 0;
+        background: transparent;
+        color: inherit;
+        font: inherit;
+        font-size: 100%;
+    }
+}
 // Clearfix
 @mixin clearfix {
     &:after {
