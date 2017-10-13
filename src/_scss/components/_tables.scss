@@ -4,8 +4,8 @@ table {
 	max-width: 100%;
 	width: 100%;
 	empty-cells: show;
-	font-size: $table-font-size;
-	line-height: $table-base-line;
+	font-size: $font-size-table;
+	line-height: $base-line-table;
 }
 table caption {
     text-align: left;
@@ -27,8 +27,8 @@ td._align-middle {
 }
 th,
 td {
-	padding: $table-padding-tb $table-padding-rl;
-	border-bottom: $table-border;
+	padding: $padding-tb-table $padding-rl-table;
+	border-bottom: $border-table;
 	&:first-child {
 		padding-left: 0;
 	}
@@ -41,23 +41,19 @@ tfoot td {
 	color: rgba($color-text, .5);
 }
 
-
-
-
-
 // Bordered
 table._bordered {
 
 	& td,
 	& th {
-		border: $table-border;
+		border: $border-table;
 	}
 
 }
 
 // Striped
 table._striped tr:nth-child(odd) td {
-	background: $table-background-striped;
+	background: $background-color-table-striped;
 }
 
 table._bordered,
@@ -65,10 +61,10 @@ table._striped {
 	& td,
 	& th {
 		&:first-child {
-			padding-left: $table-padding-rl;
+			padding-left: $padding-rl-table;
 		}
 		&:last-child {
-			padding-right: $table-padding-rl;
+			padding-right: $padding-rl-table;
 		}
 	}
 }

@@ -16,163 +16,125 @@ $lg: 1200px !default;
 
 
 
+// SIZES
+// ============================================================================
+
+$height-input: 40px !default;
+
+
+
 // COLORS
 // ============================================================================
 
-// Text
-$color-text:     #313439 !default;
-$color-headings: #0d0d0e !default;
+// Texts
+$color-text:                  #313439 !default;
+$color-headings:              #0d0d0e !default;
 
 // Links
-$color-link:       #3498db !default;
-$color-link-hover: #2980b9 !default;
+$color-link:                  #3498db !default;
+$color-link-hover:            #2980b9 !default;
 
-// Button
+// Buttons
 $color-button-primary:        #1c86f2 !default;
-$color-button-primary-text:   #fff !default;
+$color-button-primary-text:   #ffffff !default;
 $color-button-secondary:      #313439 !default;
-$color-button-secondary-text: #fff !default;
+$color-button-secondary-text: #ffffff !default;
 
 // States
-$color-error:   #e74c3c !default;
-$color-success: #2ecc71 !default;
-$color-warning: #f1c40f !default;
-$color-focus:   #3498db !default;
+$color-error:                 #e74c3c !default;
+$color-success:               #2ecc71 !default;
+$color-warning:               #f1c40f !default;
+$color-focus:                 #3498db !default;
 
 
 
-// FONT FAMILY
+// FONT
 // ============================================================================
 
-$text-font-family:      Arial, sans-serif !default;
-$monospace-font-family: Consolas, Monaco, 'Courier New', monospace !default;
-$headings-font-family:  $text-font-family !default;
-$buttons-font-family:   $text-font-family !default;
-$input-font-family:     $text-font-family !default;
+// Font families
+$font-family:           Arial, sans-serif !default;
+$font-family-monospace: Consolas, Monaco, 'Courier New', monospace !default;
+$font-family-headings:  $font-family !default;
+$font-family-buttons:   $font-family !default;
+$font-family-input:     $font-family !default;
 
+// Texts sizes
+$font-size:        16px !default;
+$font-size-small:  $font-size - 2px !default;
 
+// Headings sizes
+$font-size-h1:     48px !default;
+$font-size-h2:     36px !default;
+$font-size-h3:     24px !default;
+$font-size-h4:     21px !default;
+$font-size-h5:     18px !default;
+$font-size-h6:     16px !default;
 
-// TEXT
-// ============================================================================
-
-// Font Size
-$font-size:       16px !default;
-$font-size-small: $font-size - 2px !default;
-
-// Baseline
-$base-line: 1.5 !default;
-
-// Margin
-$text-margin-bottom: $font-size * $base-line !default;
-
-
-
-// HEADINGS
-// ============================================================================
-
-// Font Size
-$heading-font-size-1: 48px !default;
-$heading-font-size-2: 36px !default;
-$heading-font-size-3: 24px !default;
-$heading-font-size-4: 21px !default;
-$heading-font-size-5: 18px !default;
-$heading-font-size-6: 16px !default;
-
-// Baseline
-$heading-base-line: 1 !default;
-
-// Margin
-$heading-margin-bottom: $text-margin-bottom !default;
-
-
-
-// TABLES
-// ============================================================================
-
-// Font Size
-$table-font-size: $font-size-small !default;
-
-// Baseline
-$table-base-line: $base-line !default;
-
-// Padding
-$table-padding-tb: 1rem !default;
-$table-padding-rl: 1rem !default;
-
-// Border
-$table-border: 1px solid rgba(0, 0, 0, .05) !default;
-
-// Striped
-$table-background-striped: #f8f8f8 !default;
-
-
-
-// INPUTS
-// ============================================================================
-
-// Font Size
-$input-font-size: $font-size - 2 !default;
-
-// Height
-$input-height: 40px !default;
-
-// Padding
-$input-padding-rl:          12px !default;
-$input-textarea-padding-tb: 8px !default;
-
-// States
-$input-border-width:     1px !default;
-$input-border-color:     #d4d4d4 !default;
-$input-background-color: #fff !default;
-$input-box-shadow:       none !default;
-
-$input-focus-background-color: #fff !default;
-$input-focus-border-color:     $color-focus !default;
-$input-focus-box-shadow:       0 0 1px $color-focus inset !default;
-
-$input-error-background-color: $color-error !default;
-$input-error-border-color:     $color-error !default;
-$input-error-focus-box-shadow: 0 0 1px $color-error inset !default;
-
-$input-success-background-color: $color-success !default;
-$input-success-border-color:     $color-success !default;
-$input-success-focus-box-shadow: 0 0 1px $color-success inset !default;
-
-$input-disabled-opacity: .6 !default;
-$input-disabled-color:   rgba(0, 0, 0, .5) !default;
-
-// Radius
-$input-border-radius: 3px !default;
-
-
-
-// BUTTONS
-// ============================================================================
-
-// Font Size
-$button-font-size: $font-size - 2 !default;
-
-// Height
-$button-height: $input-height !default;
-
-// Baseline
-$button-base-line: $button-height !default;
-
-// Padding
-$button-padding-rl: 20px !default;
+// Others sizes
+$font-size-table:  $font-size-small !default;
+$font-size-input:  $font-size-small !default;
+$font-size-button: $font-size-small !default;
 
 // Weight
-$button-font-weight: bold !default;
-
-// Radius
-$button-border-radius: 3px !default;
+$font-weight-button: bold !default;
 
 
 
+// BASELINES
+// ============================================================================
+
+$base-line:         1.5 !default;
+$base-line-heading: 1 !default;
+$base-line-table:   $base-line !default;
+$base-line-button:  $height-input !default;
 
 
 
+// MARGINS
+// ============================================================================
 
+$margin-bottom:         $font-size * $base-line !default;
+$margin-bottom-heading: $margin-bottom !default;
+
+
+
+// PADDINGS
+// ============================================================================
+
+$padding-tb-table:    1rem !default;
+$padding-rl-table:    1rem !default;
+$padding-rl-input:    12px !default;
+$padding-tb-textarea: 8px !default;
+$padding-rl-button:   20px !default;
+
+
+
+// BORDERS
+// ============================================================================
+
+$border-table:         1px solid rgba(0, 0, 0, .05) !default;
+$border-width-input:   1px !default;
+$border-color-input:   #d4d4d4 !default;
+$border-radius-input:  3px !default;
+$border-radius-button: 3px !default;
+
+
+
+// BACKGROUNDS
+// ============================================================================
+
+$background-color-table-striped: #f8f8f8 !default;
+$background-color-input:         #fff !default;
+
+
+
+// BOX SHADOWS
+// ============================================================================
+
+$box-shadow-input:               none !default;
+$box-shadow-input-focus:         0 0 1px $color-focus inset !default;
+$box-shadow-input-focus-error:   0 0 1px $color-error inset !default;
+$box-shadow-input-focus-success: 0 0 1px $color-success inset !default;
 
 
 
