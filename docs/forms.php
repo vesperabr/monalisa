@@ -45,7 +45,7 @@
     <pre data-src="data/forms/cod_7.html"></pre>
 
     <h2>Disabled</h2>
-    <p>You can disable elements of the form so that the user does not access.</p>
+    <p>You can disable elements of the form then the appearance becomes clearer.</p>
 
     <? include 'data/forms/exe_8.php'; ?>
     <pre data-src="data/forms/cod_8.html"></pre>
