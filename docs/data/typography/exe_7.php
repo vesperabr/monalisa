@@ -11,7 +11,7 @@
 				<td>
 					<span class="_muted">Muted</span>
 				</td>
-				<td class='_col-12'>
+				<td class='_col-6'>
 					<code>_muted</code>
 				</td>
 			</tr>
