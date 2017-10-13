@@ -484,11 +484,11 @@ figure pre {
 ._text-right {
   text-align: right; }
 
-ul._unstyled {
+ul._unstyled, .Pagination ul {
   margin-left: 0; }
 
-ul._unstyled,
-ul._unstyled ul {
+ul._unstyled, .Pagination ul,
+ul._unstyled ul, .Pagination ul ul {
   list-style: none; }
 
 ._monospace {
@@ -849,8 +849,8 @@ button,
   .Button._upper {
     text-transform: uppercase;
     letter-spacing: .04em; }
-  button._round,
-  .Button._round {
+  button._rounded,
+  .Button._rounded {
     border-radius: 20px; }
   button._secondary,
   .Button._secondary {
@@ -913,3 +913,74 @@ button,
   .Message._focus {
     background: #3498db;
     color: #fff; }
+
+.Breadcrumbs {
+  font-size: 14px;
+  margin-bottom: 1.5; }
+  .Breadcrumbs ul {
+    display: flex;
+    align-items: center; }
+  .Breadcrumbs._centered ul {
+    justify-content: center; }
+  .Breadcrumbs span,
+  .Breadcrumbs a {
+    font-style: normal;
+    padding: 0 10px;
+    display: inline-block;
+    white-space: nowrap; }
+  .Breadcrumbs li:after {
+    display: inline-block;
+    content: '/';
+    color: rgba(0, 0, 0, 0.3); }
+  .Breadcrumbs li:last-child:after {
+    display: none; }
+  .Breadcrumbs li:first-child span,
+  .Breadcrumbs li:first-child a {
+    padding-left: 0; }
+  .Breadcrumbs li._active a {
+    color: #313439;
+    text-decoration: none;
+    cursor: text; }
+
+.Pagination {
+  margin: 24px 0;
+  font-size: 14px; }
+  .Pagination ul {
+    display: flex;
+    margin: 0; }
+    .Pagination ul li {
+      margin: 0 1px; }
+      .Pagination ul li span,
+      .Pagination ul li a {
+        display: inline-block;
+        padding: 8px 12px;
+        border: 1px solid transparent;
+        border-radius: 3px;
+        line-height: 1;
+        white-space: nowrap; }
+      .Pagination ul li a {
+        color: #313439;
+        text-decoration: none; }
+        .Pagination ul li a:hover {
+          border-color: #eee;
+          color: rgba(0, 0, 0, 0.5); }
+      .Pagination ul li span,
+      .Pagination ul li._active a {
+        color: rgba(0, 0, 0, 0.5);
+        border-color: #eee;
+        cursor: text; }
+  .Pagination._centered ul {
+    justify-content: center; }
+  .Pagination._pager li {
+    flex-basis: 50%; }
+    .Pagination._pager li.next {
+      text-align: right; }
+    .Pagination._pager li a {
+      padding-left: 16px;
+      padding-right: 16px;
+      border-radius: 64px;
+      border-color: rgba(0, 0, 0, 0.1); }
+  .Pagination._pager._centered li {
+    flex-basis: auto;
+    margin-left: 4px;
+    margin-right: 4px; }

@@ -453,6 +453,45 @@ $box-shadow-input-focus-success: 0 0 1px $color-success inset !default;
         background-size: $width $height;
     }
 }
+.Breadcrumbs {
+	font-size: $font-size-small;
+	margin-bottom: $base-line;
+
+    & ul {
+        @include flex;
+        @include flex-items-middle;
+    }
+    &._centered ul {
+        @include flex-items-center;
+    }
+    & span,
+    & a {
+    	font-style: normal;
+    	padding: 0 10px;
+    	display: inline-block;
+    	white-space: nowrap;
+    }
+    & li {
+        &:after {
+        	display: inline-block;
+        	content: '/';
+        	color: rgba(0, 0, 0, .3);
+        }
+        &:last-child:after {
+        	display: none;
+        }
+        &:first-child span,
+        &:first-child a {
+            padding-left: 0;
+        }
+        &._active a {
+            color: $color-text;
+        	text-decoration: none;
+        	cursor: text;
+        }
+    }
+}
+
 button,
 .Button {
     display: inline-block;
@@ -518,7 +557,7 @@ button,
         letter-spacing: .04em;
     }
 
-    &._round {
+    &._rounded {
         border-radius: $height-input / 2 ;
     }
 
@@ -884,6 +923,78 @@ select[multiple] {
 
 
 
+.Pagination {
+    margin: $margin-bottom 0;
+    font-size: $font-size-small;
+
+    ul {
+        @include flex;
+        @extend ._unstyled;
+        margin: 0;
+
+        li {
+            margin: 0 1px;
+
+            span,
+            a {
+                display: inline-block;
+                padding: 8px 12px;
+                border: 1px solid transparent;
+                border-radius: 3px;
+                line-height: 1;
+                white-space: nowrap;
+            }
+
+            a {
+                color: $color-text;
+                text-decoration: none;
+
+                &:hover {
+                    border-color: #eee;
+                    color: rgba(0, 0, 0, .5);
+                }
+            }
+
+            & span,
+            &._active a {
+                color: rgba(0, 0, 0, .5);
+                border-color: #eee;
+                cursor: text;
+            }
+        }
+    }
+
+    &._centered {
+        ul {
+            @include flex-items-center;
+        }
+    }
+
+    &._pager {
+        li {
+            @include flex-basis(50%);
+
+            &.next {
+                text-align: right;
+            }
+
+            a {
+                padding-left: 16px;
+                padding-right: 16px;
+                border-radius: 64px;
+                border-color: rgba(0, 0, 0, .1);
+            }
+        }
+
+        &._centered {
+            li {
+                @include flex-basis(auto);
+                margin-left: 4px;
+                margin-right: 4px;
+            }
+        }
+    }
+}
 // http://meyerweb.com/eric/tools/css/reset/
 //   v2.0 | 20110126
 //   License: none (public domain)
