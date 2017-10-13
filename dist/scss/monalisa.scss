@@ -167,6 +167,37 @@ $box-shadow-input-focus-success: 0 0 1px $color-success inset !default;
         @media #{$query} { @content; }
     }
 }
+@mixin button($color-text, $color-back)
+{
+    background-color: $color-back;
+    color: $color-text;
+
+    &:hover {
+        background-color: lighten($color-back, 20%);
+        color: $color-text;
+    }
+    &:disabled,
+    &._disabled {
+        background-color: rgba($color-back, .7);
+        color: rgba($color-text, .7);
+    }
+    &._outline {
+        border-color: $color-back;
+        background: none;
+        color: $color-back;
+
+        &:hover {
+            border-color: rgba($color-back, .5);
+            color: rgba($color-back, .6);
+        }
+        &:disabled,
+        &._disabled {
+            border-color: rgba($color-back, .5);
+            background: none;
+            color: rgba($color-back, .7);
+        }
+    }
+}
 // display
 @mixin flex {
 	display: flex;
@@ -331,6 +362,84 @@ $box-shadow-input-focus-success: 0 0 1px $color-success inset !default;
 		column-count: 1;
     }
 }
+button,
+.Button {
+    display: inline-block;
+    width: auto;
+    height: $height-input;
+    padding: 0 $padding-rl-button;
+    border: 1px solid transparent;
+    border-radius: $border-radius-button;
+    background-color: $color-button-primary;
+    color: $color-button-primary-text;
+    font-size: $font-size-button;
+    font-family: $font-family-buttons;
+    font-weight: $font-weight-button;
+    line-height: $base-line-button - 2px;
+    text-decoration: none;
+    text-align: center;
+    cursor: pointer;
+    vertical-align: middle;
+    transition: 200ms;
+    -webkit-appearance: none;
+
+    &:hover {
+        outline: none;
+        text-decoration: none;
+        color: $color-button-primary-text;
+        background-color: lighten($color-button-primary, 10%);
+    }
+
+    &:disabled,
+    &._disabled {
+        background-color: rgba($color-button-primary, .7);
+        color: rgba($color-button-primary-text, 1);
+        cursor: default;
+        font-style: normal;
+    }
+
+    &._outline {
+        border-width: 2px;
+        border-color: $color-button-primary;
+        background: none;
+        color: $color-button-primary;
+
+        &:hover {
+            border-color: rgba($color-button-primary, .5);
+            background: none;
+            color: rgba($color-button-primary, .6);
+        }
+
+        &:disabled,
+        &._disabled {
+            border-color: rgba($color-button-primary, .5);
+            background: none;
+            color: rgba($color-button-primary, .7);
+        }
+    }
+
+    &._raised {
+        box-shadow: 0 1px 3px rgba(0, 0, 0, .3);
+    }
+
+    &._upper {
+        text-transform: uppercase;
+        letter-spacing: .04em;
+    }
+
+    &._round {
+        border-radius: $height-input / 2 ;
+    }
+
+    &._secondary {
+        @include button($color-button-secondary-text, $color-button-secondary);
+    }
+}
+
+
+
+
+
 .Form {
     margin-bottom: $margin-bottom;
 
@@ -360,7 +469,7 @@ $box-shadow-input-focus-success: 0 0 1px $color-success inset !default;
             margin-bottom: 4px;
             font-size: $font-size - 1px;
 
-            &.checkbox {
+            &._checkbox {
                 color: inherit;
                 font-size: $font-size;
                 font-weight: normal;
@@ -375,109 +484,6 @@ $box-shadow-input-focus-success: 0 0 1px $color-success inset !default;
         }
 
         > div {
-            input,
-            textarea,
-            select {
-                display: block;
-                width: 100%;
-                height: $height-input;
-                padding: 0 $padding-rl-input;
-                border: $border-width-input solid $border-color-input;
-                border-radius: $border-radius-input;
-                background-color: $background-color-input;
-                font-family: $font-family-input;
-                font-size: $font-size-input;
-                outline: none;
-                vertical-align: middle;
-                box-shadow: $box-shadow-input;
-
-                &:focus {
-                    border-color: $color-focus;
-                    box-shadow: $box-shadow-input-focus;
-                    outline: none;
-                }
-
-                &._error {
-                    border: $border-width-input solid lighten($color-error, 15%);
-                    background-color: rgba($color-error, .1);
-
-                    &:focus {
-                        border-color: $color-error;
-                        box-shadow: $box-shadow-input-focus-error;
-                    }
-                }
-
-                &._success {
-                    border: $border-width-input solid lighten($color-success, 15%);
-                    background-color: rgba($color-success, .1);
-
-                    &:focus {
-                        border-color: $color-success;
-                        box-shadow: $box-shadow-input-focus-success;
-                    }
-                }
-
-                &:disabled,
-                &._disabled {
-                    resize: none;
-                    opacity: 0.6;
-                    cursor: default;
-                    font-style: italic;
-                    color: rgba(0, 0, 0, .5);
-                }
-            }
-
-            input {
-                &[type="file"] {
-                    display: inline-block;
-                    width: auto;
-                    height: auto;
-                    border: none;
-                    padding: 0;
-                    background: none;
-                    box-shadow: none;
-                }
-
-                &[type="search"],
-                &._search {
-                    padding-left: 32px;
-                    background-repeat: no-repeat;
-                    background-position: 8px 53%;
-                    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"><path fill="#000" fill-opacity="0.4" d="M14.891,14.39l-0.5.5a0.355,0.355,0,0,1-.5,0L9.526,10.529a5.3,5.3,0,1,1,2.106-4.212,5.268,5.268,0,0,1-1.1,3.21l4.362,4.362A0.354,0.354,0,0,1,14.891,14.39ZM6.316,2.418a3.9,3.9,0,1,0,3.9,3.9A3.9,3.9,0,0,0,6.316,2.418Z"/></svg>');
-                }
-
-                &[type="radio"],
-                &[type="checkbox"] {
-                    display: inline-block;
-                    width: auto;
-                    height: auto;
-                    padding: 0;
-
-                    &:focus {
-                        box-shadow: none;
-                    }
-                }
-            }
-
-            textarea {
-                height: auto;
-                padding: $padding-tb-textarea $padding-rl-input;
-                vertical-align: top;
-            }
-
-            select {
-                -webkit-appearance: none;
-                background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="9" height="12" viewBox="0 0 9 12"><path fill="#5e6c75" d="M0.722,4.823L-0.01,4.1,4.134-.01,4.866,0.716Zm7.555,0L9.01,4.1,4.866-.01l-0.732.726ZM0.722,7.177L-0.01,7.9,4.134,12.01l0.732-.726Zm7.555,0L9.01,7.9,4.866,12.01l-0.732-.726Z"/></svg>');
-                background-repeat: no-repeat;
-                background-position: right 1rem center;
-            }
-
-            select[multiple] {
-                height: auto;
-                padding: .5rem .75rem;
-                background-image: none;
-            }
-
             // Modificadores
             &._append,
             &._prepend {
@@ -523,7 +529,7 @@ $box-shadow-input-focus-success: 0 0 1px $color-success inset !default;
                 & input {
                     border-radius: $border-radius-input 0 0 $border-radius-input;
                 }
-                & .button {
+                & .Button {
                     margin-left: -1px;
                     border-radius: 0 $border-radius-input $border-radius-input 0 !important;
                 }
@@ -535,14 +541,14 @@ $box-shadow-input-focus-success: 0 0 1px $color-success inset !default;
         }
 
         // Modificadores
-        ._checkboxes {
+        &._checkboxes {
             & label.checkbox {
                 display: inline-block;
                 margin-right: 16px;
             }
         }
 
-        ._buttons {
+        &._buttons {
             & button,
             & .Button {
                 margin-right: 8px;
@@ -578,7 +584,109 @@ $box-shadow-input-focus-success: 0 0 1px $color-success inset !default;
             width: auto;
         }
     }
+}
 
+input,
+textarea,
+select {
+    display: block;
+    width: 100%;
+    height: $height-input;
+    padding: 0 $padding-rl-input;
+    border: $border-width-input solid $border-color-input;
+    border-radius: $border-radius-input;
+    background-color: $background-color-input;
+    font-family: $font-family-input;
+    font-size: $font-size-input;
+    outline: none;
+    vertical-align: middle;
+    box-shadow: $box-shadow-input;
+
+    &:focus {
+        border-color: $color-focus;
+        box-shadow: $box-shadow-input-focus;
+        outline: none;
+    }
+
+    &._error {
+        border: $border-width-input solid lighten($color-error, 15%);
+        background-color: rgba($color-error, .1);
+
+        &:focus {
+            border-color: $color-error;
+            box-shadow: $box-shadow-input-focus-error;
+        }
+    }
+
+    &._success {
+        border: $border-width-input solid lighten($color-success, 15%);
+        background-color: rgba($color-success, .1);
+
+        &:focus {
+            border-color: $color-success;
+            box-shadow: $box-shadow-input-focus-success;
+        }
+    }
+
+    &:disabled,
+    &._disabled {
+        resize: none;
+        opacity: 0.6;
+        cursor: default;
+        font-style: italic;
+        color: rgba(0, 0, 0, .5);
+    }
+}
+
+input {
+    &[type="file"] {
+        display: inline-block;
+        width: auto;
+        height: auto;
+        border: none;
+        padding: 0;
+        background: none;
+        box-shadow: none;
+    }
+
+    &[type="search"],
+    &._search {
+        padding-left: 32px;
+        background-repeat: no-repeat;
+        background-position: 8px 53%;
+        background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"><path fill="#000" fill-opacity="0.4" d="M14.891,14.39l-0.5.5a0.355,0.355,0,0,1-.5,0L9.526,10.529a5.3,5.3,0,1,1,2.106-4.212,5.268,5.268,0,0,1-1.1,3.21l4.362,4.362A0.354,0.354,0,0,1,14.891,14.39ZM6.316,2.418a3.9,3.9,0,1,0,3.9,3.9A3.9,3.9,0,0,0,6.316,2.418Z"/></svg>');
+    }
+
+    &[type="radio"],
+    &[type="checkbox"] {
+        display: inline-block;
+        width: auto;
+        height: auto;
+        padding: 0;
+
+        &:focus {
+            box-shadow: none;
+        }
+    }
+}
+
+textarea {
+    height: auto;
+    padding: $padding-tb-textarea $padding-rl-input;
+    vertical-align: top;
+}
+
+select {
+    -webkit-appearance: none;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="9" height="12" viewBox="0 0 9 12"><path fill="#5e6c75" d="M0.722,4.823L-0.01,4.1,4.134-.01,4.866,0.716Zm7.555,0L9.01,4.1,4.866-.01l-0.732.726ZM0.722,7.177L-0.01,7.9,4.134,12.01l0.732-.726Zm7.555,0L9.01,7.9,4.866,12.01l-0.732-.726Z"/></svg>');
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+}
+
+select[multiple] {
+    height: auto;
+    padding: .5rem .75rem;
+    background-image: none;
 }
 .Row {
 
