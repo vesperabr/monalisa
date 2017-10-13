@@ -42,4 +42,9 @@
 	<? include 'data/buttons/exe_7.php'; ?>
 	<pre data-src="data/buttons/cod_7.html"></pre>
 
+	<h2>Custom</h2>
+	<p>Using sass you can customize your buttons in a snap.</p>
+
+	<pre data-src="data/buttons/cod_8.html"></pre>
+
 <? include '_footer.php'; ?>
