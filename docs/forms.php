@@ -56,4 +56,10 @@
     <? include 'data/forms/exe_9.php'; ?>
     <pre data-src="data/forms/cod_9.html"></pre>
 
+    <h2>Horizontal & Inline</h2>
+    <p>This modifiers are very useful if you want your form in horizontal or inline.</p>
+
+    <? include 'data/forms/exe_10.php'; ?>
+    <pre data-src="data/forms/cod_10.html"></pre>
+
 <? include '_footer.php'; ?>
