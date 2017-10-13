@@ -136,24 +136,24 @@
 				</td>
 			</tr>
 			<tr>
-				<td>
-					<span class="_text-left">Text left</span>
+				<td class="_text-left">
+					Text left
 				</td>
 				<td>
 					<code>_text-left</code>
 				</td>
 			</tr>
 			<tr>
-				<td>
-					<span class="_text-center">Text center</span>
+				<td class="_text-center">
+					Text center
 				</td>
 				<td>
 					<code>_text-center</code>
 				</td>
 			</tr>
 			<tr>
-				<td>
-					<span class="_text-right">Text right</span>
+				<td class="_text-right">
+					Text right
 				</td>
 				<td>
 					<code>_text-right</code>
