@@ -24,7 +24,7 @@
 
 	    <div class="form-item">
 	        <button>Log in</button>
-	        <button class="button secondary outline">Cancel</button>
+	        <button class="Button _secondary _outline">Cancel</button>
 	    </div>
 
 	</form>
