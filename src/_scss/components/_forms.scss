@@ -122,7 +122,10 @@
             flex-direction: row;
             flex-wrap: wrap;
 
-            label {width: 30%;}
+            label {
+                width: 30%;
+                line-height: $height-input;
+            }
             > div {width: 70%;}
 
             @include breakpoint(sm) {
