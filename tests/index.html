@@ -4,55 +4,162 @@
     <meta charset="UTF-8">
     <title>Monalisa Test</title>
     <link rel="stylesheet" href="../dist/css/monalisa.min.css">
+    <!-- <link rel="stylesheet" href="kube.min.css"> -->
     <style>
         .Container {
-            width: 1170px;
-            margin: 0 auto;
+            margin: 30px auto 0;
+            width: 900px;
+            max-width: 90%;
         }
 
-        ._bg1 {background-color: #1abc9c;}
-        ._bg2 {background-color: #2980b9;}
+        ._bg0 {background-color: silver;}
+        ._bg1 {background-color: #3498db;}
+        ._bg2 {background-color: #2ecc71;}
+
     </style>
 </head>
 <body>
 
     <div class="Container">
-        <div class="Row">
-            <div class="col _col-6 _bg1">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur molestiae ad, officiis molestias, sequi consectetur veniam deleniti nostrum voluptatibus ullam voluptatum praesentium tenetur voluptas expedita quas minima, repudiandae cum modi.</div>
-            <div class="col _col-6 _bg2">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur molestiae ad, officiis molestias, sequi consectetur veniam deleniti nostrum voluptatibus ullam voluptatum praesentium tenetur voluptas expedita quas minima, repudiandae cum modi.</div>
+        <strong class="_upper">Headings</strong><hr>
+        <h1>Heading 1 <a href="#">Link</a></h1>
+        <h2>Heading 2</h2>
+        <h3>Heading 3</h3>
+        <h4>Heading 4</h4>
+        <h5>Heading 5</h5>
+        <h6>Heading 6</h6>
+    </div>
+
+    <div class="Container">
+        <strong class="_upper">Texts</strong><hr>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde placeat delectus id at nam praesentium assumenda perspiciatis veritatis sunt pariatur odio, explicabo. Corporis ipsa eum, nihil expedita quae velit. Culpa.</p>
+    </div>
+
+    <div class="Container">
+        <strong class="_upper">Links</strong><hr>
+        <a href="#">Link</a>
+    </div>
+
+    <div class="Container">
+        <div class="Row _gutters">
+            <div class="col _col-4">
+                <strong class="_upper">Unordered List</strong><hr>
+                <ul>
+                    <li>Item 1</li>
+                    <li>Item 2</li>
+                    <li>
+                        Item 3
+                        <ul>
+                            <li>Sub 1</li>
+                            <li>Sub 2</li>
+                            <li>
+                                Sub 3
+                                <ul>
+                                    <li>Sub sub 1</li>
+                                    <li>Sub sub 2</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="col _col-4">
+                <strong class="_upper">Unstyled List</strong><hr>
+                <ul class="_unstyled">
+                    <li>Item 1</li>
+                    <li>Item 2</li>
+                    <li>
+                        Item 3
+                        <ul>
+                            <li>Sub 1</li>
+                            <li>Sub 2</li>
+                            <li>
+                                Sub 3
+                                <ul>
+                                    <li>Sub sub 1</li>
+                                    <li>Sub sub 2</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="col _col-4">
+                <strong class="_upper">Ordered List</strong><hr>
+                <ol>
+                    <li>Item 1</li>
+                    <li>Item 2</li>
+                    <li>
+                        Item 3
+                        <ol>
+                            <li>Sub 1</li>
+                            <li>Sub 2</li>
+                            <li>
+                                Sub 3
+                                <ol>
+                                    <li>Sub sub 1</li>
+                                    <li>Sub sub 2</li>
+                                </ol>
+                            </li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="col _col-6">
+                <strong class="_upper">Definition List</strong><hr>
+                <dl>
+                    <dt>Name: </dt>
+                    <dd>John Don</dd>
+
+                    <dt>Age: </dt>
+                    <dd>23</dd>
+
+                    <dt>Gender: </dt>
+                    <dd>Male</dd>
+
+                    <dt>Day of Birth:</dt>
+                    <dd>12th May 1986</dd>
+                </dl>
+            </div>
+
+            <div class="col _col-6">
+                <strong class="_upper">Nav List</strong><hr>
+                <nav>
+                    <ul>
+                        <li><a href="#">Item 1</a></li>
+                        <li><a href="#">Item 2</a></li>
+                        <li>
+                            <a href="#">Item 3</a>
+                            <ul>
+                                <li><a href="#">Sub 1</a></li>
+                                <li><a href="#">Sub 2</a></li>
+                                <li><a href="#">Sub 3</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
         </div>
+    </div>
 
-        <table class="_bordered">
-            <thead>
-                <tr>
-                    <th class="_w50">Col1</th>
-                    <th class="_w25">Col2</th>
-                    <th class="_w25">Col3</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>Oi</td>
-                    <td>Tudo</td>
-                    <td>Bem?</td>
-                </tr>
-
-                <tr>
-                    <td>Oi</td>
-                    <td>Tudo</td>
-                    <td>Bem?</td>
-                </tr>
-
-                <tr>
-                    <td>Oi</td>
-                    <td>Tudo</td>
-                    <td>Bem?</td>
-                </tr>
-            </tbody>
-        </table>
+    <div class="Container">
+        <strong class="_upper">Blockquotes</strong><hr>
+        <blockquote class="_w50">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laboriosam consectetur aut, id maiores repellendus praesentium nostrum quia cupiditate esse voluptas suscipit dicta animi. Consequuntur facere, deserunt voluptatum cupiditate asperiores.</p>
+            <small>Steve Jobs</small>
+        </blockquote>
     </div>
 
 
+
+
+
+    <div class="Container">
+        <strong class="_upper">Title</strong><hr>
+    </div>
 
 </body>
 </html>
