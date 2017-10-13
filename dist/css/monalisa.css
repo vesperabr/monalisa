@@ -685,7 +685,8 @@ table._unstyled th {
     flex-direction: row;
     flex-wrap: wrap; }
     .Form._horizontal .form-item label {
-      width: 30%; }
+      width: 30%;
+      line-height: 40px; }
     .Form._horizontal .form-item > div {
       width: 70%; }
     @media (max-width: 768px) {
@@ -879,3 +880,36 @@ button,
         border-color: rgba(49, 52, 57, 0.5);
         background: none;
         color: rgba(49, 52, 57, 0.7); }
+
+.Message {
+  position: relative;
+  padding: 1rem;
+  padding-right: 2.5em;
+  padding-bottom: .75rem;
+  margin-bottom: 24px;
+  background: #eee;
+  color: #313439;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.5; }
+  .Message a {
+    color: inherit; }
+  .Message p,
+  .Message h1,
+  .Message h2,
+  .Message h3,
+  .Message h4,
+  .Message h5,
+  .Message h6 {
+    margin-bottom: 0; }
+  .Message._error {
+    background: #e74c3c;
+    color: #fff; }
+  .Message._success {
+    background: #2ecc71;
+    color: #fff; }
+  .Message._warning {
+    background: #f7ca18; }
+  .Message._focus {
+    background: #3498db;
+    color: #fff; }

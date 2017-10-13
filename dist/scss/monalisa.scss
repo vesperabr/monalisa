@@ -43,7 +43,7 @@ $color-button-secondary-text: #ffffff !default;
 // States
 $color-error:                 #e74c3c !default;
 $color-success:               #2ecc71 !default;
-$color-warning:               #f1c40f !default;
+$color-warning:               #f7ca18 !default;
 $color-focus:                 #3498db !default;
 
 
@@ -297,6 +297,34 @@ $box-shadow-input-focus-success: 0 0 1px $color-success inset !default;
         flex: 0 0 100% !important;
     }
 }
+// vertical
+@mixin gradient-vertical($start: #555, $end: #333) {
+	background-color: $start;
+	background-image: linear-gradient(to bottom, $start 0%, $end 100%);
+}
+
+// vertical to opacity
+@mixin gradient-vertical-to-opacity($color, $opacity: 0) {
+	$rgba: rgba(red($color), green($color), blue($color), $opacity);
+	background: linear-gradient(to bottom, $color 0%, $rgba 100%);
+}
+
+// horizontal
+@mixin gradient-horizontal($start: #555, $end: #333) {
+    background-color: $start;
+    background: linear-gradient(to right, $start 0%, $end 100%);
+}
+
+// horizontal to opacity
+@mixin gradient-horizontal-to-opacity($color: #555, $opacity: 0) {
+    $rgba: rgba(red($color), green($color), blue($color), $opacity);
+    background: linear-gradient(to right, $color 0%, $rgba 100%);
+}
+
+// radial
+@mixin gradient-radial($inner: #555, $outer: #333) {
+	background-image: radial-gradient(circle, $inner, $outer);
+}
 // Make Row
 @mixin grid-row {
     @include flex;
@@ -360,6 +388,69 @@ $box-shadow-input-focus-success: 0 0 1px $color-success inset !default;
 		-webkit-column-count: 1;
 		-moz-column-count: 1;
 		column-count: 1;
+    }
+}
+// Clearfix
+@mixin clearfix {
+    &:after {
+        content: '';
+        display: table;
+        clear: both;
+    }
+}
+
+// Transition
+@mixin transition($transition: all linear .2s) {
+    -moz-transition: $transition;
+    transition: $transition;
+}
+
+// transform
+@mixin transform($transforms) {
+    -moz-transform: $transforms;
+    -ms-transform: $transforms;
+    -webkit-transform: $transforms;
+    transform: $transforms;
+}
+
+// blur
+@mixin blur($radius) {
+    -webkit-filter: blur($radius);
+    -moz-filter: blur($radius);
+    -ms-filter: blur($radius);
+    filter: blur($radius);
+}
+
+// striped
+@mixin striped($color: rgba(255, 255, 255, .2), $angle: 45deg) {
+    background-image: -webkit-linear-gradient($angle, $color 25%, transparent 25%, transparent 50%, $color 50%, $color 75%, transparent 75%, transparent);
+    background-image: -o-linear-gradient($angle, $color 25%, transparent 25%, transparent 50%, $color 50%, $color 75%, transparent 75%, transparent);
+    background-image: linear-gradient($angle, $color 25%, transparent 25%, transparent 50%, $color 50%, $color 75%, transparent 75%, transparent);
+}
+
+// animation
+@mixin animation($animation) {
+    -webkit-animation: $animation;
+    -moz-animation: $animation;
+    animation: $animation;
+}
+
+
+// Retina Images
+@mixin retina-background-image($file, $type, $width:  auto, $height:  auto) {
+
+    background-repeat: no-repeat;
+    background-image: url($file + '.' + $type);
+
+    @media
+      only screen and (-webkit-min-device-pixel-ratio: 2),
+      only screen and (min--moz-device-pixel-ratio: 2),
+      only screen and (-o-min-device-pixel-ratio: 2/1),
+      only screen and (min-device-pixel-ratio: 2),
+      only screen and (min-resolution: 192dpi),
+      only screen and (min-resolution: 2dppx) {
+        background-image: url($file + '-2x.' + $type);
+        background-size: $width $height;
     }
 }
 button,
@@ -564,7 +655,10 @@ button,
             flex-direction: row;
             flex-wrap: wrap;
 
-            label {width: 30%;}
+            label {
+                width: 30%;
+                line-height: $height-input;
+            }
             > div {width: 70%;}
 
             @include breakpoint(sm) {
@@ -745,6 +839,51 @@ select[multiple] {
         }
     }
 }
+.Message {
+    position: relative;
+    padding: 1rem;
+    padding-right: 2.5em;
+    padding-bottom: .75rem;
+    margin-bottom: $margin-bottom;
+    background: #eee;
+    color: $color-text;
+    font-family: $font-family;
+    font-size: $font-size-small;
+    line-height: $base-line;
+
+    & a {color: inherit;}
+
+    & p,
+    & h1,
+    & h2,
+    & h3,
+    & h4,
+    & h5,
+    & h6 {
+        margin-bottom: 0;
+    }
+
+    &._error {
+        background: $color-error;
+        color: #fff;
+    }
+    &._success {
+        background: $color-success;
+        color: #fff;
+    }
+    &._warning {
+        background: $color-warning;
+    }
+    &._focus {
+        background: $color-focus;
+        color: #fff;
+    }
+}
+
+
+
+
+
 // http://meyerweb.com/eric/tools/css/reset/
 //   v2.0 | 20110126
 //   License: none (public domain)
