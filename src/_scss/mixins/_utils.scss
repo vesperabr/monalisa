@@ -7,6 +7,13 @@
     }
 }
 
+// Vertical align
+@mixin vertical-align($position: absolute) {
+    position: $position;
+    top: 50%;
+    transform: perspective(1px) translateY(-50%);
+}
+
 // Transition
 @mixin transition($transition: all linear .2s) {
     -moz-transition: $transition;
