@@ -1,4 +1,3 @@
-button,
 .Button {
     display: inline-block;
     width: auto;
@@ -71,7 +70,3 @@ button,
         @include button($color-button-secondary-text, $color-button-secondary);
     }
 }
-
-
-
-

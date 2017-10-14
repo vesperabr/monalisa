@@ -239,7 +239,7 @@ a._muted {
 a._muted:hover {
     opacity: 1;
 }
-._small {
+small, ._small {
     font-size: $font-size-small;
 }
 ._end {

@@ -1,3 +1,8 @@
+// Group
+._group {
+    @include clearfix;
+}
+
 // Float
 ._float-right {
     float: right;
