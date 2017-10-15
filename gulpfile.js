@@ -19,6 +19,8 @@ gulp.task('combine', function() {
     return gulp.src([
             'src/_scss/_variables.scss',
             'src/_scss/mixins/*.scss',
+            'src/_scss/base/*.scss',
+            'src/_scss/utils/*.scss',
             'src/_scss/components/*.scss'
         ])
         .pipe(concat('monalisa.scss'))
@@ -26,7 +28,13 @@ gulp.task('combine', function() {
 });
 
 gulp.task('watch', function() {
-    gulp.watch(['src/_scss/*.scss', 'src/_scss/components/*.scss', 'src/_scss/mixins/*.scss'], ['sass', 'combine']);
+    gulp.watch([
+        'src/_scss/*.scss',
+        'src/_scss/components/*.scss',
+        'src/_scss/mixins/*.scss',
+        'src/_scss/base/*.scss',
+        'src/_scss/utils/*.scss'
+    ], ['sass', 'combine']);
 });
 
 gulp.task('default', ['sass', 'combine']);
