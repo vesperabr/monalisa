@@ -1,5 +1,5 @@
 <div class="example">
-	<table>
+	<table class="Table">
 		<thead>
 			<tr>
 				<th>Example</th>

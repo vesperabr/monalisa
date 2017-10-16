@@ -1,5 +1,5 @@
 <div class="example">
-<table class="_bordered">
+<table class="Table _bordered">
 	<thead>
 		<tr>
 			<th class="_w40">First name</th>

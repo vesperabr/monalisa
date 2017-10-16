@@ -23,7 +23,7 @@
 	    </div>
 
 	    <div class="form-item">
-	        <button>Log in</button>
+	        <button class="Button">Log in</button>
 	        <button class="Button _secondary _outline">Cancel</button>
 	    </div>
 

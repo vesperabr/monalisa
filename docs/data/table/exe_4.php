@@ -1,5 +1,5 @@
 <div class="example">
-<table class="_unstyled">
+<table class="Table _unstyled">
 	<thead>
 		<tr>
 			<th>First name</th>

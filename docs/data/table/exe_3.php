@@ -1,5 +1,5 @@
 <div class="example">
-<table class="_striped">
+<table class="Table _striped">
 	<thead>
 		<tr>
 			<th>First name</th>

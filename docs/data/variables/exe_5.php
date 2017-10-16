@@ -1,5 +1,5 @@
 
-<table class="_bordered">
+<table class="Table _bordered">
 	<thead>
 		<tr>
 			<th>Variable</th>
