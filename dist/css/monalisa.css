@@ -1634,7 +1634,6 @@ small, ._small {
 
 .Button {
   display: inline-block;
-  width: auto;
   height: 40px;
   padding: 0 20px;
   border: 1px solid transparent;

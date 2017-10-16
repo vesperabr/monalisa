@@ -1,7 +1,7 @@
 <? include '_header.php'; ?>
 
 	<h1>Tables</h1>
-    <p>Format whatever you want inside a table with monalisa.</p>
+    <p>Format whatever you want inside a table with Monalisa.</p>
 
 	<h2>Base</h2>
     <p>The standard table of monalisa.</p>

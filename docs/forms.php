@@ -40,7 +40,7 @@
     <pre data-src="data/forms/cod_6.html"></pre>
 
     <h2>States</h2>
-    <p>You can use the width modifier to control the size of the field.</p>
+    <p>You can set colors states for the input fields.</p>
 
     <? include 'data/forms/exe_7.php'; ?>
     <pre data-src="data/forms/cod_7.html"></pre>
