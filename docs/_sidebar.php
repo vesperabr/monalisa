@@ -10,7 +10,6 @@
     <li><a href="tables.php">Tables</a></li>
     <li><a href="animation.php">Animation</a></li>
     <li><a href="position.php">Position</a></li>
-    <li><a href="labels.php">Labels</a></li>
     <li><a href="colors.php">Colors</a></li>
     <li><a href="variables.php">Variables</a></li>
 </ul>
