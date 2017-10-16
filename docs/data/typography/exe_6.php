@@ -71,7 +71,7 @@
 				<b>Bold</b>
 			</td>
 			<td>
-				&lt;/b&gt;
+				&lt;b&gt;
 			</td>
 			<td>
 				x<sup>superscript</sup>
