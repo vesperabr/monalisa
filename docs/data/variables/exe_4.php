@@ -1,4 +1,4 @@
-<table class="Table _bordered">
+<table class="Table">
 	<thead>
 		<tr>
 			<th>Variable</th>
@@ -8,6 +8,7 @@
 	<tbody>
 		<tr>
 			<td><b>Texts</b></td>
+			<td></td>
 		</tr>
 		<tr>
 			<td>$color-text</td>
@@ -15,6 +16,7 @@
 		</tr>
 		<tr>
 			<td><b>Links</b></td>
+			<td></td>
 		</tr>
 		<tr>
 			<td>$color-link</td>
@@ -26,6 +28,7 @@
 		</tr>
 		<tr>
 			<td><b>Buttons</b></td>
+			<td></td>
 		</tr>
 		<tr>
 			<td>$color-button-primary</td>
@@ -45,6 +48,7 @@
 		</tr>
 		<tr>
 			<td><b>States</b></td>
+			<td></td>
 		</tr>
 		<tr>
 			<td>$color-error</td>

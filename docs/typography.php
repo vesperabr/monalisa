@@ -1,6 +1,7 @@
 <? include '_header.php'; ?>
 
 	<h1>Typography</h1>
+	<p>The typography can be use to format texts from diferent ways.</p>
 
 	<h2>Headings</h2>
 
@@ -8,7 +9,7 @@
 	<pre data-src="data/typography/cod_1.html"></pre>
 
 	<h2>Paragraphs</h2>
-	<p>The base pragraph has an ideal ratio of font size and baseline.</p>
+	<p>The base paragraph has an ideal ratio of font size and baseline.</p>
 
 	<? include 'data/typography/exe_2.php'; ?>
 	<pre data-src="data/typography/cod_2.html"></pre>

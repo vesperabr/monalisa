@@ -25,22 +25,6 @@
 			</tr>
 			<tr>
 				<td>
-					<span class="_black">Black link</span>
-				</td>
-				<td>
-					<code>_black</code>
-				</td>
-			</tr>
-			<tr>
-				<td>
-					<span class="_highlight">Highlight</span>
-				</td>
-				<td>
-					<code>_highlight</code>
-				</td>
-			</tr>
-			<tr>
-				<td>
 					<span class="_upper">upper</span>
 				</td>
 				<td>
@@ -109,30 +93,6 @@
 				</td>
 				<td>
 					<code>_small</code>
-				</td>
-			</tr>
-			<tr>
-				<td>
-					<span class="_smaller">Smaller</span>
-				</td>
-				<td>
-					<code>_smaller</code>
-				</td>
-			</tr>
-			<tr>
-				<td>
-					<span class="_large">Large</span>
-				</td>
-				<td>
-					<code>_large</code>
-				</td>
-			</tr>
-			<tr>
-				<td>
-					<span class="_big">Big</span>
-				</td>
-				<td>
-					<code>_big</code>
 				</td>
 			</tr>
 			<tr>

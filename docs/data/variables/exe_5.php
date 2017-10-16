@@ -1,5 +1,5 @@
 
-<table class="Table _bordered">
+<table class="Table">
 	<thead>
 		<tr>
 			<th>Variable</th>
@@ -9,6 +9,7 @@
 	<tbody>
 		<tr>
 			<td><b>Font-family</b></td>
+			<td></td>
 		</tr>
 		<tr>
 			<td>$font-family</td>
@@ -32,6 +33,7 @@
 		</tr>
 		<tr>
 			<td><b>Texts sizes</b></td>
+			<td></td>
 		</tr>
 		<tr>
 			<td>$font-size</td>
@@ -43,6 +45,7 @@
 		</tr>
 		<tr>
 			<td><b>Headings sizes</b></td>
+			<td></td>
 		</tr>
 		<tr>
 			<td>$font-size-h1</td>
@@ -70,6 +73,7 @@
 		</tr>
 		<tr>
 			<td><b>Other sizes</b></td>
+			<td></td>
 		</tr>
 		<tr>
 			<td>$font-size-table</td>
@@ -85,6 +89,7 @@
 		</tr>
 		<tr>
 			<td><b>Weight</b></td>
+			<td></td>
 		</tr>
 		<tr>
 			<td>$font-weight-button</td>

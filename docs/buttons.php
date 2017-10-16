@@ -1,6 +1,8 @@
 <? include '_header.php'; ?>
 
 	<h1>Buttons</h1>
+	<p>The buttons are used to be pressed and make something happen, from opening a new page or submitting a form.
+	Use it the way you want it</p>
 
 	<h2>Primary</h2>
 

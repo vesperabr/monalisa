@@ -1,6 +1,7 @@
 <? include '_header.php'; ?>
 
 	<h1>Forms</h1>
+    <p>Create incredible forms with Monalisa.</p>
 
 	<h2>Base</h2>
     <p>The most basic form with all the basic inputs.</p>

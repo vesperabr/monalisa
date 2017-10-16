@@ -1,6 +1,7 @@
 <? include '_header.php'; ?>
 
 	<h1>Breadcrumbs</h1>
+	<p>In Monalisa breadcrumbs are lists with default separators.</p>
 
 	<h2>Base</h2>
 

@@ -1,6 +1,7 @@
 <? include '_header.php'; ?>
 
 	<h1>Pagination</h1>
+	<p>Users can use pagination to navigate in an organized way between the pages of the site.</p>
 
 	<h2>Base</h2>
 

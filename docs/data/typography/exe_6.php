@@ -14,13 +14,13 @@
 				<abbr>CSS</abbr>
 			</td>
 			<td class='_col-6'>
-				<code><abbr></code>
+				&lt;abbr&gt;
 			</td>
 			<td>
 				<cite>Cite</cite>
 			</td>
 			<td class='_col-6'>
-				<code><cite></code>
+				&lt;cite&gt;
 			</td>
 		</tr>
 		<tr>
@@ -28,13 +28,13 @@
 				<code>Code</code>
 			</td>
 			<td>
-				<code><code></code>
+				&lt;code&gt;
 			</td>
 			<td>
 				<samp>Sample</samp>
 			</td>
 			<td>
-				<code><samp></code>
+				&lt;samp&gt;
 			</td>
 		</tr>
 		<tr>
@@ -42,13 +42,13 @@
 				<var>Variable</var>
 			</td>
 			<td>
-				<code><var></code>
+				&lt;var&gt;
 			</td>
 			<td>
 				<mark>Mark</mark>
 			</td>
 			<td>
-				<code><mark></code>
+				&lt;mark&gt;
 			</td>
 		</tr>
 		<tr>
@@ -56,71 +56,42 @@
 				<kbd>Shortcut</kbd>
 			</td>
 			<td>
-				<code><kbd></code>
-			</td>
-			<td>
-				<del>Deleted</del>
-			</td>
-			<td>
-				<code><del></code>
-			</td>
-		</tr>
-		<tr>
-			<td>
-				<i>Italic</i>
-			</td>
-			<td>
-				<code><i></code>
+				&lt;kbd&gt;
 			</td>
 			<td>
 				<em>Emphasis</em>
 			</td>
 			<td>
-				<code><em></code>
+				&lt;em&gt;
 			</td>
+		
 		</tr>
 		<tr>
-			<td>
-				<strong>Highlighted</strong>
-			</td>
-			<td>
-				<code><strong></code>
-			</td>
 			<td>
 				<b>Bold</b>
 			</td>
 			<td>
-				<code><b></code>
+				&lt;/b&gt;
+			</td>
+			<td>
+				x<sup>superscript</sup>
+			</td>
+			<td>
+				&lt;sup&gt;
 			</td>
 		</tr>
 		<tr>
 			<td>
-				x
-				<sup>superscript</sup>
+				x<sub>subscript</sub>
 			</td>
 			<td>
-				<code><sup></code>
+				&lt;sub&gt;
 			</td>
-			<td>
-				x
-				<sub>subscript</sub>
-			</td>
-			<td>
-				<code><sub></code>
-			</td>
-		</tr>
-		<tr>
 			<td>
 				<small>small</small>
 			</td>
 			<td>
-				<code><small></code>
-			</td>
-			<td>
-				<ins>Inserted</ins>
-			</td>
-			<td>
-				<code><ins></code>
+				&lt;small&gt;
 			</td>
 		</tr>
 	</tbody>
