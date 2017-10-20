@@ -2495,7 +2495,7 @@ small, ._small {
     }
 }
 
-@include breakpoint($min: $sm) {
+@include breakpoint($min: $sm + 1) {
     ._show-sm {
         display: none !important;
     }

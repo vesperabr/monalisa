@@ -1418,7 +1418,7 @@ small, ._small {
   ._hide-sm {
     display: none !important; } }
 
-@media (min-width: 768px) {
+@media (min-width: 769px) {
   ._show-sm {
     display: none !important; } }
 
