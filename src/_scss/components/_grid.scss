@@ -1,10 +1,28 @@
-// Grid Row
-.row {
+.Row {
+
+    // Grid Row
     @include grid-row;
 
+    // Grid Columns
+    @include generate-grid-columns;
+
+    .col {
+        // Offset
+        &[class^='_offset-'],
+        &[class*=' _offset-'] {
+            @include breakpoint(sm) {
+                margin-left: 0;
+            }
+        }
+
+        // Ordering
+        &._first {order: -1;}
+        &._last  {order: 1;}
+    }
+
     // Gutters
-    &.gutters,
-    &.gutters > .row {
+    &._gutters,
+    &._gutters > .Row {
         margin-left: -$grid-gutter;
 
         @include breakpoint(sm) {
@@ -19,47 +37,21 @@
             }
         }
     }
-	&.around {
-		@include flex-items-space-around;
-	}
-	&.between {
-		@include flex-items-space-between;
-	}
-	&.auto {
-    	& .col {
+
+    // Auto width
+    &._auto {
+        & .col {
             flex: 1 1 0%;
         }
-	}
-}
-
-// Grid Columns
-@include generate-grid-columns;
-
-// Offset
-[class^='offset-'],
-[class*=' offset-'] {
-    @include breakpoint(sm) {
-        margin-left: 0;
     }
-}
 
-// Ordering
-.first    { order: -1; }
-.last     { order: 1;  }
-
-@include breakpoint(sm) {
-    .row {
-
+    @include breakpoint(sm) {
         & .col {
             margin-left: 0;
             width: 100%;
-        }
-        &.gutters {
-            & .col {
-                margin-bottom: $text-margin-bottom;
-            }
+
+            &._first-sm {order: -1;}
+            &._last-sm  {order: 1;}
         }
     }
-	.first-sm { order: -1; }
-	.last-sm  { order: 1;  }
 }

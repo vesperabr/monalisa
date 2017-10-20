@@ -1,0 +1,40 @@
+.Message {
+    position: relative;
+    padding: 1rem;
+    padding-right: 2.5em;
+    padding-bottom: .75rem;
+    margin-bottom: $margin-bottom;
+    background: #eee;
+    color: $color-text;
+    font-family: $font-family;
+    font-size: $font-size-small;
+    line-height: $base-line;
+
+    & a {color: inherit;}
+
+    & p,
+    & h1,
+    & h2,
+    & h3,
+    & h4,
+    & h5,
+    & h6 {
+        margin-bottom: 0;
+    }
+
+    &._error {
+        background: $color-error;
+        color: #fff;
+    }
+    &._success {
+        background: $color-success;
+        color: #fff;
+    }
+    &._warning {
+        background: $color-warning;
+    }
+    &._focus {
+        background: $color-focus;
+        color: #fff;
+    }
+}

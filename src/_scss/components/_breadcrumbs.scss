@@ -1,16 +1,13 @@
-.breadcrumbs {
+.Breadcrumbs {
 	font-size: $font-size-small;
-	margin-bottom: $text-margin-bottom;
+	margin-bottom: $base-line;
 
     & ul {
         @include flex;
         @include flex-items-middle;
     }
-    &.push-center ul {
+    &._centered ul {
         @include flex-items-center;
-    }
-    &.push-right ul {
-        @include flex-items-right;
     }
     & span,
     & a {
@@ -32,7 +29,7 @@
         &:first-child a {
             padding-left: 0;
         }
-        &.active a {
+        &._active a {
             color: $color-text;
         	text-decoration: none;
         	cursor: text;

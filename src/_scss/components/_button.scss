@@ -1,0 +1,71 @@
+.Button {
+    display: inline-block;
+    height: $height-input;
+    padding: 0 $padding-rl-button;
+    border: 1px solid transparent;
+    border-radius: $border-radius-button;
+    background-color: $color-button-primary;
+    color: $color-button-primary-text;
+    font-size: $font-size-button;
+    font-family: $font-family-buttons;
+    font-weight: $font-weight-button;
+    line-height: $base-line-button - 2px;
+    text-decoration: none;
+    text-align: center;
+    cursor: pointer;
+    vertical-align: middle;
+    transition: 200ms;
+    -webkit-appearance: none;
+
+    &:hover {
+        outline: none;
+        text-decoration: none;
+        color: $color-button-primary-text;
+        background-color: lighten($color-button-primary, 10%);
+    }
+
+    &:disabled,
+    &._disabled {
+        background-color: rgba($color-button-primary, .7);
+        color: rgba($color-button-primary-text, 1);
+        cursor: default;
+        font-style: normal;
+    }
+
+    &._outline {
+        border-width: 2px;
+        border-color: $color-button-primary;
+        background: none;
+        color: $color-button-primary;
+
+        &:hover {
+            border-color: rgba($color-button-primary, .5);
+            background: none;
+            color: rgba($color-button-primary, .6);
+        }
+
+        &:disabled,
+        &._disabled {
+            border-color: rgba($color-button-primary, .5);
+            background: none;
+            color: rgba($color-button-primary, .7);
+        }
+    }
+
+    &._raised {
+        box-shadow: 0 1px 3px rgba(0, 0, 0, .3);
+    }
+
+    &._upper {
+        text-transform: uppercase;
+        letter-spacing: .04em;
+    }
+
+    &._rounded {
+        border-radius: $height-input / 2 ;
+    }
+
+    &._secondary {
+        @include button($color-button-secondary-text, $color-button-secondary);
+    }
+}
