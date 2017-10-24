@@ -416,10 +416,19 @@ $box-shadow-input-focus-success: 0 0 1px $color-success inset !default;
         font-size: 100%;
     }
 }
+// Strip unit
+@function strip-unit($number) {
+    @if type-of($number) == 'number' and not unitless($number) {
+        @return $number / ($number * 0 + 1);
+    }
+
+    @return $number;
+}
+
 // Logo
 @mixin logo($url, $w, $h) {
     display: block;
-    width: #{$w}px;
+    width: #{strip-unit($w)}px;
     background: transparent url($url) no-repeat center center;
     background-size: contain;
     font-size: 1px;
@@ -429,7 +438,7 @@ $box-shadow-input-focus-success: 0 0 1px $color-success inset !default;
     &:after {
         content: '';
         display: block;
-        padding-top: #{($h/$w)*100%};
+        padding-top: #{(strip-unit($h)/strip-unit($w))*100%};
     }
 }
 

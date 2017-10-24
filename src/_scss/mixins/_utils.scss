@@ -1,7 +1,16 @@
+// Strip unit
+@function strip-unit($number) {
+    @if type-of($number) == 'number' and not unitless($number) {
+        @return $number / ($number * 0 + 1);
+    }
+
+    @return $number;
+}
+
 // Logo
 @mixin logo($url, $w, $h) {
     display: block;
-    width: #{$w}px;
+    width: #{strip-unit($w)}px;
     background: transparent url($url) no-repeat center center;
     background-size: contain;
     font-size: 1px;
@@ -11,7 +20,7 @@
     &:after {
         content: '';
         display: block;
-        padding-top: #{($h/$w)*100%};
+        padding-top: #{(strip-unit($h)/strip-unit($w))*100%};
     }
 }
 
