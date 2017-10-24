@@ -2668,7 +2668,7 @@ small, ._small {
     text-align: center;
     cursor: pointer;
     vertical-align: middle;
-    transition: 200ms;
+    transition: background 200ms ease;
     -webkit-appearance: none;
 
     &:hover {
@@ -2926,6 +2926,10 @@ select {
 }
 
 input {
+    &[type="submit"] {
+        width: auto;
+    }
+
     &[type="file"] {
         display: inline-block;
         width: auto;

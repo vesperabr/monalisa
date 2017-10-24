@@ -200,6 +200,10 @@ select {
 }
 
 input {
+    &[type="submit"] {
+        width: auto;
+    }
+
     &[type="file"] {
         display: inline-block;
         width: auto;

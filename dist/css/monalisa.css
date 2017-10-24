@@ -1648,7 +1648,7 @@ small, ._small {
   text-align: center;
   cursor: pointer;
   vertical-align: middle;
-  transition: 200ms;
+  transition: background 200ms ease;
   -webkit-appearance: none; }
   .Button:hover {
     outline: none;
@@ -1845,6 +1845,9 @@ select {
     cursor: default;
     font-style: italic;
     color: rgba(0, 0, 0, 0.5); }
+
+input[type="submit"] {
+  width: auto; }
 
 input[type="file"] {
   display: inline-block;
