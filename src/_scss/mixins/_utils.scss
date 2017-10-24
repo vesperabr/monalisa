@@ -1,7 +1,7 @@
 // Logo
 @mixin logo($url, $w, $h) {
     display: block;
-    width: $w + 'px';
+    width: #{$w}px;
     background: transparent url($url) no-repeat center center;
     background-size: contain;
     font-size: 1px;
@@ -11,7 +11,7 @@
     &:after {
         content: '';
         display: block;
-        padding-top: (($h/$w)*100) + '%';
+        padding-top: #{($h/$w)*100%};
     }
 }
 
