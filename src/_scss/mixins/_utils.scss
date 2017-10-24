@@ -1,3 +1,20 @@
+// Logo
+@mixin logo($url, $w, $h) {
+    display: block;
+    width: $w + 'px';
+    background: transparent url($url) no-repeat center center;
+    background-size: contain;
+    font-size: 1px;
+    text-indent: -9999px;
+    overflow: hidden;
+
+    &:after {
+        content: '';
+        display: block;
+        padding-top: (($h/$w)*100) + '%';
+    }
+}
+
 // Clearfix
 @mixin clearfix {
     &:after {

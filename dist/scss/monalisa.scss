@@ -416,6 +416,23 @@ $box-shadow-input-focus-success: 0 0 1px $color-success inset !default;
         font-size: 100%;
     }
 }
+// Logo
+@mixin logo($url, $w, $h) {
+    display: block;
+    width: $w + 'px';
+    background: transparent url($url) no-repeat center center;
+    background-size: contain;
+    font-size: 1px;
+    text-indent: -9999px;
+    overflow: hidden;
+
+    &:after {
+        content: '';
+        display: block;
+        padding-top: (($h/$w)*100) + '%';
+    }
+}
+
 // Clearfix
 @mixin clearfix {
     &:after {
