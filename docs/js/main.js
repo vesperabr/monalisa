@@ -1,7 +1,7 @@
 $(function() {
 
-   $('ul li').click(function() {
-        $('ul li').not(this).find('ul').hide();
+   $('.menu li').click(function() {
+        $('.menu li').not(this).find('ul').hide();
         $(this).find('ul').toggle();
     });
    

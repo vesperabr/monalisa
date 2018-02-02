@@ -11,7 +11,6 @@
     <link rel="stylesheet" href="css/prism-meadow.css">
     <link rel="stylesheet" href="css/kube.demo.css">
     <link rel="stylesheet" href="css/docs.css">
-    <link rel="stylesheet" href="css/style.css">
 
 </head>
 <body>

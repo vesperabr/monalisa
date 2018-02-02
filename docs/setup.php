@@ -5,9 +5,8 @@
 
     <h2>Download</h2>
     <p>First of all download monalisa. You can do it by clicking on the link below.</p>
-    <div>
-    	<a href="../monalisa.zip" download><p>Download Here</p></a>
-    </div>
+ 
+    <a href="../monalisa.zip" download><button class="Button _download">Download Here</button></a>
 
     <h2>Set up</h2>
     <p>Now incorporate monalisa into your project by adding this tag in your header with the path to the monalisa style file.</p>
