@@ -3057,9 +3057,29 @@ select[multiple] {
         & .col {
             margin-left: 0;
             width: 100%;
+            margin-bottom: $margin-bottom;
+            
+            &:last-child {
+                margin-bottom: 0;
+            }
 
             &._first-sm {order: -1;}
             &._last-sm  {order: 1;}
+
+            &._first {order: 0;}
+            &._last  {order: 0;}
+        }
+
+        &._gutters {
+            > .col,
+            > .Row > .col {
+                width: 100%;
+                margin: 0 0 $margin-bottom;
+
+                &:last-child {
+                    margin: 0;
+                }
+            }
         }
     }
 }
