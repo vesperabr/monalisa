@@ -37,4 +37,34 @@
         background: $color-focus;
         color: #fff;
     }
+
+    .close {
+        position: absolute;
+        top: 4px;
+        right: 4px;
+        width: 14px;
+        height: 14px;
+        opacity: .5;
+        cursor: pointer;
+
+        &:before,
+        &:after {
+            content: '';
+            display: block;
+            width: 14px;
+            height: 1px;
+            margin: 7px 0px 0px;
+            background-color: #000;
+            transform: rotate(45deg);
+        }
+
+        &:after {
+            margin-top: -1px;
+            transform: rotate(-45deg);
+        }
+
+        &:hover {
+            opacity: 1;
+        }
+    }
 }

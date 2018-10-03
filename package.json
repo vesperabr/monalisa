@@ -11,6 +11,8 @@
     "gulp-rename": "^1.2.2",
     "gulp-sass": "^3.1.0",
     "gulp-uglify": "^3.0.0",
+    "gulp-uglifyjs": "^0.6.2",
+    "gulp-watch": "^5.0.1",
     "laravel-elixir": "^6.0.0-16"
   },
   "dependencies": {

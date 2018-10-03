@@ -1,0 +1,48 @@
+.Tabs {
+	ul {
+		@include flex;
+        @extend ._unstyled;
+        margin: 0;
+
+        li {
+        	margin-right: 5px;
+
+        	a {
+				display: block;
+				height: 40px;
+				padding: 0 15px;
+				margin-bottom: -1px;
+				border: 1px solid #d4d4d4;
+				border-radius: 4px 4px 0 0;
+				background-color: transparent;
+				color: $color-button-primary;
+				font-size: $font-size;
+				font-weight: 700;
+				line-height: 38px;
+				text-decoration: none;
+				text-align: center;
+				cursor: pointer;
+				vertical-align: middle;
+				transition: background .2s ease;
+
+				&:hover {
+					opacity: 0.5;
+				}
+        	}
+
+        	&._active {
+        		a {
+					border-color: $color-button-primary;
+					background-color: $color-button-primary;
+	        		color: $color-button-primary-text;
+        		}
+        	}
+        }
+	}
+
+	> div {
+		border: 1px solid #d4d4d4;
+		border-radius: 0 0 4px 4px;
+		padding: 30px 20px 20px;
+	}
+}

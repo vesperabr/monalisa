@@ -311,12 +311,14 @@ figure pre {
 ._text-right {
   text-align: right; }
 
-ul._unstyled, .Pagination ul {
+ul._unstyled, .Pagination ul, .Tabs ul, ul.Dropdown {
   margin-left: 0; }
 
-ul._unstyled, .Pagination ul,
+ul._unstyled, .Pagination ul, .Tabs ul, ul.Dropdown,
 ul._unstyled ul,
-.Pagination ul ul {
+.Pagination ul ul,
+.Tabs ul ul,
+ul.Dropdown ul {
   list-style: none; }
 
 ._monospace {
@@ -2072,6 +2074,27 @@ select[multiple] {
   .Message._focus {
     background: #3498db;
     color: #fff; }
+  .Message .close {
+    position: absolute;
+    top: 4px;
+    right: 4px;
+    width: 14px;
+    height: 14px;
+    opacity: .5;
+    cursor: pointer; }
+    .Message .close:before, .Message .close:after {
+      content: '';
+      display: block;
+      width: 14px;
+      height: 1px;
+      margin: 7px 0px 0px;
+      background-color: #000;
+      transform: rotate(45deg); }
+    .Message .close:after {
+      margin-top: -1px;
+      transform: rotate(-45deg); }
+    .Message .close:hover {
+      opacity: 1; }
 
 .Pagination {
   margin: 24px 0;
@@ -2161,11 +2184,351 @@ select[multiple] {
   .Table._bordered th:last-child, .Table._striped td:last-child,
   .Table._striped th:last-child {
     padding-right: 1rem; }
-  .Table._unstyled td, .Pagination ul.Table td,
+  .Table._unstyled td, .Pagination ul.Table td, .Tabs ul.Table td, .Table.Dropdown td,
   .Table._unstyled th,
-  .Pagination ul.Table th {
+  .Pagination ul.Table th,
+  .Tabs ul.Table th,
+  .Table.Dropdown th {
     border: none;
     padding: 0; }
   .Table tr._align-middle td,
   .Table td._align-middle {
     vertical-align: middle; }
+
+.Tabs ul {
+  display: flex;
+  margin: 0; }
+  .Tabs ul li {
+    margin-right: 5px; }
+    .Tabs ul li a {
+      display: block;
+      height: 40px;
+      padding: 0 15px;
+      margin-bottom: -1px;
+      border: 1px solid #d4d4d4;
+      border-radius: 4px 4px 0 0;
+      background-color: transparent;
+      color: #1c86f2;
+      font-size: 16px;
+      font-weight: 700;
+      line-height: 38px;
+      text-decoration: none;
+      text-align: center;
+      cursor: pointer;
+      vertical-align: middle;
+      transition: background .2s ease; }
+      .Tabs ul li a:hover {
+        opacity: 0.5; }
+    .Tabs ul li._active a {
+      border-color: #1c86f2;
+      background-color: #1c86f2;
+      color: #ffffff; }
+
+.Tabs > div {
+  border: 1px solid #d4d4d4;
+  border-radius: 0 0 4px 4px;
+  padding: 30px 20px 20px; }
+
+.Dropdown {
+  position: absolute;
+  width: 280px;
+  max-width: 100%;
+  background: #fff;
+  box-shadow: 0 6px 24px rgba(17, 17, 19, 0.12);
+  border-radius: 3px;
+  z-index: 99;
+  visibility: visible; }
+  .Dropdown a {
+    display: block;
+    padding: 10px 15px; }
+
+.Modal {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  z-index: 1;
+  padding: 20px;
+  box-sizing: border-box;
+  background-color: black;
+  background-color: rgba(0, 0, 0, 0.75);
+  text-align: center; }
+  .Modal .modal {
+    top: 0;
+    left: 50%;
+    display: block;
+    z-index: 2;
+    width: 400px;
+    max-width: 96%;
+    background: #fff;
+    padding: 15px 30px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px #000;
+    text-align: left;
+    transform: translateX(-50%); }
+    .Modal .modal .close {
+      position: absolute;
+      top: -12.5px;
+      right: -12.5px;
+      display: block;
+      width: 26px;
+      height: 26px;
+      border-radius: 50%;
+      padding: 5px 6px;
+      background-color: #000;
+      text-indent: -9999px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+      opacity: 1;
+      cursor: pointer; }
+      .Modal .modal .close:before, .Modal .modal .close:after {
+        content: '';
+        display: block;
+        width: 15px;
+        height: 2px;
+        margin: 7px 0px 0px;
+        background-color: #fff;
+        transform: rotate(45deg); }
+      .Modal .modal .close:after {
+        margin-top: -2px;
+        transform: rotate(-45deg); }
+      .Modal .modal .close:hover {
+        opacity: 0.6;
+        box-shadow: 0 0 10px rgba(255, 255, 255, 0.5); }
+
+.Autocomplete {
+  position: absolute;
+  background-color: #fff;
+  box-shadow: 0 1px 3px rgba(17, 17, 19, 0.15);
+  padding: 0;
+  max-height: 200px;
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px;
+  border: 0 solid transparent;
+  overflow: auto; }
+  .Autocomplete a {
+    font-size: .9375em;
+    display: block;
+    padding: 8px;
+    text-decoration: none;
+    color: #111113;
+    border-bottom: 1px solid rgba(17, 17, 19, 0.05); }
+    .Autocomplete a:last-child {
+      border-bottom-color: transparent; }
+    .Autocomplete a._active, .Autocomplete a:hover {
+      background-color: rgba(17, 17, 19, 0.04);
+      color: #111113;
+      text-decoration: underline; }
+
+.Autocomplete-labels .label {
+  margin: 4px 4px 0 0;
+  display: inline-block;
+  vertical-align: baseline;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0;
+  text-transform: none;
+  line-height: 20px;
+  background: #f3f3f3;
+  color: rgba(17, 17, 19, 0.85);
+  padding: 0 8px;
+  border: 1px solid transparent;
+  border-radius: 4px; }
+
+.Autocomplete-labels .close {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  text-align: center;
+  font-size: 9px;
+  opacity: .7;
+  border-radius: 17px;
+  cursor: pointer;
+  margin-top: -3px;
+  margin-bottom: -3px;
+  margin-right: -3px;
+  width: 16px;
+  height: 16px;
+  line-height: 22px; }
+  .Autocomplete-labels .close:before {
+    content: "";
+    width: 1px;
+    height: 10px;
+    background: #000;
+    transform: rotate(45deg);
+    position: absolute;
+    top: calc(50% - 5px);
+    left: 50%; }
+  .Autocomplete-labels .close:after {
+    content: "";
+    width: 1px;
+    height: 10px;
+    background: #000;
+    transform: rotate(-45deg);
+    position: absolute;
+    top: calc(50% - 5px);
+    left: 50%; }
+  .Autocomplete-labels .close:hover:before, .Autocomplete-labels .close .close:hover:after {
+    background: #fff; }
+  .Autocomplete-labels .close:hover {
+    -moz-transition: all linear .2s;
+    transition: all linear .2s;
+    opacity: 1;
+    color: #fff;
+    background-color: #111113; }
+
+.Datepicker {
+  position: absolute;
+  background-color: #fff;
+  padding: 20px;
+  border: 0 solid transparent;
+  border-radius: 4px;
+  box-shadow: 0 6px 24px rgba(17, 17, 19, 0.12); }
+
+.Datepicker.is-embed {
+  border: 1px solid rgba(17, 17, 19, 0.05);
+  max-width: 288px;
+  position: static;
+  box-shadow: none; }
+
+.datepicker-head {
+  display: flex;
+  align-items: center;
+  margin-top: -4px;
+  margin-bottom: 8px; }
+
+.datepicker-control {
+  width: 24px;
+  height: 24px;
+  color: rgba(17, 17, 19, 0.75);
+  font-size: 18px;
+  font-weight: 700;
+  text-align: center;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  -ms-user-select: none;
+  user-select: none; }
+
+.datepicker-month-box {
+  flex: 1;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #111113;
+  text-align: center;
+  padding: 8px 0 4px 0; }
+
+.datepicker-month-box span {
+  margin: 0 1px; }
+
+.datepicker-select-year {
+  display: inline-block;
+  cursor: pointer;
+  position: relative;
+  height: 24px;
+  line-height: 24px; }
+
+.datepicker-select-year .datepicker-select-year-caret {
+  position: relative;
+  top: -1px;
+  display: inline-block;
+  width: 0;
+  height: 0;
+  margin-left: .3em;
+  vertical-align: middle;
+  border-top: 4px solid;
+  border-right: 4px solid transparent;
+  border-left: 4px solid transparent; }
+
+.datepicker-select-year select {
+  z-index: 2;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  height: 24px;
+  -webkit-appearance: menulist-button;
+  -moz-appearance: menulist-button;
+  -ms-appearance: menulist-button;
+  appearance: menulist-button; }
+
+.datepicker-weekdays {
+  white-space: nowrap; }
+
+.datepicker-weekdays span {
+  display: inline-block;
+  text-align: center;
+  width: 36px;
+  height: 24px;
+  margin-top: -1px;
+  margin-left: -1px;
+  font-size: 11px;
+  font-weight: 700;
+  color: #111113; }
+
+.datepicker-row:after {
+  content: '';
+  display: table;
+  clear: both; }
+
+.datepicker-cell {
+  float: left;
+  text-align: center;
+  width: 36px;
+  height: 32px;
+  line-height: 32px;
+  margin-top: -1px;
+  margin-left: -1px;
+  font-size: 12px;
+  border: 1px solid #fff; }
+
+.datepicker-cell a {
+  display: block;
+  color: #111113;
+  line-height: 31px;
+  text-decoration: none;
+  border-radius: 4px;
+  background: #fff; }
+
+.datepicker-cell.is-out a {
+  background-color: transparent;
+  color: rgba(17, 17, 19, 0.5); }
+
+.datepicker-cell.is-out a:hover {
+  color: #fff;
+  background-color: #158df7; }
+
+.datepicker-cell.is-today {
+  border-color: #fff; }
+
+.datepicker-cell.is-today a {
+  background: #ee2455;
+  color: #fff; }
+
+.datepicker-cell.is-today a:hover {
+  color: #fff; }
+
+.datepicker-cell.is-selected {
+  border-color: #fff; }
+
+.datepicker-cell.is-selected a {
+  background: #111113;
+  color: #fff; }
+
+.datepicker-cell.is-selected a:hover {
+  color: #fff; }
+
+.datepicker-cell a:hover {
+  background: #158df7;
+  color: #fff; }
+
+.datepicker-cell.is-disabled a, .datepicker-cell.is-disabled a:hover {
+  background-color: #fff;
+  color: rgba(17, 17, 19, 0.4);
+  cursor: default; }

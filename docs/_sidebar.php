@@ -25,6 +25,7 @@
           <li><a href="messages.php">Messages</a></li>
         </ul>    
     </li>
+    <li><a href="javascript.php">JavaScript</a></li>
     <li><a href="animation.php">Animation</a></li> 
     <li><a href="variables.php">Variables</a></li>
 </ul>
