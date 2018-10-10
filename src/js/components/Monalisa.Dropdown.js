@@ -25,9 +25,23 @@
         },
 
         toggle: function(e) {
-            if(e) e.preventDefault(); 
-            this.$el.toggleClass('_active')
+            if (e)
+            {
+                e.stopPropagation();
+                e.preventDefault();
+            }
+
+
+            this.$el.toggleClass('_active');
             this.$target.toggleClass('_hide').toggleClass('_show');
+            
+            if (this.$el.hasClass('_active') === true) $(window).on('click.toggle', this.close.bind(this));
+        },
+
+        close: function(e) {
+            this.$el.removeClass('_active');
+            this.$target.addClass('_hide');
+            this.$target.removeClass('_show');
         }
 
     });

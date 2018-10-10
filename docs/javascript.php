@@ -23,10 +23,10 @@
     <h2>CEP</h2>
 
     <div class="example">
-        <form method="post" action="" class="Form">
+        <form method="post" action="" class="Form" data-component="masks">
             <div class="form-item">
                 <label>CEP</label>
-                <input type="text" id="meucep" data-component="autocomplete-cep" autocomplete="nope">
+                <input type="text" id="meucep" data-component="autocomplete-cep" class="mask" data-type="cep">
             </div>
             <div class="form-item">
                 <label>Endereço</label>
@@ -90,7 +90,7 @@
 
     <h2>Dropdown</h2>
 
-    <span class="Button" data-component="dropdown" data-name="dropdown1" data-target="#dropdown"> Dropdown </span>
+    <a href="#" class="Button" data-component="dropdown" data-name="dropdown1" data-target="#dropdown"> Dropdown </a>
 
     <ul id="dropdown" class="Dropdown _hide">
         <li><a href="#">Item 1</a></li>
@@ -157,40 +157,82 @@
     <br><br><hr>
 
     <h2>Checkbox all</h2>
-    <div class="Form">
+    <form class="Form">
         <div class="form-item" data-component="check_all">
             <label class="checkbox _strong"><input type="checkbox" data-type="all"> Check All</label>
             <label class="checkbox"><input type="checkbox" value="1"> Item 1</label>
             <label class="checkbox"><input type="checkbox" value="2"> Item 2</label>
             <label class="checkbox"><input type="checkbox" value="3"> Item 3</label>
         </div>
-    </div>
+    </form>
 
     <br><hr>
 
     <h2>Auto complete</h2>
-    <div class="Form">
+    <form class="Form">
         <div class="form-item">
-            <input type="text" name="test" data-component="autocomplete" data-url="testAutocomplete">
+            <input type="text" data-name="test" data-component="autocomplete" data-url="testAutocomplete">
         </div>
         <div class="form-item">
-            <input type="text" name="test2" data-target="#mytarget" data-component="autocomplete" data-url="testAutocomplete">
+            <input type="text" data-name="test2" data-target="#mytarget" data-component="autocomplete">
         </div>
 
-    <div id="mytarget"></div>
+        <div id="mytarget"></div>
+    </form>
     <br><hr>
 
     <h2>Datepicker</h2>
-    <div class="Form">
+    <form class="Form">
         <div class="form-item">
             <input type="text" data-component="datepicker">
         </div>
         <div class="form-item">
-            <label>Formato da data (ex.: 12 de janeiro de 1992)</label>
+            <label>Formato da data (ex.: 01 de janeiro de 2018)</label>
             <input type="text" data-component="datepicker" data-date-format="dd 'de' MM 'de' yy">
         </div>
-    </div>
+    </form>
+    <br><hr>
+
+    <h2>Mask</h2>
+    <form class="Form" data-name="mask" data-component="masks">
+        <div class="form-item">
+            <label>Data</label>
+            <input type="text" class="mask" data-type="date">
+        </div>
+        <div class="form-item">
+            <label>Hora</label>
+            <input type="text" class="mask" data-type="time">
+        </div>
+        <div class="form-item">
+            <label>Data e hora</label>
+            <input type="text" class="mask" data-type="date_time">
+        </div>
+        <div class="form-item">
+            <label>CEP</label>
+            <input type="text" class="mask" data-type="cep">
+        </div>
+        <div class="form-item">
+            <label>CPF</label>
+            <input type="text" class="mask" data-type="cpf">
+        </div>
+        <div class="form-item">
+            <label>CNPJ</label>
+            <input type="text" class="mask" data-type="cnpj">
+        </div>
+        <div class="form-item">
+            <label>Telefone</label>
+            <input type="text" class="mask" data-type="telefone">
+        </div>
+        <div class="form-item">
+            <label>Phone US</label>
+            <input type="text" class="mask" data-type="phone_us">
+        </div>
+    </form>
 
     <br><hr>
 
 <? include '_footer.php'; ?>
+
+<script>
+    $M["components"]["test2"]['settings']["json"] = [{"id": 1, "name": "Apple"},{"id": 2, "name": "Apricot"},{"id": 3, "name": "Avocado"},{"id": 4, "name": "Banana"},{"id": 5, "name": "Breadfruit"},{"id": 6, "name": "Bilberry"},{"id": 7, "name": "Blackberry"},{"id": 8, "name": "Blackcurrant"},{"id": 9, "name": "Blueberry"},{"id": 10, "name": "Boysenberry"}];
+</script>

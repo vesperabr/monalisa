@@ -85,7 +85,8 @@
             left: 50%;
         }
 
-        &:hover:before, .close:hover:after {
+        &:hover:before, 
+        &:hover:after {
             background: #fff;
         }
 

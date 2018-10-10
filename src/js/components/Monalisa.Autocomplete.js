@@ -19,7 +19,7 @@
                 min: 2,
                 labelClass: false,
                 target: false,
-                param: false
+                json: false
             };
 
             // context
@@ -89,25 +89,28 @@
         resize: function() {
             this.$box.width(this.$el.width());
         },
-        lookup: function() {   
-            $.ajax({
-                url: this.settings.url,
-                type: 'POST',
-                success: $.proxy(function(data){
-                    this.complete(data);
-                }, this)
-            });
+        lookup: function() {
+            if (this.settings.json) {
+                this.complete(this.settings.json);
+            } else {
+                $.ajax({
+                    url: this.settings.url,
+                    type: 'POST',
+                    success: $.proxy(function(data){
+                        this.complete(data);
+                    }, this)
+                });
+            }
 
-        },
-        filterValueJson: function(arr, part) {
-            part = part.toLowerCase();
-
-            return arr.filter(function(obj) {
-                return obj.name.toLowerCase().indexOf(part) !== -1; 
-            });
         },
         complete: function(json) {
-            result = this.filterValueJson(json, this.$el.val());
+            arr = json;
+            part = this.$el.val();
+            part = part.toLowerCase();
+
+            result = arr.filter(function(obj) {
+                return obj.name.toLowerCase().indexOf(part) !== -1; 
+            });
 
             this.$box.html('');
 
@@ -152,7 +155,7 @@
                 break;
 
                 default:
-                    this.timeout = setTimeout(this.lookup.bind(this),100);
+                        this.timeout = setTimeout(this.lookup.bind(this),100);
                 break;
             }
         },

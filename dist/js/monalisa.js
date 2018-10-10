@@ -308,7 +308,7 @@ h("input"),watchDataMask:!1,byPassKeys:[9,16,17,18,36,37,38,39,40,91],translatio
                 min: 2,
                 labelClass: false,
                 target: false,
-                param: false
+                json: false
             };
 
             // context
@@ -378,25 +378,28 @@ h("input"),watchDataMask:!1,byPassKeys:[9,16,17,18,36,37,38,39,40,91],translatio
         resize: function() {
             this.$box.width(this.$el.width());
         },
-        lookup: function() {   
-            $.ajax({
-                url: this.settings.url,
-                type: 'POST',
-                success: $.proxy(function(data){
-                    this.complete(data);
-                }, this)
-            });
+        lookup: function() {
+            if (this.settings.json) {
+                this.complete(this.settings.json);
+            } else {
+                $.ajax({
+                    url: this.settings.url,
+                    type: 'POST',
+                    success: $.proxy(function(data){
+                        this.complete(data);
+                    }, this)
+                });
+            }
 
-        },
-        filterValueJson: function(arr, part) {
-            part = part.toLowerCase();
-
-            return arr.filter(function(obj) {
-                return obj.name.toLowerCase().indexOf(part) !== -1; 
-            });
         },
         complete: function(json) {
-            result = this.filterValueJson(json, this.$el.val());
+            arr = json;
+            part = this.$el.val();
+            part = part.toLowerCase();
+
+            result = arr.filter(function(obj) {
+                return obj.name.toLowerCase().indexOf(part) !== -1; 
+            });
 
             this.$box.html('');
 
@@ -441,7 +444,7 @@ h("input"),watchDataMask:!1,byPassKeys:[9,16,17,18,36,37,38,39,40,91],translatio
                 break;
 
                 default:
-                    this.timeout = setTimeout(this.lookup.bind(this),100);
+                        this.timeout = setTimeout(this.lookup.bind(this),100);
                 break;
             }
         },
@@ -561,12 +564,14 @@ h("input"),watchDataMask:!1,byPassKeys:[9,16,17,18,36,37,38,39,40,91],translatio
             var defaults = {
                 dateFormat: 'dd/mm/yy',
                 dayNames: ['Domingo','Segunda','Terça','Quarta','Quinta','Sexta','Sábado'],
-                dayNamesMin: ['D','S','T','Q','Q','S','S','D'],
+                dayNamesMin: ['Dom','Seg','Ter','Qua','Qui','Sex','Sáb','Dom'],
                 dayNamesShort: ['Dom','Seg','Ter','Qua','Qui','Sex','Sáb','Dom'],
                 monthNames: ['Janeiro','Fevereiro','Março','Abril','Maio','Junho','Julho','Agosto','Setembro','Outubro','Novembro','Dezembro'],
                 monthNamesShort: ['Jan','Fev','Mar','Abr','Mai','Jun','Jul','Ago','Set','Out','Nov','Dez'],
-                nextText: 'Próximo',
-                prevText: 'Anterior'
+                nextText: '>',
+                prevText: '<',
+                showOtherMonths: true,
+                selectOtherMonths: true
             };
 
             // context
@@ -577,9 +582,14 @@ h("input"),watchDataMask:!1,byPassKeys:[9,16,17,18,36,37,38,39,40,91],translatio
         },
 
         start: function() {
-            console.log(this.settings);
+            $(this.$el).mask('00/00/0000', {selectOnFocus: true});
             $(this.$el).datepicker(this.settings);
-            $('#ui-datepicker-div').addClass('Datapicker');
+            $(this.$el).datepicker( "option", { disabled: false } );
+            $('#ui-datepicker-div').addClass('Datepicker');
+        },
+
+        stop: function() {
+            $(this.$el).datepicker( "option", { disabled: true } );
         }
     });
 
@@ -612,14 +622,94 @@ h("input"),watchDataMask:!1,byPassKeys:[9,16,17,18,36,37,38,39,40,91],translatio
         },
 
         toggle: function(e) {
-            if(e) e.preventDefault(); 
-            this.$el.toggleClass('_active')
+            if (e)
+            {
+                e.stopPropagation();
+                e.preventDefault();
+            }
+
+
+            this.$el.toggleClass('_active');
             this.$target.toggleClass('_hide').toggleClass('_show');
+            
+            if (this.$el.hasClass('_active') === true) $(window).on('click.toggle', this.close.bind(this));
+        },
+
+        close: function(e) {
+            this.$el.removeClass('_active');
+            this.$target.addClass('_hide');
+            this.$target.removeClass('_show');
         }
 
     });
 
 })(Monalisa);
+
+/**
+ * Monsalisa: Tabs
+ * @author VESPERA
+ * @version 1.0.0
+ */
+
+;(function($M) {
+
+    $M.addComponent('masks', {
+        init: function(context) {
+            var defaults  = {};
+
+            this.context  = context;
+            this.$el      = context.$el;
+            this.settings = Object.assign({}, defaults, context.settings);
+
+            // items
+            this.$items   = this.$el.find('.mask');
+        },
+        
+        start: function() {
+            // items
+            this.$items.each(this.masks.bind(this));
+        },
+
+        stop: function() {
+            this.$items.unmask(this);
+        },
+        
+        masks: function(i, el) {
+            var type = $(el).data('type');
+            $(el).attr('autocomplete', 'nope')
+
+
+            if (type === 'date') {
+                $(el).mask('00/00/0000', {selectOnFocus: true});
+            } else if (type === 'time') {
+                $(el).mask('00:00');
+            } else if (type === 'date_time') {
+                $(el).mask('00/00/0000 00:00');
+            } else if (type === 'cep') {
+                $(el).mask('00000-000');
+            } else if (type === 'cpf') {
+                $(el).mask('000.000.000-00');
+            } else if (type === 'cnpj') {
+                $(el).mask('00.000.000/0000-00');
+            } else if (type === 'phone_us') {
+                $(el).mask('(000) 000-0000');
+            } else if (type === 'telefone') {
+                var SPMaskBehavior = function (val) {
+                    return val.replace(/\D/g, '').length === 11 ? '(00) 00000-0000' : '(00) 0000-00009';
+                },
+                spOptions = {
+                    onKeyPress: function(val, e, field, options) {
+                        field.mask(SPMaskBehavior.apply({}, arguments), options);
+                    }
+                };
+
+                $(el).mask(SPMaskBehavior, spOptions);
+            }
+        },
+    });
+
+})(Monalisa);
+
 
 /**
  * Monsalisa: Modal
