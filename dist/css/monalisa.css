@@ -1770,6 +1770,64 @@ small, ._small {
     .Form .form-item > div._append span {
       border-left: none;
       border-radius: 0 3px 3px 0; }
+    .Form .form-item > div._number {
+      display: flex;
+      width: auto;
+      position: relative; }
+      .Form .form-item > div._number input {
+        width: 40px;
+        border-radius: 0;
+        padding: 0 5px;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        text-align: center; }
+      .Form .form-item > div._number input::-webkit-outer-spin-button,
+      .Form .form-item > div._number input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none; }
+      .Form .form-item > div._number .button {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        flex-shrink: 0;
+        width: 40px;
+        border: 1px solid #d4d4d4;
+        color: rgba(0, 0, 0, 0.7);
+        text-decoration: none;
+        text-align: center;
+        cursor: pointer;
+        font-size: 14px; }
+        .Form .form-item > div._number .button.increment {
+          border-left: none;
+          border-radius: 0 3px 3px 0; }
+        .Form .form-item > div._number .button.decrement {
+          border-right: none;
+          border-radius: 3px 0 0 3px; }
+        .Form .form-item > div._number .button:hover {
+          background-color: #f8f8f8; }
+        .Form .form-item > div._number .button._disable {
+          opacity: 0.6;
+          cursor: default;
+          font-style: italic;
+          color: rgba(0, 0, 0, 0.5); }
+      .Form .form-item > div._number._up-down {
+        width: 60px; }
+        .Form .form-item > div._number._up-down .button {
+          float: right;
+          width: 20px;
+          height: 20px; }
+          .Form .form-item > div._number._up-down .button.decrement {
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            border-top: none;
+            border-left: none;
+            border-right: 1px solid #d4d4d4;
+            border-radius: 0 0 3px 0; }
+          .Form .form-item > div._number._up-down .button.increment {
+            border-radius: 0 3px 0 0; }
     .Form .form-item._checkboxes label.checkbox {
       display: inline-block;
       margin-right: 16px; }
@@ -2517,3 +2575,325 @@ select[multiple] {
     clear: both;
     width: 100%;
     font-size: 0; }
+
+.Tooltip {
+  position: relative;
+  display: inline-block;
+  /**
+	* left tooltip
+	*/
+  /**
+	* top-left tooltip
+	*/
+  /**
+	* top-right tooltip
+	*/
+  /**
+	* bottom-left tooltip
+	*/
+  /**
+	* bottom-right tooltip
+	*/
+  /**
+	* Error
+	*/
+  /**
+	* Warning
+	*/
+  /**
+	* Info
+	*/
+  /**
+	* Success
+	*/ }
+  .Tooltip:before, .Tooltip:after {
+    position: absolute;
+    -webkit-transform: translate3d(0, 0, 0);
+    -moz-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+    visibility: hidden;
+    opacity: 0;
+    z-index: 1000000;
+    pointer-events: none;
+    -webkit-transition: 0.3s ease;
+    -moz-transition: 0.3s ease;
+    transition: 0.3s ease;
+    -webkit-transition-delay: 0ms;
+    -moz-transition-delay: 0ms;
+    transition-delay: 0ms; }
+  .Tooltip:hover:before, .Tooltip:hover:after {
+    visibility: visible;
+    opacity: 1;
+    -webkit-transition-delay: 100ms;
+    -moz-transition-delay: 100ms;
+    transition-delay: 100ms; }
+  .Tooltip:before {
+    content: '';
+    position: absolute;
+    background: transparent;
+    border: 6px solid transparent;
+    z-index: 1000001; }
+  .Tooltip:after {
+    background: #383838;
+    color: white;
+    padding: 8px 10px;
+    font-size: 12px;
+    line-height: 12px;
+    white-space: nowrap; }
+  .Tooltip[aria-label]:after {
+    content: attr(aria-label); }
+  .Tooltip[data-hint]:after {
+    content: attr(data-hint); }
+  .Tooltip._top-left:before, .Tooltip._top-right:before {
+    margin-bottom: -11px; }
+  .Tooltip._top:before, .Tooltip._top:after {
+    bottom: 100%;
+    left: 50%; }
+  .Tooltip._top:before {
+    margin-bottom: -11px;
+    left: calc(50% - 6px);
+    border-top-color: #383838; }
+  .Tooltip._top:after {
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    transform: translateX(-50%); }
+  .Tooltip._top:hover:before {
+    -webkit-transform: translateY(-8px);
+    -moz-transform: translateY(-8px);
+    transform: translateY(-8px); }
+  .Tooltip._top:hover:after {
+    -webkit-transform: translateX(-50%) translateY(-8px);
+    -moz-transform: translateX(-50%) translateY(-8px);
+    transform: translateX(-50%) translateY(-8px); }
+  .Tooltip._bottom:before {
+    margin-top: -11px;
+    left: calc(50% - 6px);
+    border-bottom-color: #383838; }
+  .Tooltip._bottom:before, .Tooltip._bottom:after {
+    top: 100%;
+    left: 50%; }
+  .Tooltip._bottom:after {
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    transform: translateX(-50%); }
+  .Tooltip._bottom:hover:before:before {
+    -webkit-transform: translateY(8px);
+    -moz-transform: translateY(8px);
+    transform: translateY(8px); }
+  .Tooltip._bottom:hover:before:after {
+    -webkit-transform: translateX(-50%) translateY(8px);
+    -moz-transform: translateX(-50%) translateY(8px);
+    transform: translateX(-50%) translateY(8px); }
+  .Tooltip._right:before {
+    margin-left: -11px;
+    margin-bottom: -6px;
+    border-right-color: #383838; }
+  .Tooltip._right:after {
+    margin-bottom: -14px; }
+  .Tooltip._right:before, .Tooltip._right:after {
+    left: 100%;
+    bottom: 50%; }
+  .Tooltip._right:hover:before {
+    -webkit-transform: translateX(8px);
+    -moz-transform: translateX(8px);
+    transform: translateX(8px); }
+  .Tooltip._right:hover:after {
+    -webkit-transform: translateX(8px);
+    -moz-transform: translateX(8px);
+    transform: translateX(8px); }
+  .Tooltip._left:before {
+    margin-right: -11px;
+    margin-bottom: -6px;
+    border-left-color: #383838; }
+  .Tooltip._left:after {
+    margin-bottom: -14px; }
+  .Tooltip._left:before, .Tooltip._left:after {
+    right: 100%;
+    bottom: 50%; }
+  .Tooltip._left:hover:before {
+    -webkit-transform: translateX(-8px);
+    -moz-transform: translateX(-8px);
+    transform: translateX(-8px); }
+  .Tooltip._left:hover:after {
+    -webkit-transform: translateX(-8px);
+    -moz-transform: translateX(-8px);
+    transform: translateX(-8px); }
+  .Tooltip._top-left:before, .Tooltip._top-left:after {
+    bottom: 100%;
+    left: 50%; }
+  .Tooltip._top-left:before {
+    left: calc(50% - 6px);
+    border-top-color: #383838; }
+  .Tooltip._top-left:after {
+    -webkit-transform: translateX(-100%);
+    -moz-transform: translateX(-100%);
+    transform: translateX(-100%);
+    margin-left: 12px; }
+  .Tooltip._top-left:hover:before {
+    -webkit-transform: translateY(-8px);
+    -moz-transform: translateY(-8px);
+    transform: translateY(-8px); }
+  .Tooltip._top-left:hover:after {
+    -webkit-transform: translateX(-100%) translateY(-8px);
+    -moz-transform: translateX(-100%) translateY(-8px);
+    transform: translateX(-100%) translateY(-8px); }
+  .Tooltip._top-right:before, .Tooltip._top-right:after {
+    bottom: 100%;
+    left: 50%; }
+  .Tooltip._top-right:before {
+    left: calc(50% - 6px);
+    border-top-color: #383838; }
+  .Tooltip._top-right:after {
+    -webkit-transform: translateX(0);
+    -moz-transform: translateX(0);
+    transform: translateX(0);
+    margin-left: -12px; }
+  .Tooltip._top-right:hover:before {
+    -webkit-transform: translateY(-8px);
+    -moz-transform: translateY(-8px);
+    transform: translateY(-8px); }
+  .Tooltip._top-right:hover:after {
+    -webkit-transform: translateY(-8px);
+    -moz-transform: translateY(-8px);
+    transform: translateY(-8px); }
+  .Tooltip._bottom-left:before, .Tooltip._bottom-left:after {
+    top: 100%;
+    left: 50%; }
+  .Tooltip._bottom-left:before {
+    margin-top: -11px;
+    left: calc(50% - 6px);
+    border-bottom-color: #383838; }
+  .Tooltip._bottom-left:after {
+    -webkit-transform: translateX(-100%);
+    -moz-transform: translateX(-100%);
+    transform: translateX(-100%);
+    margin-left: 12px; }
+  .Tooltip._bottom-left:hover:before {
+    -webkit-transform: translateY(8px);
+    -moz-transform: translateY(8px);
+    transform: translateY(8px); }
+  .Tooltip._bottom-left:hover:after {
+    -webkit-transform: translateX(-100%) translateY(8px);
+    -moz-transform: translateX(-100%) translateY(8px);
+    transform: translateX(-100%) translateY(8px); }
+  .Tooltip._bottom-right:before, .Tooltip._bottom-right:after {
+    top: 100%;
+    left: 50%; }
+  .Tooltip._bottom-right:before {
+    margin-top: -11px;
+    left: calc(50% - 6px);
+    border-bottom-color: #383838; }
+  .Tooltip._bottom-right:after {
+    -webkit-transform: translateX(0);
+    -moz-transform: translateX(0);
+    transform: translateX(0);
+    margin-left: -12px; }
+  .Tooltip._bottom-right:hover:before {
+    -webkit-transform: translateY(8px);
+    -moz-transform: translateY(8px);
+    transform: translateY(8px); }
+  .Tooltip._bottom-right:hover:after {
+    -webkit-transform: translateY(8px);
+    -moz-transform: translateY(8px);
+    transform: translateY(8px); }
+  .Tooltip._small:after, .Tooltip._medium:after, .Tooltip._large:after {
+    white-space: normal;
+    line-height: 1.4em;
+    word-wrap: break-word; }
+  .Tooltip._small:after {
+    width: 80px; }
+  .Tooltip._medium:after {
+    width: 150px; }
+  .Tooltip._large:after {
+    width: 300px; }
+  .Tooltip._error:after {
+    background-color: #e74c3c; }
+  .Tooltip._error._top-left:before, .Tooltip._error._top-right:before, .Tooltip._error._top:before {
+    border-top-color: #e74c3c; }
+  .Tooltip._error._bottom-left:before, .Tooltip._error._bottom-right:before, .Tooltip._error._bottom:before {
+    border-bottom-color: #e74c3c; }
+  .Tooltip._error._left:before {
+    border-left-color: #e74c3c; }
+  .Tooltip._error._right:before {
+    border-right-color: #e74c3c; }
+  .Tooltip._warning:after {
+    background-color: #f7ca18; }
+  .Tooltip._warning._top-left:before, .Tooltip._warning._top-right:before, .Tooltip._warning._top:before {
+    border-top-color: #f7ca18; }
+  .Tooltip._warning._bottom-left:before, .Tooltip._warning._bottom-right:before, .Tooltip._warning._bottom:before {
+    border-bottom-color: #f7ca18; }
+  .Tooltip._warning._left:before {
+    border-left-color: #f7ca18; }
+  .Tooltip._warning._right:before {
+    border-right-color: #f7ca18; }
+  .Tooltip._info:after {
+    background-color: #3498db; }
+  .Tooltip._info._top-left:before, .Tooltip._info._top-right:before, .Tooltip._info._top:before {
+    border-top-color: #3498db; }
+  .Tooltip._info._bottom-left:before, .Tooltip._info._bottom-right:before, .Tooltip._info._bottom:before {
+    border-bottom-color: #3498db; }
+  .Tooltip._info._left:before {
+    border-left-color: #3498db; }
+  .Tooltip._info._right:before {
+    border-right-color: #3498db; }
+  .Tooltip._success:after {
+    background-color: #2ecc71; }
+  .Tooltip._success._top-left:before, .Tooltip._success._top-right:before, .Tooltip._success._top:before {
+    border-top-color: #2ecc71; }
+  .Tooltip._success._bottom-left:before, .Tooltip._success._bottom-right:before, .Tooltip._success._bottom:before {
+    border-bottom-color: #2ecc71; }
+  .Tooltip._success._left:before {
+    border-left-color: #2ecc71; }
+  .Tooltip._success._right:before {
+    border-right-color: #2ecc71; }
+  .Tooltip._always:after, .Tooltip._always:before {
+    opacity: 1;
+    visibility: visible; }
+  .Tooltip._always._top:before, .Tooltip._always._top-left:before, .Tooltip._always._top-right:before, .Tooltip._always._top-right:after {
+    -webkit-transform: translateY(-8px);
+    -moz-transform: translateY(-8px);
+    transform: translateY(-8px); }
+  .Tooltip._always._top:after {
+    -webkit-transform: translateX(-50%) translateY(-8px);
+    -moz-transform: translateX(-50%) translateY(-8px);
+    transform: translateX(-50%) translateY(-8px); }
+  .Tooltip._always._top-left:after {
+    -webkit-transform: translateX(-100%) translateY(-8px);
+    -moz-transform: translateX(-100%) translateY(-8px);
+    transform: translateX(-100%) translateY(-8px); }
+  .Tooltip._always._bottom:before, .Tooltip._always._bottom-left:before, .Tooltip._always._bottom-right:before, .Tooltip._always._bottom-right:after {
+    -webkit-transform: translateY(8px);
+    -moz-transform: translateY(8px);
+    transform: translateY(8px); }
+  .Tooltip._always._bottom:after {
+    -webkit-transform: translateX(-50%) translateY(8px);
+    -moz-transform: translateX(-50%) translateY(8px);
+    transform: translateX(-50%) translateY(8px); }
+  .Tooltip._always._bottom-left:after {
+    -webkit-transform: translateX(-100%) translateY(8px);
+    -moz-transform: translateX(-100%) translateY(8px);
+    transform: translateX(-100%) translateY(8px); }
+  .Tooltip._always._left:before, .Tooltip._always._left:after {
+    -webkit-transform: translateX(-8px);
+    -moz-transform: translateX(-8px);
+    transform: translateX(-8px); }
+  .Tooltip._always._right:before, .Tooltip._always._right:after {
+    -webkit-transform: translateX(8px);
+    -moz-transform: translateX(8px);
+    transform: translateX(8px); }
+  .Tooltip._rounded:after {
+    border-radius: 4px; }
+  .Tooltip._no-animate:before, .Tooltip._no-animate:after {
+    -webkit-transition-duration: 0ms;
+    -moz-transition-duration: 0ms;
+    transition-duration: 0ms; }
+  .Tooltip._bounce:before, .Tooltip._bounce:after {
+    -webkit-transition: opacity 0.3s ease, visibility 0.3s ease, -webkit-transform 0.3s cubic-bezier(0.71, 1.7, 0.77, 1.24);
+    -moz-transition: opacity 0.3s ease, visibility 0.3s ease, -moz-transform 0.3s cubic-bezier(0.71, 1.7, 0.77, 1.24);
+    transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s cubic-bezier(0.71, 1.7, 0.77, 1.24); }
+
+[aria-label='']:before,
+[aria-label='']:after,
+[data-hint='']:before,
+[data-hint='']:after {
+  display: none !important; }

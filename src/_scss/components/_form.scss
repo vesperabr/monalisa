@@ -96,6 +96,88 @@
                     border-radius: 0 $border-radius-input $border-radius-input 0;
                 }
             }
+
+            &._number {
+                display: flex;
+                width: auto;
+                position: relative;
+                
+                input {
+                    width: $height-input;
+                    border-radius:0;
+                    padding: 0 5px;
+                    -webkit-appearance: none;
+                    -moz-appearance: none;
+                    appearance: none;
+                    text-align: center;
+                }
+
+                input::-webkit-outer-spin-button,
+                input::-webkit-inner-spin-button {
+                    -webkit-appearance: none;
+                    -moz-appearance: none;
+                    appearance: none;
+                }
+
+                .button {
+                    @include flex;
+                    @include flex-items-column;
+                    @include flex-items-center;
+                    @include flex-item-shrink;
+                    width: $height-input;
+                    border: $border-width-input solid $border-color-input;
+                    color: rgba(0, 0, 0, .7);
+                    text-decoration: none;
+                    text-align: center;
+                    cursor: pointer;
+                    font-size: $font-size-input;
+
+                    &.increment {
+                        border-left: none;
+                        border-radius: 0 $border-radius-input $border-radius-input 0;
+                    }
+
+                    &.decrement {
+                        border-right: none;
+                        border-radius: $border-radius-input 0 0 $border-radius-input;
+                    }
+
+                    &:hover {
+                        background-color: #f8f8f8;
+                    }
+                    
+                    &._disable {
+                        opacity: 0.6;
+                        cursor: default;
+                        font-style: italic;
+                        color: rgba(0, 0, 0, .5);
+                    }
+                }
+
+                &._up-down {
+                    width: $height-input + ($height-input / 2);
+
+                    .button {
+                        float: right;
+                        width: $height-input / 2;
+                        height: $height-input / 2;
+
+                        &.decrement {
+                            position: absolute;
+                            right: 0;
+                            bottom: 0;
+                            border-top: none;
+                            border-left: none;
+                            border-right: $border-width-input solid $border-color-input;
+                            border-radius: 0 0 $border-radius-input 0;
+                        }
+
+                        &.increment {
+                            border-radius: 0 $border-radius-input 0 0;
+                        }
+                    }
+                }
+            }
         }
 
         // Modificadores

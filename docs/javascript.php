@@ -194,42 +194,91 @@
     <br><hr>
 
     <h2>Mask</h2>
-    <form class="Form" data-name="mask" data-component="masks">
-        <div class="form-item">
+    <form class="Form" data-name="mask">
+        <div class="form-item" data-component="masks">
             <label>Data</label>
             <input type="text" class="mask" data-type="date">
         </div>
-        <div class="form-item">
+        <div class="form-item" data-component="masks">
             <label>Hora</label>
             <input type="text" class="mask" data-type="time">
         </div>
-        <div class="form-item">
+        <div class="form-item" data-component="masks">
             <label>Data e hora</label>
             <input type="text" class="mask" data-type="date_time">
         </div>
-        <div class="form-item">
+        <div class="form-item" data-component="masks">
             <label>CEP</label>
             <input type="text" class="mask" data-type="cep">
         </div>
-        <div class="form-item">
+        <div class="form-item" data-component="masks">
             <label>CPF</label>
             <input type="text" class="mask" data-type="cpf">
         </div>
-        <div class="form-item">
+        <div class="form-item" data-component="masks">
             <label>CNPJ</label>
             <input type="text" class="mask" data-type="cnpj">
         </div>
-        <div class="form-item">
+        <div class="form-item" data-component="masks">
             <label>Telefone</label>
             <input type="text" class="mask" data-type="telefone">
         </div>
-        <div class="form-item">
+        <div class="form-item" data-component="masks">
             <label>Phone US</label>
             <input type="text" class="mask" data-type="phone_us">
         </div>
     </form>
 
     <br><hr>
+
+    <h2>Number</h2>
+    <form class="Form">
+        <div class="form-item">
+            <label>Number 1</label>
+            <div class="_number" data-component="number">
+                <input type="number" value="3">
+            </div>
+        </div>
+        <div class="form-item">
+            <label>Number 2</label>
+            <div class="_number _up-down" data-component="number">
+                <input type="number" value="2">
+            </div>
+        </div>
+    </form>
+
+    <br><hr>
+
+    <h2>Tooltip</h2>
+    <div class="example demo-grid">
+        <div class="Row _gutters">
+            <div class="col _col-4 _mb10"><a aria-label="bottom-right" class="Tooltip _bottom-right">bottom-right</a></div>
+            <div class="col _col-4 _mb10"><a aria-label="bottom" class="Tooltip _bottom">bottom</a></div>
+            <div class="col _col-4 _mb10"><a aria-label="bottom-left" class="Tooltip _bottom-left">bottom-left</a></div>
+            <div class="col _col-4 _mb10"><a aria-label="right" class="Tooltip _right">right</a></div>
+            <div class="col _col-4 _mb10"><a> </a></div>
+            <div class="col _col-4 _mb10"><a aria-label="left" class="Tooltip _left">left</a></div>
+            <div class="col _col-4 _mb10"><a aria-label="top-right" class="Tooltip _top-right">top-right</a></div>
+            <div class="col _col-4 _mb10"><a aria-label="top" class="Tooltip _top">top</a></div>
+            <div class="col _col-4 _mb10"><a aria-label="top-left" class="Tooltip _top-left">top-left</a></div>
+        </div>
+    </div>
+    <br>
+
+    <h4>Color Modifiers</h4>
+    <a class="Tooltip Button _bottom-right _error" aria-label="This is an error tooltip">error</a>
+    <a class="Tooltip Button _bottom-right _warning" aria-label="This is a warning tooltip">warning</a>
+    <a class="Tooltip Button _bottom-left _info" aria-label="This is an info tooltip">info</a>
+    <a class="Tooltip Button _bottom-right _success" aria-label="This is success tooltip">success</a>
+    <br><br>
+
+    <h4>Size variations</h4>
+    <a class="Tooltip Button _top _small" data-hint="You can show very very long sentences inside tooltips by using various available size variation classes.">Small</a>
+    <a class="Tooltip Button _top _medium" data-hint="You can show very very long sentences inside tooltips by using various available size variation classes.">Medium</a>
+    <a class="Tooltip Button _top _large" data-hint="You can show very very long sentences inside tooltips by using various available size variation classes.">Large</a>
+
+
+    <br><br><hr>
 
 <? include '_footer.php'; ?>
 

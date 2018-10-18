@@ -17,6 +17,7 @@
 	<script src="../src/js/components/Monalisa.Autocomplete.js"></script>
 	<script src="../src/js/components/Monalisa.Datepicker.js"></script>
 	<script src="../src/js/components/Monalisa.Masks.js"></script>
+	<script src="../src/js/components/Monalisa.Number.js"></script>
     <script src="js/main.js"></script>
 
     <script>
