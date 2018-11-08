@@ -6,7 +6,6 @@
     <a href="#" class="Button toggle" data-component="toggle" data-target="#lipsum2">2</a>
     <br>
     <br>
-    <!-- <div data-component="toggle">2</div> -->
 
     <div id="lipsum" class="example">
         <h6>Example 1</h6> 
@@ -157,95 +156,105 @@
     <br><br><hr>
 
     <h2>Checkbox all</h2>
-    <form class="Form">
-        <div class="form-item" data-component="check_all">
-            <label class="checkbox _strong"><input type="checkbox" data-type="all"> Check All</label>
-            <label class="checkbox"><input type="checkbox" value="1"> Item 1</label>
-            <label class="checkbox"><input type="checkbox" value="2"> Item 2</label>
-            <label class="checkbox"><input type="checkbox" value="3"> Item 3</label>
-        </div>
-    </form>
+    <div class="example demo-grid">
+        <form class="Form">
+            <div class="form-item" data-component="check_all">
+                <label class="checkbox _strong"><input type="checkbox" data-type="all"> Check All</label>
+                <label class="checkbox"><input type="checkbox" value="1"> Item 1</label>
+                <label class="checkbox"><input type="checkbox" value="2"> Item 2</label>
+                <label class="checkbox"><input type="checkbox" value="3"> Item 3</label>
+            </div>
+        </form>
+    </div>
 
     <br><hr>
 
     <h2>Auto complete</h2>
-    <form class="Form">
-        <div class="form-item">
-            <input type="text" data-name="test" data-component="autocomplete" data-url="testAutocomplete">
-        </div>
-        <div class="form-item">
-            <input type="text" data-name="test2" data-target="#mytarget" data-component="autocomplete">
-        </div>
+    <div class="example demo-grid">
+        <form class="Form">
+            <div class="form-item">
+                <input type="text" data-name="test" data-component="autocomplete" data-url="testAutocomplete">
+            </div>
+            <div class="form-item">
+                <input type="text" data-name="test2" data-target="#mytarget" data-component="autocomplete">
+            </div>
 
-        <div id="mytarget"></div>
-    </form>
+            <div id="mytarget"></div>
+        </form>
+    </div>
     <br><hr>
 
     <h2>Datepicker</h2>
-    <form class="Form">
-        <div class="form-item">
-            <input type="text" data-component="datepicker">
-        </div>
-        <div class="form-item">
-            <label>Formato da data (ex.: 01 de janeiro de 2018)</label>
-            <input type="text" data-component="datepicker" data-date-format="dd 'de' MM 'de' yy">
-        </div>
-    </form>
+    <div class="example demo-grid">
+        <form class="Form">
+            <div class="form-item">
+                <input type="text" data-component="datepicker">
+            </div>
+            <div class="form-item">
+                <label>Formato da data (ex.: 01 de janeiro de 2018)</label>
+                <input type="text" data-component="datepicker" data-date-format="dd 'de' MM 'de' yy">
+            </div>
+        </form>
+    </div>
     <br><hr>
 
     <h2>Mask</h2>
-    <form class="Form" data-name="mask">
-        <div class="form-item" data-component="masks">
-            <label>Data</label>
-            <input type="text" class="mask" data-type="date">
-        </div>
-        <div class="form-item" data-component="masks">
-            <label>Hora</label>
-            <input type="text" class="mask" data-type="time">
-        </div>
-        <div class="form-item" data-component="masks">
-            <label>Data e hora</label>
-            <input type="text" class="mask" data-type="date_time">
-        </div>
-        <div class="form-item" data-component="masks">
-            <label>CEP</label>
-            <input type="text" class="mask" data-type="cep">
-        </div>
-        <div class="form-item" data-component="masks">
-            <label>CPF</label>
-            <input type="text" class="mask" data-type="cpf">
-        </div>
-        <div class="form-item" data-component="masks">
-            <label>CNPJ</label>
-            <input type="text" class="mask" data-type="cnpj">
-        </div>
-        <div class="form-item" data-component="masks">
-            <label>Telefone</label>
-            <input type="text" class="mask" data-type="telefone">
-        </div>
-        <div class="form-item" data-component="masks">
-            <label>Phone US</label>
-            <input type="text" class="mask" data-type="phone_us">
-        </div>
-    </form>
+    <div class="example demo-grid">
+        <form class="Form" data-name="mask">
+            <div class="form-item" data-component="masks">
+                <label>Data</label>
+                <input type="text" class="mask" data-type="date">
+            </div>
+            <div class="form-item" data-component="masks">
+                <label>Hora</label>
+                <input type="text" class="mask" data-type="time">
+            </div>
+            <div class="form-item" data-component="masks">
+                <label>Data e hora</label>
+                <input type="text" class="mask" data-type="date_time">
+            </div>
+            <div class="form-item" data-component="masks">
+                <label>CEP</label>
+                <input type="text" class="mask" data-type="cep">
+            </div>
+            <div class="form-item" data-component="masks">
+                <label>CPF</label>
+                <input type="text" class="mask" data-type="cpf">
+            </div>
+            <div class="form-item" data-component="masks">
+                <label>CNPJ</label>
+                <input type="text" class="mask" data-type="cnpj">
+            </div>
+            <div class="form-item" data-component="masks">
+                <label>Telefone</label>
+                <input type="text" class="mask" data-type="telefone">
+            </div>
+            <div class="form-item" data-component="masks">
+                <label>Phone US</label>
+                <input type="text" class="mask" data-type="phone_us">
+            </div>
+        </form>
+    </div>
 
     <br><hr>
 
     <h2>Number</h2>
-    <form class="Form">
-        <div class="form-item">
-            <label>Number 1</label>
-            <div class="_number" data-component="number">
-                <input type="number" value="3">
+    <div class="example demo-grid">
+        <form class="Form">
+            <div class="form-item">
+                <label>Number 1</label>
+                <div class="_number" data-component="number">
+                    <input type="number" value="3">
+                </div>
             </div>
-        </div>
-        <div class="form-item">
-            <label>Number 2</label>
-            <div class="_number _up-down" data-component="number">
-                <input type="number" value="2">
+            <div class="form-item">
+                <label>Number 2</label>
+                <div class="_number _up-down" data-component="number">
+                    <input type="number" value="2">
+                </div>
             </div>
-        </div>
-    </form>
+        </form>
+    </div>
 
     <br><hr>
 
@@ -277,6 +286,105 @@
     <a class="Tooltip Button _top _medium" data-hint="You can show very very long sentences inside tooltips by using various available size variation classes.">Medium</a>
     <a class="Tooltip Button _top _large" data-hint="You can show very very long sentences inside tooltips by using various available size variation classes.">Large</a>
 
+
+    <br><br><hr>
+
+    <h2>Validate Form</h2>
+    <div class="example demo-grid">
+
+        <form class="Form" action="" method="get" data-component="validate">
+            <div class="form-item">
+                <label>Name</label>
+                <input type="text" name="name" class="_w50" required>
+            </div>
+            <div class="form-item">
+                <label>Email</label>
+                <input type="email" name="email" class="_w50" required>
+            </div>
+
+            <div class="form-item">
+                <label>Country</label>
+                <select name="country" class="_w50" required>
+                    <option value="">---</option>
+                    <option value="us">USA</option>
+                    <option value="de">Germany</option>
+                    <option value="fi">Suomi</option>
+                    <option value="se">Sweden</option>
+                </select>
+            </div>
+
+            <div class="form-item">
+                <label class="checkbox"><input type="checkbox" name="check"> Check me</label>
+            </div>
+
+            <div class="form-item">
+                <textarea rows="6" name="about" required></textarea>
+            </div>
+
+            <div class="form-item">
+                <button class="Button _secondary">Send</button>
+            </div>
+        </form>
+
+    </div>
+
+    <br><br><hr>
+
+    <h2>Selector</h2>
+    <div class="example demo-grid">
+
+        <form class="Form" action="" method="get">
+            <div class="form-item">
+                <select data-component="selector">
+                    <option value="#box-1">Box 1</option>
+                    <option value="#box-2">Box 2</option>
+                </select>
+            </div>
+
+            <div class="Message" id="box-1">Box 1</div>
+            <div class="Message _hide" id="box-2">Box 2</div>
+
+            <hr>
+
+            <div class="form-item" data-component="selector">
+                <label><input type="radio" name="checker" value="#box-3"> Box 3</label>
+                <label><input type="radio" name="checker" value="#box-4" checked="true"> Box 4</label>
+            </div>
+
+            <div class="Message _hide" id="box-3">Box 3</div>
+            <div class="Message" id="box-4">Box 4</div>
+
+            <hr>
+
+            <div class="form-item" data-component="selector">
+                <label><input type="checkbox" name="checkbox" value="#box-5"> Box 5</label>
+            </div>
+
+            <div class="Message _hide" id="box-5">Box 5</div>
+        </form>
+
+    </div>
+
+    <br><br><hr>
+
+    <h2>Upload</h2>
+    <div class="example demo-grid">
+        <form action="">
+            <div class="form-item" id="file1">
+                <div class="Upload" data-component="upload" data-type="file" data-target="#my-upload-target" data-multiple="true"></div>
+
+            <div id="my-upload-target" class="upload-target"></div>
+            </div>
+        </form>
+
+        <form action="">
+            <div class="form-item" id="file2">
+                <div class="Upload _box" data-component="upload" data-type="image" data-multiple="true">
+                    <div class="upload-item"></div>
+                </div>
+            </div>
+        </form>
+    </div>
 
     <br><br><hr>
 

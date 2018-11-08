@@ -18,6 +18,17 @@
         }
     }
 
+    .Message {
+        width: 100%;
+    }
+
+    svg.loading {
+        display: inline-block;
+        margin: 0 8px;
+        vertical-align: middle;
+        opacity: 0;
+    }
+
     .form-item {
         margin-bottom: $margin-bottom;
 
@@ -38,6 +49,18 @@
                 & input {
                     margin-top: 0;
                 }
+            }
+        }
+
+        span {
+            &._error {
+                position: absolute;
+                bottom: 0;
+                left: $padding-rl-input;
+                border: 0;
+                background-color: transparent;
+                color: $color-error;
+                font-size: $font-size - 5px;
             }
         }
 
@@ -278,6 +301,15 @@ select {
         cursor: default;
         font-style: italic;
         color: rgba(0, 0, 0, .5);
+    }
+
+    &:-webkit-autofill,
+    &:-webkit-autofill:hover,
+    &:-webkit-autofill:focus {
+      border: $border-width-input solid $border-color-input;
+      -webkit-text-fill-color: $color-text;
+      -webkit-box-shadow: 0 0 0 1000px $background-color-input inset;
+      transition: background-color 5000s ease-in-out 0s;
     }
 }
 

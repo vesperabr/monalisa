@@ -1,0 +1,14 @@
+[
+    {
+        "type": "show",
+        "data": {
+            "#myform-message": true
+        }
+    },
+    {
+        "type": "hide",
+        "data": {
+            "#myform":true
+        }
+    }
+]
