@@ -331,7 +331,6 @@
         },
         _sendData: function(data, files, e) {
             var response = files;
-            console.log(response);
             this._complete(response, e);
         },
         _buildData: function(name, files, data) {
@@ -371,16 +370,41 @@
             }
         },
         _completeBoxImage: function(response) {
-
             for (var i = 0; i < response.length; i++) {
-                // img
-                var $img = $('<img>');
-                var reader = new FileReader();
-                reader.onload = function(e) {
-                    $img.attr("src", e.target.result);
-                    $img.attr("data-id", e.loaded);
-                };
-                reader.readAsDataURL(response[i]);
+                var dvPreview = this.$box;
+                var multiple = this.isMultiple;
+                dvPreview.html("");
+                // var regex = /^([a-zA-Z0-9\s_\\.\-:])+(.jpg|.jpeg|.gif|.png|.bmp)$/;
+                if (dvPreview) {
+                    var reader = new FileReader();
+                        // append
+                        reader.onload = function(e) {
+                            if (multiple) {
+                                var item = $("<div class='upload-item _uploaded' data-id='"+e.loaded+"'><img src='"+e.target.result+"'></div>");
+                                dvPreview.last().before(item);
+                            }
+                            else {
+                                var item = $("<img src='"+e.target.result+"'>");
+                                dvPreview.append(item);
+                            }
+                        };
+                        reader.onloadend = function(e) {
+                            if (multiple) {
+                                $('.upload-item._uploaded').append($close);
+                                $('.upload-item._uploaded').append($hidden);
+                            }
+                            else {
+                                $('.upload-item').append($close);
+                                $('.upload-item').append($hidden);
+                            }
+                        };
+
+                    reader.readAsDataURL(response[i]);
+                } else {
+                    alert(response[i].name + " is not a valid image file.");
+                    dvPreview.html("");
+                    return false;
+                }
                 // close
                 var $close = $('<span>');
                 $close.addClass('close');
@@ -391,39 +415,6 @@
                 $hidden.attr('type', 'hidden');
                 $hidden.attr('name', this._getHiddenName());
                 $hidden.val(response[i].size);
-
-                // item
-                var $item = $('<div>');
-                $item.addClass('upload-item _uploaded');
-                $item.attr('data-id', response[i].size);
-                this._upCount();
-
-                if (this.isMultiple)
-                {
-                    // append
-                    $item.append($close);
-                    $item.append($img);
-                    $item.append($hidden);
-
-                    this.$box.last().before($item);
-                }
-                // single
-                else
-                {
-                    var $lastImg = this.$box.find('img');
-                    if ($lastImg.length !== 0)
-                    {
-                        this._removeFileRequest(this.$box.attr('data-id'));
-                    }
-
-                    this.$box.html('');
-                    this.$box.attr('data-id', response[i].size);
-                    this.$box.append($close);
-                    this.$box.append($img);
-                    this.$box.append($hidden);
-
-                    return;
-                }
             }
         },
         _completeBoxFile: function(response) {

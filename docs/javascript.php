@@ -372,14 +372,13 @@
         <form action="">
             <div class="form-item" id="file1">
                 <div class="Upload" data-component="upload" data-type="file" data-target="#my-upload-target" data-multiple="true"></div>
-
-            <div id="my-upload-target" class="upload-target"></div>
+                <div id="my-upload-target" class="upload-target"></div>
             </div>
         </form>
 
         <form action="">
             <div class="form-item" id="file2">
-                <div class="Upload _box" data-component="upload" data-type="image" data-multiple="true">
+                <div class="Upload _box" data-component="upload" data-type="image">
                     <div class="upload-item"></div>
                 </div>
             </div>
