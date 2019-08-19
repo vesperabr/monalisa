@@ -43,8 +43,4 @@
     &._gutters {
         @include grid-gutters($grid-gutter);
     }
-
-    &._gutters-x {
-        @include grid-gutters(100px);
-    }
 }

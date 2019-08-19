@@ -5,8 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Monalisa</title>
 
-    <base href="http://localhost/monalisa-v2/">
-    <link rel="stylesheet" href="dist/css/Monalisa.min.css">
+    <link rel="stylesheet" href="../dist/css/Monalisa.min.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
 
     <style>
