@@ -1,0 +1,104 @@
+// GRID
+// ============================================================================
+
+$grid-gutter: 2% !default;
+
+
+
+// BREAKPOINTS
+// ============================================================================
+
+$xs: 480px !default;
+$sm: 768px !default;
+$md: 992px !default;
+$lg: 1200px !default;
+
+
+
+// COLORS
+// ============================================================================
+
+// Texts
+$color-text: #313439 !default;
+$color-heading: #0d0d0e !default;
+
+// Links
+$color-link: #1c86f2 !default;
+$color-link-hover: darken($color-link, 10%) !default;
+
+// Buttons
+$color-button-primary: #1c86f2 !default;
+$color-button-primary-text: #ffffff !default;
+$color-button-secondary: #313439 !default;
+$color-button-secondary-text: #ffffff !default;
+
+// States
+$color-error: #ee5253 !default;
+$color-success: #2ecc71 !default;
+$color-warning: #feca57 !default;
+$color-focus: #1c86f2 !default;
+
+
+
+// FONT
+// ============================================================================
+
+// Font families
+$font-family: Arial, sans-serif !default;
+$font-family-monospace: Consolas, Monaco, 'Courier New', monospace !default;
+
+// Texts sizes
+$font-size: 16px !default;
+$font-size-small: $font-size - 2px !default;
+
+// Headings sizes
+$font-size-h1: 40px !default;
+$font-size-h2: 30px !default;
+$font-size-h3: 24px !default;
+$font-size-h4: 20px !default;
+$font-size-h5: 18px !default;
+$font-size-h6: 16px !default;
+
+
+
+// BASELINES
+// ============================================================================
+
+$baseline: 1.5 !default;
+$baseline-heading: 1 !default;
+
+
+
+// SIZES
+// ============================================================================
+
+$height-input: $font-size * 2.25 !default;
+
+
+
+// MARGINS
+// ============================================================================
+
+$margin-1x: $font-size * $baseline !default;
+$margin-2x: $margin-1x * 2 !default;
+
+
+
+// PADDINGS
+// ============================================================================
+
+$padding-1x: ($font-size * $baseline) / 2 !default;
+$padding-2x: $padding-1x * 2 !default;
+$padding-3x: $padding-1x * 3 !default;
+
+
+
+
+
+// BORDERS
+// ============================================================================
+
+$border-color-input: #d4d4d4 !default;
+$border-radius: 4px !default;
+
+

@@ -1,0 +1,50 @@
+.Row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    > .col {
+        flex: 1 1 0%;
+
+        &[class*=' _col-'] {
+            flex: 0 1 auto;
+        }
+
+        @for $i from 1 through 12 {
+            &._col-#{$i} {
+                width: 100% / 12 * $i;
+            }
+
+            &._offset-#{$i} {
+                $width: 100% / 12 * $i;
+                margin-left: $width;
+            }
+        }
+    }
+
+    @include breakpoint(sm) {
+        flex-direction: column;
+        flex-wrap: nowrap;
+
+        > .col {
+            &,
+            &[class*=' _col-'] {
+                width: 100%;
+            }
+
+            // Offset
+            &[class^='_offset-'],
+            &[class*=' _offset-'] {
+                margin-left: 0;
+            }
+        }
+    }
+
+    &._gutters {
+        @include grid-gutters($grid-gutter);
+    }
+
+    &._gutters-x {
+        @include grid-gutters(100px);
+    }
+}

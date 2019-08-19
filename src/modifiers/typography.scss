@@ -1,0 +1,88 @@
+// Alignment
+._tal,
+._text-left {
+    text-align: left;
+}
+
+._tac,
+._text-center {
+    text-align: center;
+}
+
+._tar,
+._text-right {
+    text-align: right;
+}
+
+ul._unstyled {
+    & {
+        margin-left: 0;
+    }
+
+    &,
+    & ul {
+        list-style: none;
+    }
+}
+
+._monospace {
+   font-family: $font-family-monospace;
+}
+
+._upper {
+    text-transform: uppercase;
+}
+
+._lower {
+    text-transform: lowercase;
+}
+
+._italic {
+    font-style: italic !important;
+}
+
+._strong {
+    font-weight: 700 !important;
+}
+
+._normal {
+    font-weight: normal !important;
+}
+
+._muted {
+    opacity: .55;
+}
+
+a._muted {
+    color: $color-text;
+
+    &:hover {
+        opacity: 1;
+    }
+}
+
+._small {
+    font-size: $font-size-small;
+}
+
+._nowrap,
+._nowrap td {
+    white-space: nowrap;
+}
+
+// Text Columns
+._columns-2,
+._columns-3,
+._columns-4 {
+     column-gap: $margin-1x;
+}
+
+._columns-2 {column-count: 2;}
+._columns-3 {column-count: 3;}
+._columns-4 {column-count: 4;}
+
+@include breakpoint(xs) {
+    ._columns-2,
+    ._columns-3,
+    ._columns-4 {column-count: 1;}
+}

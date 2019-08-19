@@ -1,0 +1,211 @@
+* {
+    outline: none;
+    -webkit-font-smoothing: antialiased;
+    -webkit-overflow-scrolling: touch;
+}
+
+*,
+:after,
+:before{
+    box-sizing: border-box;
+}
+
+html, body, main, header, footer, section,
+article, aside, figure, nav, div {
+    position: relative;
+}
+
+body {
+    background-color: transparent;
+    color: $color-text;
+    font-family: $font-family;
+    font-size: $font-size;
+    line-height: $baseline;
+    overflow-x: hidden;
+}
+
+// Headings
+h1, h2, h3, h4, h5, h6 {
+    margin: 0 0 $margin-1x 0;
+    color: $color-heading;
+    font-weight: 700;
+    text-rendering: optimizeLegibility;
+    line-height: $baseline-heading;
+}
+
+h1, ._h1 {font-size: $font-size-h1;}
+h2, ._h2 {font-size: $font-size-h2;}
+h3, ._h3 {font-size: $font-size-h3;}
+h4, ._h4 {font-size: $font-size-h4;}
+h5, ._h5 {font-size: $font-size-h5;}
+h6, ._h6 {font-size: $font-size-h6;}
+
+h1 a, ._h1 a,
+h2 a, ._h2 a,
+h3 a, ._h3 a,
+h4 a, ._h4 a,
+h5 a, ._h5 a,
+h6 a, ._h6 a {
+    color: inherit;
+}
+
+// Text
+p {
+    margin: 0 0 $margin-1x 0;
+}
+
+// Links
+a {
+    color: $color-link;
+    cursor: pointer;
+
+    &:hover {
+        color: $color-link-hover;
+    }
+}
+
+// Lists
+ul, ol {
+    margin: 0 0 $margin-1x $margin-1x;
+    padding: 0;
+
+    & ul,
+    & ol {
+        margin: 0 0 0 $margin-1x;
+    }
+
+}
+
+ol ol li {
+    list-style-type: lower-alpha;
+}
+
+ol ol ol li {
+    list-style-type: lower-roman;
+}
+
+nav {
+    & ul,
+    & ol {
+        margin: 0;
+        list-style: none;
+    }
+}
+
+dl {
+    margin-top: 0;
+    margin-bottom: $margin-1x;
+
+    dt {
+        font-weight: 700;
+    }
+
+    dd {
+        margin-left: $margin-1x;
+    }
+}
+
+// Quotes
+blockquote {
+    margin: 0 0 $margin-1x $margin-2x;
+}
+
+// HR
+hr {
+    margin: -1px 0 $margin-1x 0;
+    border: none;
+    border-bottom: 1px solid rgba(0, 0, 0, .1);
+}
+
+// Figure
+figure {
+    margin: 0;
+}
+
+// Images
+img {
+    display: block;
+    height: auto;
+    max-width: 100%;
+}
+
+a img {
+    border: none;
+}
+
+// Preformatted
+pre, code, samp, var, kbd {
+    font-family: $font-family-monospace;
+    font-size: 87.5%;
+}
+
+pre {
+    display: block;
+    margin: 0 0 $margin-1x 0;
+    padding: 1rem;
+    background: #f8f8f8;
+    color: rgba($color-text, .85);
+    line-height: $baseline;
+    overflow: none;
+    white-space: pre-wrap;
+}
+
+mark, code, samp, kbd {
+    position: relative;
+    padding: 4px;
+    display: inline-block;
+    line-height: 1;
+    color: rgba($color-text, .85);
+}
+
+kbd {
+    border: 1px solid rgba(0, 0, 0, .1);
+}
+
+// Tables
+table {
+    margin: 0 0 $margin-1x 0;
+    border-collapse: collapse;
+    border-spacing: 0;
+
+    th {
+        text-align: left;
+    }
+}
+
+// Forms
+form {
+    margin: 0 0 $margin-1x 0;
+}
+
+fieldset {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+textarea {
+    resize: none;
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+    position: relative;
+    bottom: 1px;
+    margin-right: 2px;
+}
+
+input[type="search"] {
+    -webkit-appearance: textfield;
+
+    &::-webkit-search-decoration,
+    &::-webkit-search-cancel-button {
+        -webkit-appearance: none;
+    }
+}
+
+button {
+    margin: 0;
+    padding: 2px;
+    cursor: pointer;
+}

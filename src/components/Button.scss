@@ -1,0 +1,74 @@
+.Button {
+    display: inline-block;
+    height: $height-input;
+    padding: 0 $padding-2x;
+    border: none;
+    border-radius: $border-radius;
+    background-color: $color-button-primary;
+    color: $color-button-primary-text;
+    font-family: $font-family;
+    font-size: $font-size-small;
+    font-weight: 700;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    vertical-align: middle;
+    transition: background 200ms ease;
+    appearance: none;
+
+    &:hover {
+        background-color: darken($color-button-primary, 10%);
+        color: $color-button-primary-text;
+        text-decoration: none;
+        outline: none;
+    }
+
+    &._rounded {
+        border-radius: $height-input / 2 ;
+    }
+
+    &._upper {
+        font-size: $font-size-small - 2px;
+        letter-spacing: 1px;
+    }
+
+    &:disabled,
+    &._disabled {
+        opacity: .7;
+        color: rgba($color-button-primary-text, 1);
+        cursor: default;
+
+        &:hover {
+            background-color: $color-button-primary;
+        }
+    }
+
+    &._outline {
+        &,
+        &:disabled,
+        &._disabled {
+            border: 2px solid $color-button-primary;
+            background: none;
+            color: $color-button-primary;
+        }
+
+        &:hover {
+            border-color: darken($color-button-primary, 20%);
+            color: darken($color-button-primary, 20%);
+
+            &:disabled,
+            &._disabled {
+                border-color: $color-button-primary;
+                color: $color-button-primary;
+            }
+        }
+    }
+
+    &._secondary {
+        @include button($color-button-secondary-text, $color-button-secondary);
+    }
+}
+
+a.Button {
+    line-height: $height-input - 1px;
+}

@@ -1,48 +1,52 @@
-var gulp   = require('gulp');
-var sass   = require('gulp-sass');
+var autoprefixer = require('autoprefixer');
+var gulp = require('gulp');
+var notify = require('gulp-notify');
+var sass = require('gulp-sass');
+var newer = require('gulp-newer');
+var plumber = require('gulp-plumber');
+var postcss = require('gulp-postcss');
 var concat = require('gulp-concat');
 var uglify = require('gulp-uglify');
 var rename = require('gulp-rename');
-var minify = require('gulp-clean-css');
-var watch = require('gulp-watch');
+var cleanCSS = require('gulp-clean-css');
 
-
-gulp.task('sass', function() {
-    return gulp.src('src/monalisa.scss')
-        .pipe(sass())
+function css() {
+    return gulp.src('src/Monalisa.scss')
+        .pipe(plumber({
+            errorHandler: notify.onError("Error: <%= error.message %>")
+        }))
+        .pipe(sass({ outputStyle: 'expanded' }))
+        .pipe(postcss([autoprefixer()]))
         .pipe(gulp.dest('dist/css'))
-        .pipe(rename('monalisa.min.css'))
-        .pipe(minify())
+        .pipe(cleanCSS())
+        .pipe(rename({ suffix: ".min" }))
         .pipe(gulp.dest('dist/css'));
-});
+}
 
-gulp.task('combine', function() {
+function scss() {
     return gulp.src([
-            'src/_scss/_variables.scss',
-            'src/_scss/mixins/*.scss',
-            'src/_scss/base/*.scss',
-            'src/_scss/utils/*.scss',
-            'src/_scss/components/*.scss'
+            'src/core/variables.scss',
+            'src/core/mixins.scss',
+            'src/core/normalize.css',
+            'src/core/print.scss',
+            'src/core/base.scss',
+            'src/modifiers/*',
+            'src/components/*'
         ])
-        .pipe(concat('monalisa.scss'))
+        .pipe(plumber({
+            errorHandler: notify.onError("Error: <%= error.message %>")
+        }))
+        .pipe(concat('Monalisa.scss'))
         .pipe(gulp.dest('dist/scss'));
-});
+}
 
-gulp.task('scripts', function(){
-    return gulp.src(['src/js/libs/jquery.min.js','src/js/libs/*.js','src/js/components/*.js'])
-        .pipe(concat('monalisa.js'))
-        .pipe(gulp.dest('dist/js'))
-});
+function watch() {
+    gulp.watch('src/**/*.scss', gulp.parallel(css, scss));
+}
 
-gulp.task('watch', function() {
-    gulp.watch([
-        'src/_scss/*.scss',
-        'src/_scss/components/*.scss',
-        'src/_scss/mixins/*.scss',
-        'src/_scss/base/*.scss',
-        'src/_scss/utils/*.scss',
-        'src/js/components/*.js'
-    ], ['sass', 'combine', 'scripts']);
-});
+var build = gulp.parallel(css, scss);
 
-gulp.task('default', ['sass', 'combine', 'scripts']);
+exports.css = css;
+exports.scss = scss;
+exports.watch = watch;
+exports.default = build;

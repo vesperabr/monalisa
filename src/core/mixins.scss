@@ -1,0 +1,147 @@
+// Breakpoint
+@mixin breakpoint($min: 0, $max: 0) {
+    $type: type-of($min);
+
+    @if $type == string {
+        @if $min == sm {
+            @media (max-width: $sm) { @content; }
+        } @else if $min == md {
+            @media (min-width: $sm) and (max-width: $md) { @content; }
+        } @else if $min == lg {
+            @media (min-width: $lg) { @content; }
+        }
+    } @else if $type == number {
+        $query: "all" !default;
+        @if $min != 0 and $max != 0 { $query: "(min-width: #{$min}) and (max-width: #{$max})"; }
+        @else if $min != 0 and $max == 0 { $query: "(min-width: #{$min})"; }
+        @else if $min == 0 and $max != 0 { $query: "(max-width: #{$max})"; }
+        @media #{$query} { @content; }
+    }
+}
+
+// Grid gutters
+@mixin grid-gutters($gutter) {
+    & {
+        margin-left: -$gutter;
+    }
+
+    > .col {
+        margin-left: $gutter;
+    }
+
+    @for $i from 1 through 12 {
+        > ._col-#{$i} {
+            $width: 100% / 12 * $i;
+            width: calc(#{$width} - #{$gutter});
+        }
+
+        ._offset-#{$i} {
+            $width: 100% / 12 * $i;
+            margin-left: calc(#{$width} + #{$gutter});
+        }
+    }
+
+    @include breakpoint(sm) {
+        & {
+            margin-left: 0;
+
+            .Row {
+                margin-left: 0;
+            }
+
+            .col {
+                width: auto;
+            }
+        }
+
+        .col {
+            margin-left: 0;
+            margin-bottom: $margin-1x;
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+    }
+}
+
+// Clearfix
+@mixin clearfix {
+    &:after {
+        content: '';
+        display: table;
+        clear: both;
+    }
+}
+
+// Vertical align
+@mixin vertical-align($position: absolute) {
+    position: $position;
+    top: 50%;
+    transform: perspective(1px) translateY(-50%);
+}
+
+// Strip unit
+@function strip-unit($number) {
+    @if type-of($number) == 'number' and not unitless($number) {
+        @return $number / ($number * 0 + 1);
+    }
+
+    @return $number;
+}
+
+// Logo
+@mixin logo($url, $w, $h) {
+    display: block;
+    width: #{strip-unit($w)}px;
+    background: transparent url($url) no-repeat center center;
+    background-size: contain;
+    font-size: 1px;
+    text-indent: -9999px;
+    overflow: hidden;
+
+    &:after {
+        content: '';
+        display: block;
+        padding-top: #{(strip-unit($h)/strip-unit($w))*100%};
+    }
+}
+
+// Button
+@mixin button($color-text, $color-back) {
+    background-color: $color-back;
+    color: $color-text;
+
+    &:hover {
+        background-color: darken($color-back, 10%);
+        color: $color-text;
+    }
+
+    &:disabled,
+    &._disabled {
+        &:hover {
+            background-color: $color-back;
+        }
+    }
+
+    &._outline {
+        &,
+        &:disabled,
+        &._disabled {
+            border-color: $color-back;
+            background: none;
+            color: $color-back;
+        }
+
+        &:hover {
+            border-color: darken($color-back, 20%);
+            color: darken($color-back, 20%);
+
+            &:disabled,
+            &._disabled {
+                border-color: $color-back;
+                color: $color-back;
+            }
+        }
+    }
+}
