@@ -34,14 +34,14 @@
             <div class="form-item">
                 <label for="nome">Nome</label>
                 <div>
-                    <input type="text" id="nome">
+                    <input type="text" id="nome" required>
                 </div>
             </div>
 
             <div class="form-item">
                 <label for="email">E-mail</label>
                 <div>
-                    <input type="email" id="email">
+                    <input type="email" id="email" required>
                 </div>
             </div>
 

@@ -24,14 +24,10 @@ select {
     background-color: #fff;
     font-size: $font-size-small;
     outline: none;
+    box-shadow: none;
 
     &:focus {
         border-color: $color-focus;
-    }
-
-    &:invalid {
-        border-color: $color-error;
-        box-shadow: none;
     }
 
     &._error {
@@ -164,9 +160,6 @@ select[multiple] {
                     border-bottom-left-radius: 0;
             }
         }
-    }
-
-    .form-buttons {
     }
 
     &._horizontal {

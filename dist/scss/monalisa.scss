@@ -1218,14 +1218,10 @@ select {
     background-color: #fff;
     font-size: $font-size-small;
     outline: none;
+    box-shadow: none;
 
     &:focus {
         border-color: $color-focus;
-    }
-
-    &:invalid {
-        border-color: $color-error;
-        box-shadow: none;
     }
 
     &._error {
@@ -1358,9 +1354,6 @@ select[multiple] {
                     border-bottom-left-radius: 0;
             }
         }
-    }
-
-    .form-buttons {
     }
 
     &._horizontal {
@@ -1596,10 +1589,6 @@ select[multiple] {
 
     &._gutters {
         @include grid-gutters($grid-gutter);
-    }
-
-    &._gutters-x {
-        @include grid-gutters(100px);
     }
 }
 
