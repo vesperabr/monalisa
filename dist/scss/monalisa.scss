@@ -1120,8 +1120,9 @@ a._muted {
 .Button {
     display: inline-block;
     height: $height-input;
-    padding: 0 $padding-2x;
-    border: none;
+    margin-right: 5px;
+    padding: 0 ($padding-2x - 4px);
+    border: 2px solid transparent;
     border-radius: $border-radius;
     background-color: $color-button-primary;
     color: $color-button-primary-text;
@@ -1134,6 +1135,10 @@ a._muted {
     vertical-align: middle;
     transition: background 200ms ease;
     appearance: none;
+
+    &:last-child {
+        margin-right: 0;
+    }
 
     &:hover {
         background-color: darken($color-button-primary, 10%);
@@ -1189,7 +1194,7 @@ a._muted {
 }
 
 a.Button {
-    line-height: $height-input - 1px;
+    line-height: $height-input - 4px;
 }
 
 input[type="color"],

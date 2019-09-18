@@ -1661,8 +1661,9 @@ select[multiple] {
 .Button {
   display: inline-block;
   height: 36px;
-  padding: 0 24px;
-  border: none;
+  margin-right: 5px;
+  padding: 0 20px;
+  border: 2px solid transparent;
   border-radius: 4px;
   background-color: #1c86f2;
   color: #ffffff;
@@ -1677,6 +1678,10 @@ select[multiple] {
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
+}
+
+.Button:last-child {
+  margin-right: 0;
 }
 
 .Button:hover {
@@ -1752,7 +1757,7 @@ select[multiple] {
 }
 
 a.Button {
-  line-height: 35px;
+  line-height: 32px;
 }
 
 .Table {
