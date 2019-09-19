@@ -1,15 +1,15 @@
 .Button {
     display: inline-block;
-    height: $height-input;
+    height: $input-height;
     margin-right: 5px;
-    padding: 0 ($padding-2x - 4px);
+    padding: $button-padding;
     border: 2px solid transparent;
     border-radius: $border-radius;
-    background-color: $color-button-primary;
-    color: $color-button-primary-text;
-    font-family: $font-family;
-    font-size: $font-size-small;
-    font-weight: 700;
+    background-color: $button-color-primary;
+    color: $button-color-primary-text;
+    font-family: $button-font-family;
+    font-size: $button-font-size;
+    font-weight: $button-font-weight;
     text-align: center;
     text-decoration: none;
     cursor: pointer;
@@ -22,14 +22,14 @@
     }
 
     &:hover {
-        background-color: darken($color-button-primary, 10%);
-        color: $color-button-primary-text;
+        background-color: darken($button-color-primary, 10%);
+        color: $button-color-primary-text;
         text-decoration: none;
         outline: none;
     }
 
     &._rounded {
-        border-radius: $height-input / 2 ;
+        border-radius: $input-height / 2 ;
     }
 
     &._upper {
@@ -40,11 +40,11 @@
     &:disabled,
     &._disabled {
         opacity: .7;
-        color: rgba($color-button-primary-text, 1);
+        color: rgba($button-color-primary-text, 1);
         cursor: default;
 
         &:hover {
-            background-color: $color-button-primary;
+            background-color: $button-color-primary;
         }
     }
 
@@ -52,28 +52,28 @@
         &,
         &:disabled,
         &._disabled {
-            border: 2px solid $color-button-primary;
+            border: 2px solid $button-color-primary;
             background: none;
-            color: $color-button-primary;
+            color: $button-color-primary;
         }
 
         &:hover {
-            border-color: darken($color-button-primary, 20%);
-            color: darken($color-button-primary, 20%);
+            border-color: darken($button-color-primary, 20%);
+            color: darken($button-color-primary, 20%);
 
             &:disabled,
             &._disabled {
-                border-color: $color-button-primary;
-                color: $color-button-primary;
+                border-color: $button-color-primary;
+                color: $button-color-primary;
             }
         }
     }
 
     &._secondary {
-        @include button($color-button-secondary-text, $color-button-secondary);
+        @include button($button-color-secondary-text, $button-color-secondary);
     }
 }
 
 a.Button {
-    line-height: $height-input - 4px;
+    line-height: $input-height - 4px;
 }

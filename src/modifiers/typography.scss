@@ -54,7 +54,7 @@ ul._unstyled {
 }
 
 a._muted {
-    color: $color-text;
+    color: $text-color;
 
     &:hover {
         opacity: 1;
@@ -74,7 +74,7 @@ a._muted {
 ._columns-2,
 ._columns-3,
 ._columns-4 {
-     column-gap: $margin-1x;
+     column-gap: $size-2x;
 }
 
 ._columns-2 {column-count: 2;}

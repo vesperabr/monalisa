@@ -52,7 +52,7 @@
 ._video {
     position: relative;
     height: 0;
-    margin-bottom: $margin-1x;
+    margin-bottom: $margin-bottom;
     padding-bottom: 56.25%; // ratio 16:9
     & iframe,
     & object,

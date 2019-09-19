@@ -17,7 +17,7 @@ article, aside, figure, nav, div {
 
 body {
     background-color: transparent;
-    color: $color-text;
+    color: $text-color;
     font-family: $font-family;
     font-size: $font-size;
     line-height: $baseline;
@@ -26,19 +26,19 @@ body {
 
 // Headings
 h1, h2, h3, h4, h5, h6 {
-    margin: 0 0 $margin-1x 0;
-    color: $color-heading;
-    font-weight: 700;
+    margin: 0 0 $margin-bottom 0;
+    color: $heading-color;
+    font-weight: $heading-font-weight;
+    line-height: $heading-line-height;
     text-rendering: optimizeLegibility;
-    line-height: $baseline-heading;
 }
 
-h1, ._h1 {font-size: $font-size-h1;}
-h2, ._h2 {font-size: $font-size-h2;}
-h3, ._h3 {font-size: $font-size-h3;}
-h4, ._h4 {font-size: $font-size-h4;}
-h5, ._h5 {font-size: $font-size-h5;}
-h6, ._h6 {font-size: $font-size-h6;}
+h1, ._h1 {font-size: $heading-font-size-1;}
+h2, ._h2 {font-size: $heading-font-size-2;}
+h3, ._h3 {font-size: $heading-font-size-3;}
+h4, ._h4 {font-size: $heading-font-size-4;}
+h5, ._h5 {font-size: $heading-font-size-5;}
+h6, ._h6 {font-size: $heading-font-size-6;}
 
 h1 a, ._h1 a,
 h2 a, ._h2 a,
@@ -49,29 +49,30 @@ h6 a, ._h6 a {
     color: inherit;
 }
 
+
 // Text
 p {
-    margin: 0 0 $margin-1x 0;
+    margin: 0 0 $margin-bottom 0;
 }
 
 // Links
 a {
-    color: $color-link;
+    color: $link-color;
     cursor: pointer;
 
     &:hover {
-        color: $color-link-hover;
+        color: $link-color-hover;
     }
 }
 
 // Lists
 ul, ol {
-    margin: 0 0 $margin-1x $margin-1x;
+    margin: 0 0 $margin-bottom $size-2x;
     padding: 0;
 
     & ul,
     & ol {
-        margin: 0 0 0 $margin-1x;
+        margin: 0 0 0 $size-2x;
     }
 
 }
@@ -94,25 +95,25 @@ nav {
 
 dl {
     margin-top: 0;
-    margin-bottom: $margin-1x;
+    margin-bottom: $margin-bottom;
 
     dt {
         font-weight: 700;
     }
 
     dd {
-        margin-left: $margin-1x;
+        margin-left: $size-2x;
     }
 }
 
 // Quotes
 blockquote {
-    margin: 0 0 $margin-1x $margin-2x;
+    margin: 0 0 $margin-bottom $size-4x;
 }
 
 // HR
 hr {
-    margin: -1px 0 $margin-1x 0;
+    margin: -1px 0 $margin-bottom 0;
     border: none;
     border-bottom: 1px solid rgba(0, 0, 0, .1);
 }
@@ -141,10 +142,10 @@ pre, code, samp, var, kbd {
 
 pre {
     display: block;
-    margin: 0 0 $margin-1x 0;
+    margin: 0 0 $margin-bottom 0;
     padding: 1rem;
     background: #f8f8f8;
-    color: rgba($color-text, .85);
+    color: rgba($text-color, .85);
     line-height: $baseline;
     overflow: none;
     white-space: pre-wrap;
@@ -155,7 +156,7 @@ mark, code, samp, kbd {
     padding: 4px;
     display: inline-block;
     line-height: 1;
-    color: rgba($color-text, .85);
+    color: rgba($text-color, .85);
 }
 
 kbd {
@@ -164,7 +165,7 @@ kbd {
 
 // Tables
 table {
-    margin: 0 0 $margin-1x 0;
+    margin: 0 0 $margin-bottom 0;
     border-collapse: collapse;
     border-spacing: 0;
 
@@ -175,7 +176,7 @@ table {
 
 // Forms
 form {
-    margin: 0 0 $margin-1x 0;
+    margin: 0 0 $margin-bottom 0;
 }
 
 fieldset {

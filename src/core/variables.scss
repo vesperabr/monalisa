@@ -1,104 +1,80 @@
-// GRID
+// BASE VARS
 // ============================================================================
 
-$grid-gutter: 2% !default;
-
-
-
-// BREAKPOINTS
-// ============================================================================
-
+// Breakpoints
 $xs: 480px !default;
 $sm: 768px !default;
 $md: 992px !default;
 $lg: 1200px !default;
 
-
-
-// COLORS
-// ============================================================================
-
-// Texts
-$color-text: #313439 !default;
-$color-heading: #0d0d0e !default;
-
-// Links
-$color-link: #1c86f2 !default;
-$color-link-hover: darken($color-link, 10%) !default;
-
-// Buttons
-$color-button-primary: #1c86f2 !default;
-$color-button-primary-text: #ffffff !default;
-$color-button-secondary: #313439 !default;
-$color-button-secondary-text: #ffffff !default;
-
-// States
+// Colors
 $color-error: #ee5253 !default;
 $color-success: #2ecc71 !default;
 $color-warning: #feca57 !default;
 $color-focus: #1c86f2 !default;
 
-
-
-// FONT
-// ============================================================================
-
 // Font families
 $font-family: Arial, sans-serif !default;
 $font-family-monospace: Consolas, Monaco, 'Courier New', monospace !default;
 
-// Texts sizes
+// Font sizes
 $font-size: 16px !default;
 $font-size-small: $font-size - 2px !default;
 
-// Headings sizes
-$font-size-h1: 40px !default;
-$font-size-h2: 30px !default;
-$font-size-h3: 24px !default;
-$font-size-h4: 20px !default;
-$font-size-h5: 18px !default;
-$font-size-h6: 16px !default;
-
-
-
-// BASELINES
-// ============================================================================
-
+// Baselines
 $baseline: 1.5 !default;
-$baseline-heading: 1 !default;
 
+// Sizes
+$size-1x: ($font-size * $baseline) / 2 !default;
+$size-2x: $size-1x * 2 !default;
+$size-3x: $size-1x * 3 !default;
+$size-4x: $size-1x * 4 !default;
 
+// Margins
+$margin-bottom: $size-2x !default;
 
-// SIZES
-// ============================================================================
-
-$height-input: $font-size * 2.25 !default;
-
-
-
-// MARGINS
-// ============================================================================
-
-$margin-1x: $font-size * $baseline !default;
-$margin-2x: $margin-1x * 2 !default;
-
-
-
-// PADDINGS
-// ============================================================================
-
-$padding-1x: ($font-size * $baseline) / 2 !default;
-$padding-2x: $padding-1x * 2 !default;
-$padding-3x: $padding-1x * 3 !default;
-
-
-
-
-
-// BORDERS
-// ============================================================================
-
-$border-color-input: #d4d4d4 !default;
+// Borders
 $border-radius: 4px !default;
 
 
+
+// COMPONENT VARS
+// ============================================================================
+
+// Row
+$grid-gutter: 2% !default;
+
+// Heading
+$heading-color: #0d0d0e !default;
+$heading-font-family: $font-family !default;
+$heading-font-size-1: 40px !default;
+$heading-font-size-2: 30px !default;
+$heading-font-size-3: 24px !default;
+$heading-font-size-4: 20px !default;
+$heading-font-size-5: 18px !default;
+$heading-font-size-6: 16px !default;
+$heading-font-weight: 700 !default;
+$heading-line-height: 1 !default;
+
+// Typograph
+$text-color: #313439 !default;
+
+// Link
+$link-color: #1c86f2 !default;
+$link-color-hover: darken($link-color, 10%) !default;
+
+// Form
+$input-padding: 0 $size-1x !default;
+$input-border-color: #d4d4d4 !default;
+$input-height: $size-3x !default;
+$input-font-size: $font-size-small !default;
+
+// Button
+$button-padding: 0 $size-1x !default;
+$button-color-primary: #1c86f2 !default;
+$button-color-primary-text: #ffffff !default;
+$button-color-secondary: #313439 !default;
+$button-color-secondary-text: #ffffff !default;
+$button-font-family: $font-family !default;
+$button-font-size: $font-size-small !default;
+$button-font-weight: 700 !default;
