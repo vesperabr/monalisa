@@ -14,7 +14,7 @@
 
     th,
     td {
-        padding: $padding-1x;
+        padding: $size-1x;
         border-bottom: 1px solid rgba(0, 0, 0, .05);
 
         &:first-child {
@@ -28,7 +28,7 @@
 
     tfoot th,
     tfoot td {
-        color: rgba($color-text, .5);
+        color: rgba($text-color, .5);
     }
 
     // Modificadores
@@ -48,10 +48,10 @@
         & td,
         & th {
             &:first-child {
-                padding-left: $padding-1x;
+                padding-left: $size-1x;
             }
             &:last-child {
-                padding-right: $padding-1x;
+                padding-right: $size-1x;
             }
         }
     }

@@ -404,8 +404,8 @@ h1, h2, h3, h4, h5, h6 {
   margin: 0 0 24px 0;
   color: #0d0d0e;
   font-weight: 700;
-  text-rendering: optimizeLegibility;
   line-height: 1;
+  text-rendering: optimizeLegibility;
 }
 
 h1, ._h1 {
@@ -1330,26 +1330,6 @@ input[type="week"]._error,
 input[type="range"]._error,
 textarea._error,
 select._error {
-  border-color: #f7afaf;
-}
-
-input[type="color"]._error:focus,
-input[type="date"]._error:focus,
-input[type="datetime-local"]._error:focus,
-input[type="email"]._error:focus,
-input[type="hidden"]._error:focus,
-input[type="month"]._error:focus,
-input[type="number"]._error:focus,
-input[type="password"]._error:focus,
-input[type="search"]._error:focus,
-input[type="tel"]._error:focus,
-input[type="text"]._error:focus,
-input[type="time"]._error:focus,
-input[type="url"]._error:focus,
-input[type="week"]._error:focus,
-input[type="range"]._error:focus,
-textarea._error:focus,
-select._error:focus {
   border-color: #ee5253;
 }
 
@@ -1370,26 +1350,6 @@ input[type="week"]._success,
 input[type="range"]._success,
 textarea._success,
 select._success {
-  border-color: #7ee2a8;
-}
-
-input[type="color"]._success:focus,
-input[type="date"]._success:focus,
-input[type="datetime-local"]._success:focus,
-input[type="email"]._success:focus,
-input[type="hidden"]._success:focus,
-input[type="month"]._success:focus,
-input[type="number"]._success:focus,
-input[type="password"]._success:focus,
-input[type="search"]._success:focus,
-input[type="tel"]._success:focus,
-input[type="text"]._success:focus,
-input[type="time"]._success:focus,
-input[type="url"]._success:focus,
-input[type="week"]._success:focus,
-input[type="range"]._success:focus,
-textarea._success:focus,
-select._success:focus {
   border-color: #2ecc71;
 }
 
@@ -1486,8 +1446,10 @@ select[multiple] {
 
 .Form .form-item > div label,
 .Form .form-group > div label {
-  margin-right: 12px;
+  width: 100%;
   margin-bottom: 0;
+  line-height: 24px;
+  white-space: nowrap;
 }
 
 .Form .form-item > div {
@@ -1559,12 +1521,6 @@ select[multiple] {
   width: 70%;
 }
 
-.Form._horizontal .form-item > div label,
-.Form._horizontal .form-group > div label,
-.Form._horizontal .form-buttons > div label {
-  line-height: 36px;
-}
-
 .Form._horizontal .form-buttons > div {
   margin-left: 30%;
 }
@@ -1578,15 +1534,22 @@ select[multiple] {
 .Form._inline .form-item,
 .Form._inline .form-group,
 .Form._inline .form-buttons {
-  flex: 1 0 auto;
+  flex: 1 1 auto;
   margin-right: 24px;
   margin-bottom: 0;
+}
+
+.Form._inline .form-item > div,
+.Form._inline .form-group > div,
+.Form._inline .form-buttons > div {
+  flex-wrap: nowrap;
 }
 
 .Form._inline .form-item > div label,
 .Form._inline .form-group > div label,
 .Form._inline .form-buttons > div label {
-  margin-bottom: 0;
+  width: auto;
+  margin-right: 12px;
   line-height: 36px;
 }
 
@@ -1602,6 +1565,7 @@ select[multiple] {
   }
   .Form .form-item > div label {
     margin-bottom: 6px;
+    line-height: 1;
   }
   .Form .form-item > div label:last-child {
     margin-bottom: 0;
@@ -1662,7 +1626,7 @@ select[multiple] {
   display: inline-block;
   height: 36px;
   margin-right: 5px;
-  padding: 0 20px;
+  padding: 0 12px;
   border: 2px solid transparent;
   border-radius: 4px;
   background-color: #1c86f2;

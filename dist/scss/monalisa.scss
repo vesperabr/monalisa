@@ -1,107 +1,83 @@
-// GRID
+// BASE VARS
 // ============================================================================
 
-$grid-gutter: 2% !default;
-
-
-
-// BREAKPOINTS
-// ============================================================================
-
+// Breakpoints
 $xs: 480px !default;
 $sm: 768px !default;
 $md: 992px !default;
 $lg: 1200px !default;
 
-
-
-// COLORS
-// ============================================================================
-
-// Texts
-$color-text: #313439 !default;
-$color-heading: #0d0d0e !default;
-
-// Links
-$color-link: #1c86f2 !default;
-$color-link-hover: darken($color-link, 10%) !default;
-
-// Buttons
-$color-button-primary: #1c86f2 !default;
-$color-button-primary-text: #ffffff !default;
-$color-button-secondary: #313439 !default;
-$color-button-secondary-text: #ffffff !default;
-
-// States
+// Colors
 $color-error: #ee5253 !default;
 $color-success: #2ecc71 !default;
 $color-warning: #feca57 !default;
 $color-focus: #1c86f2 !default;
 
-
-
-// FONT
-// ============================================================================
-
 // Font families
 $font-family: Arial, sans-serif !default;
 $font-family-monospace: Consolas, Monaco, 'Courier New', monospace !default;
 
-// Texts sizes
+// Font sizes
 $font-size: 16px !default;
 $font-size-small: $font-size - 2px !default;
 
-// Headings sizes
-$font-size-h1: 40px !default;
-$font-size-h2: 30px !default;
-$font-size-h3: 24px !default;
-$font-size-h4: 20px !default;
-$font-size-h5: 18px !default;
-$font-size-h6: 16px !default;
-
-
-
-// BASELINES
-// ============================================================================
-
+// Baselines
 $baseline: 1.5 !default;
-$baseline-heading: 1 !default;
 
+// Sizes
+$size-1x: ($font-size * $baseline) / 2 !default;
+$size-2x: $size-1x * 2 !default;
+$size-3x: $size-1x * 3 !default;
+$size-4x: $size-1x * 4 !default;
 
+// Margins
+$margin-bottom: $size-2x !default;
 
-// SIZES
-// ============================================================================
-
-$height-input: $font-size * 2.25 !default;
-
-
-
-// MARGINS
-// ============================================================================
-
-$margin-1x: $font-size * $baseline !default;
-$margin-2x: $margin-1x * 2 !default;
-
-
-
-// PADDINGS
-// ============================================================================
-
-$padding-1x: ($font-size * $baseline) / 2 !default;
-$padding-2x: $padding-1x * 2 !default;
-$padding-3x: $padding-1x * 3 !default;
-
-
-
-
-
-// BORDERS
-// ============================================================================
-
-$border-color-input: #d4d4d4 !default;
+// Borders
 $border-radius: 4px !default;
 
 
+
+// COMPONENT VARS
+// ============================================================================
+
+// Row
+$grid-gutter: 2% !default;
+
+// Heading
+$heading-color: #0d0d0e !default;
+$heading-font-family: $font-family !default;
+$heading-font-size-1: 40px !default;
+$heading-font-size-2: 30px !default;
+$heading-font-size-3: 24px !default;
+$heading-font-size-4: 20px !default;
+$heading-font-size-5: 18px !default;
+$heading-font-size-6: 16px !default;
+$heading-font-weight: 700 !default;
+$heading-line-height: 1 !default;
+
+// Typograph
+$text-color: #313439 !default;
+
+// Link
+$link-color: #1c86f2 !default;
+$link-color-hover: darken($link-color, 10%) !default;
+
+// Form
+$input-padding: 0 $size-1x !default;
+$input-border-color: #d4d4d4 !default;
+$input-height: $size-3x !default;
+$input-font-size: $font-size-small !default;
+
+// Button
+$button-padding: 0 $size-1x !default;
+$button-color-primary: #1c86f2 !default;
+$button-color-primary-text: #ffffff !default;
+$button-color-secondary: #313439 !default;
+$button-color-secondary-text: #ffffff !default;
+$button-font-family: $font-family !default;
+$button-font-size: $font-size-small !default;
+$button-font-weight: 700 !default;
 
 // Breakpoint
 @mixin breakpoint($min: 0, $max: 0) {
@@ -161,7 +137,7 @@ $border-radius: 4px !default;
 
         .col {
             margin-left: 0;
-            margin-bottom: $margin-1x;
+            margin-bottom: $margin-bottom;
 
             &:last-child {
                 margin-bottom: 0;
@@ -665,7 +641,7 @@ article, aside, figure, nav, div {
 
 body {
     background-color: transparent;
-    color: $color-text;
+    color: $text-color;
     font-family: $font-family;
     font-size: $font-size;
     line-height: $baseline;
@@ -674,19 +650,19 @@ body {
 
 // Headings
 h1, h2, h3, h4, h5, h6 {
-    margin: 0 0 $margin-1x 0;
-    color: $color-heading;
-    font-weight: 700;
+    margin: 0 0 $margin-bottom 0;
+    color: $heading-color;
+    font-weight: $heading-font-weight;
+    line-height: $heading-line-height;
     text-rendering: optimizeLegibility;
-    line-height: $baseline-heading;
 }
 
-h1, ._h1 {font-size: $font-size-h1;}
-h2, ._h2 {font-size: $font-size-h2;}
-h3, ._h3 {font-size: $font-size-h3;}
-h4, ._h4 {font-size: $font-size-h4;}
-h5, ._h5 {font-size: $font-size-h5;}
-h6, ._h6 {font-size: $font-size-h6;}
+h1, ._h1 {font-size: $heading-font-size-1;}
+h2, ._h2 {font-size: $heading-font-size-2;}
+h3, ._h3 {font-size: $heading-font-size-3;}
+h4, ._h4 {font-size: $heading-font-size-4;}
+h5, ._h5 {font-size: $heading-font-size-5;}
+h6, ._h6 {font-size: $heading-font-size-6;}
 
 h1 a, ._h1 a,
 h2 a, ._h2 a,
@@ -697,29 +673,30 @@ h6 a, ._h6 a {
     color: inherit;
 }
 
+
 // Text
 p {
-    margin: 0 0 $margin-1x 0;
+    margin: 0 0 $margin-bottom 0;
 }
 
 // Links
 a {
-    color: $color-link;
+    color: $link-color;
     cursor: pointer;
 
     &:hover {
-        color: $color-link-hover;
+        color: $link-color-hover;
     }
 }
 
 // Lists
 ul, ol {
-    margin: 0 0 $margin-1x $margin-1x;
+    margin: 0 0 $margin-bottom $size-2x;
     padding: 0;
 
     & ul,
     & ol {
-        margin: 0 0 0 $margin-1x;
+        margin: 0 0 0 $size-2x;
     }
 
 }
@@ -742,25 +719,25 @@ nav {
 
 dl {
     margin-top: 0;
-    margin-bottom: $margin-1x;
+    margin-bottom: $margin-bottom;
 
     dt {
         font-weight: 700;
     }
 
     dd {
-        margin-left: $margin-1x;
+        margin-left: $size-2x;
     }
 }
 
 // Quotes
 blockquote {
-    margin: 0 0 $margin-1x $margin-2x;
+    margin: 0 0 $margin-bottom $size-4x;
 }
 
 // HR
 hr {
-    margin: -1px 0 $margin-1x 0;
+    margin: -1px 0 $margin-bottom 0;
     border: none;
     border-bottom: 1px solid rgba(0, 0, 0, .1);
 }
@@ -789,10 +766,10 @@ pre, code, samp, var, kbd {
 
 pre {
     display: block;
-    margin: 0 0 $margin-1x 0;
+    margin: 0 0 $margin-bottom 0;
     padding: 1rem;
     background: #f8f8f8;
-    color: rgba($color-text, .85);
+    color: rgba($text-color, .85);
     line-height: $baseline;
     overflow: none;
     white-space: pre-wrap;
@@ -803,7 +780,7 @@ mark, code, samp, kbd {
     padding: 4px;
     display: inline-block;
     line-height: 1;
-    color: rgba($color-text, .85);
+    color: rgba($text-color, .85);
 }
 
 kbd {
@@ -812,7 +789,7 @@ kbd {
 
 // Tables
 table {
-    margin: 0 0 $margin-1x 0;
+    margin: 0 0 $margin-bottom 0;
     border-collapse: collapse;
     border-spacing: 0;
 
@@ -823,7 +800,7 @@ table {
 
 // Forms
 form {
-    margin: 0 0 $margin-1x 0;
+    margin: 0 0 $margin-bottom 0;
 }
 
 fieldset {
@@ -912,7 +889,7 @@ button {
 ._video {
     position: relative;
     height: 0;
-    margin-bottom: $margin-1x;
+    margin-bottom: $margin-bottom;
     padding-bottom: 56.25%; // ratio 16:9
     & iframe,
     & object,
@@ -1084,7 +1061,7 @@ ul._unstyled {
 }
 
 a._muted {
-    color: $color-text;
+    color: $text-color;
 
     &:hover {
         opacity: 1;
@@ -1104,7 +1081,7 @@ a._muted {
 ._columns-2,
 ._columns-3,
 ._columns-4 {
-     column-gap: $margin-1x;
+     column-gap: $size-2x;
 }
 
 ._columns-2 {column-count: 2;}
@@ -1119,16 +1096,16 @@ a._muted {
 
 .Button {
     display: inline-block;
-    height: $height-input;
+    height: $input-height;
     margin-right: 5px;
-    padding: 0 ($padding-2x - 4px);
+    padding: $button-padding;
     border: 2px solid transparent;
     border-radius: $border-radius;
-    background-color: $color-button-primary;
-    color: $color-button-primary-text;
-    font-family: $font-family;
-    font-size: $font-size-small;
-    font-weight: 700;
+    background-color: $button-color-primary;
+    color: $button-color-primary-text;
+    font-family: $button-font-family;
+    font-size: $button-font-size;
+    font-weight: $button-font-weight;
     text-align: center;
     text-decoration: none;
     cursor: pointer;
@@ -1141,14 +1118,14 @@ a._muted {
     }
 
     &:hover {
-        background-color: darken($color-button-primary, 10%);
-        color: $color-button-primary-text;
+        background-color: darken($button-color-primary, 10%);
+        color: $button-color-primary-text;
         text-decoration: none;
         outline: none;
     }
 
     &._rounded {
-        border-radius: $height-input / 2 ;
+        border-radius: $input-height / 2 ;
     }
 
     &._upper {
@@ -1159,11 +1136,11 @@ a._muted {
     &:disabled,
     &._disabled {
         opacity: .7;
-        color: rgba($color-button-primary-text, 1);
+        color: rgba($button-color-primary-text, 1);
         cursor: default;
 
         &:hover {
-            background-color: $color-button-primary;
+            background-color: $button-color-primary;
         }
     }
 
@@ -1171,30 +1148,30 @@ a._muted {
         &,
         &:disabled,
         &._disabled {
-            border: 2px solid $color-button-primary;
+            border: 2px solid $button-color-primary;
             background: none;
-            color: $color-button-primary;
+            color: $button-color-primary;
         }
 
         &:hover {
-            border-color: darken($color-button-primary, 20%);
-            color: darken($color-button-primary, 20%);
+            border-color: darken($button-color-primary, 20%);
+            color: darken($button-color-primary, 20%);
 
             &:disabled,
             &._disabled {
-                border-color: $color-button-primary;
-                color: $color-button-primary;
+                border-color: $button-color-primary;
+                color: $button-color-primary;
             }
         }
     }
 
     &._secondary {
-        @include button($color-button-secondary-text, $color-button-secondary);
+        @include button($button-color-secondary-text, $button-color-secondary);
     }
 }
 
 a.Button {
-    line-height: $height-input - 4px;
+    line-height: $input-height - 4px;
 }
 
 input[type="color"],
@@ -1216,12 +1193,12 @@ textarea,
 select {
     display: block;
     width: 100%;
-    height: $height-input;
-    padding: 0 $padding-1x;
-    border: 1px solid $border-color-input;
+    height: $input-height;
+    padding: $input-padding;
+    border: 1px solid $input-border-color;
     border-radius: $border-radius;
     background-color: #fff;
-    font-size: $font-size-small;
+    font-size: $input-font-size;
     outline: none;
     box-shadow: none;
 
@@ -1230,19 +1207,11 @@ select {
     }
 
     &._error {
-        border-color: lighten($color-error, 20%);
-
-        &:focus {
-            border-color: $color-error;
-        }
+        border-color: $color-error;
     }
 
     &._success {
-        border-color: lighten($color-success, 20%);
-
-        &:focus {
-            border-color: $color-success;
-        }
+        border-color: $color-success;
     }
 
     &:disabled,
@@ -1257,43 +1226,43 @@ select {
 input {
     &[type="search"],
     &._search {
-        padding-left: $padding-3x;
+        padding-left: $size-3x;
         background-repeat: no-repeat;
-        background-position: $padding-1x 53%;
+        background-position: $size-1x 53%;
         background-image: url("data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16'><path fill='%23000' fill-opacity='0.4' d='M14.891,14.39l-0.5.5a0.355,0.355,0,0,1-.5,0L9.526,10.529a5.3,5.3,0,1,1,2.106-4.212,5.268,5.268,0,0,1-1.1,3.21l4.362,4.362A0.354,0.354,0,0,1,14.891,14.39ZM6.316,2.418a3.9,3.9,0,1,0,3.9,3.9A3.9,3.9,0,0,0,6.316,2.418Z'/%3E%3C/svg%3E");
     }
 }
 
 textarea {
-    padding: $padding-1x;
-    height: ($height-input * 2) + $padding-1x;
+    padding: $size-1x;
+    height: ($input-height * 2) + $size-1x;
     line-height: $baseline;
 }
 
 select {
     background-image: url("data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='9' height='12' viewBox='0 0 9 12'><path fill='%235e6c75' d='M0.722,4.823L-0.01,4.1,4.134-.01,4.866,0.716Zm7.555,0L9.01,4.1,4.866-.01l-0.732.726ZM0.722,7.177L-0.01,7.9,4.134,12.01l0.732-.726Zm7.555,0L9.01,7.9,4.866,12.01l-0.732-.726Z'/%3E%3C/svg%3E");
     background-repeat: no-repeat;
-    background-position: right $padding-1x center;
+    background-position: right $size-1x center;
     appearance: none;
 }
 
 select[multiple] {
-    padding: $padding-1x;
-    height: ($height-input * 2) + $padding-1x;
+    padding: $size-1x;
+    height: ($input-height * 2) + $size-1x;
     background-image: none;
 }
 
 .Form {
-    margin-bottom: $margin-1x;
+    margin-bottom: $margin-bottom;
 
     .form-item,
     .form-group {
-        margin-bottom: $margin-1x / 2;
+        margin-bottom: $margin-bottom / 2;
 
         label {
             display: block;
-            margin-bottom: $margin-1x / 4;
-            color: $color-text;
+            margin-bottom: $margin-bottom / 4;
+            color: $text-color;
             font-size: $font-size-small;
             line-height: 1;
         }
@@ -1303,8 +1272,10 @@ select[multiple] {
             flex-direction: row;
 
             label {
-                margin-right: $margin-1x / 2;
+                width: 100%;
                 margin-bottom: 0;
+                line-height: $size-2x;
+                white-space: nowrap;
             }
         }
     }
@@ -1336,10 +1307,10 @@ select[multiple] {
 
             > .prepend,
             > .append {
-                    height: $height-input;
-                    line-height: $height-input;
-                    padding: 0 $padding-1x;
-                    border: 1px solid $border-color-input;
+                    height: $input-height;
+                    line-height: $input-height;
+                    padding: 0 $size-1x;
+                    border: 1px solid $input-border-color;
                     border-radius: $border-radius;
                     background-color: #f8f8f8;
                     color: rgba(0, 0, 0, .7);
@@ -1371,15 +1342,11 @@ select[multiple] {
 
             > label {
                 width: 30%;
-                line-height: $height-input;
+                line-height: $input-height;
             }
 
             > div {
                 width: 70%;
-
-                label {
-                    line-height: $height-input;
-                }
             }
         }
 
@@ -1398,14 +1365,17 @@ select[multiple] {
         .form-item,
         .form-group,
         .form-buttons {
-            flex: 1 0 auto;
-            margin-right: $margin-1x;
+            flex: 1 1 auto;
+            margin-right: $size-2x;
             margin-bottom: 0;
 
             > div {
+                flex-wrap: nowrap;
+
                 label {
-                    margin-bottom: 0;
-                    line-height: $height-input;
+                    width: auto;
+                    margin-right: $size-1x;
+                    line-height: $input-height;
                 }
             }
         }
@@ -1425,7 +1395,8 @@ select[multiple] {
                 flex-direction: column;
 
                 label {
-                    margin-bottom: $margin-1x / 4;
+                    margin-bottom: $margin-bottom / 4;
+                    line-height: 1;
 
                     &:last-child {
                         margin-bottom: 0;
@@ -1471,11 +1442,11 @@ select[multiple] {
             .form-buttons {
                 width: 100%;
                 margin-right: 0;
-                margin-bottom: $margin-1x / 2;
+                margin-bottom: $margin-bottom / 2;
 
                 > div {
                     label {
-                        margin-bottom: $margin-1x / 4;
+                        margin-bottom: $margin-bottom / 4;
                         line-height: 1;
 
                         &:last-child {
@@ -1493,13 +1464,13 @@ select[multiple] {
 }
 
 .Message {
-    margin-bottom: $margin-1x;
-    padding: $padding-1x;
+    margin-bottom: $margin-bottom;
+    padding: $size-1x;
     border-radius: $border-radius;
     background-color: #eee;
-    background-position: $padding-1x ($padding-1x + 2px);
+    background-position: $size-1x ($size-1x + 2px);
     background-repeat: no-repeat;
-    color: $color-text;
+    color: $text-color;
     font-size: $font-size-small;
 
     & a {color: inherit;}
@@ -1514,7 +1485,7 @@ select[multiple] {
     & h4,
     & h5,
     & h6 {
-        margin-bottom: $margin-1x / 2;
+        margin-bottom: $margin-bottom / 2;
         color: inherit;
     }
 
@@ -1522,7 +1493,7 @@ select[multiple] {
     &._success,
     &._warning,
     &._focus {
-        padding-left: $padding-3x;
+        padding-left: $size-3x;
     }
 
     &._error {
@@ -1613,7 +1584,7 @@ select[multiple] {
 
     th,
     td {
-        padding: $padding-1x;
+        padding: $size-1x;
         border-bottom: 1px solid rgba(0, 0, 0, .05);
 
         &:first-child {
@@ -1627,7 +1598,7 @@ select[multiple] {
 
     tfoot th,
     tfoot td {
-        color: rgba($color-text, .5);
+        color: rgba($text-color, .5);
     }
 
     // Modificadores
@@ -1647,10 +1618,10 @@ select[multiple] {
         & td,
         & th {
             &:first-child {
-                padding-left: $padding-1x;
+                padding-left: $size-1x;
             }
             &:last-child {
-                padding-right: $padding-1x;
+                padding-right: $size-1x;
             }
         }
     }

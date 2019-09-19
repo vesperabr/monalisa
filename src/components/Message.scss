@@ -1,11 +1,11 @@
 .Message {
-    margin-bottom: $margin-1x;
-    padding: $padding-1x;
+    margin-bottom: $margin-bottom;
+    padding: $size-1x;
     border-radius: $border-radius;
     background-color: #eee;
-    background-position: $padding-1x ($padding-1x + 2px);
+    background-position: $size-1x ($size-1x + 2px);
     background-repeat: no-repeat;
-    color: $color-text;
+    color: $text-color;
     font-size: $font-size-small;
 
     & a {color: inherit;}
@@ -20,7 +20,7 @@
     & h4,
     & h5,
     & h6 {
-        margin-bottom: $margin-1x / 2;
+        margin-bottom: $margin-bottom / 2;
         color: inherit;
     }
 
@@ -28,7 +28,7 @@
     &._success,
     &._warning,
     &._focus {
-        padding-left: $padding-3x;
+        padding-left: $size-3x;
     }
 
     &._error {
