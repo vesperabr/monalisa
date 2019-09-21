@@ -1500,6 +1500,10 @@ select[multiple] {
   border-bottom-left-radius: 0;
 }
 
+.Form .form-buttons a {
+  font-size: 14px;
+}
+
 .Form._horizontal .form-item,
 .Form._horizontal .form-group,
 .Form._horizontal .form-buttons {

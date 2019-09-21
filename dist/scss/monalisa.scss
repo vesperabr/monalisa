@@ -1332,6 +1332,12 @@ select[multiple] {
         }
     }
 
+    .form-buttons {
+        a {
+            font-size: $button-font-size;
+        }
+    }
+
     &._horizontal {
         .form-item,
         .form-group,
