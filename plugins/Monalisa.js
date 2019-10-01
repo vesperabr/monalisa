@@ -1,13 +1,11 @@
 /**
  * Monsalisa
- * @author VESPERA
- * @version 1.0.0
+ * @author Véspera Tecnologia
  */
 
 ;if (typeof jQuery === 'undefined' && typeof Zepto === 'undefined') {throw new Error('Monalisa requires jQuery or Zepto')};
 
 var $M = {
-    version: '0.0.1',
     options: {},
     components: {},
     componentsAvaible: {},
@@ -39,7 +37,7 @@ var $M = {
                 $M['components'][context.id] = instance;
                 instance.init(context);
             } else {
-                console.log('Error loading component: ' + context.component);
+                console.error('Error loading component: ' + context.component);
             }
         });
     },
@@ -66,6 +64,10 @@ var Context = function(index, el, options) {
     var id        = ($el.attr('id')) ? $el.attr('id') : component + '-' + index;
         id        = ($el.attr('data-name')) ? $el.attr('data-name') : id;
 
+    if ($el.attr('id') == undefined) {
+        $el.attr('id', component + '-' + index);
+    }
+
     if (typeof options[id] !== 'undefined') {
         data = Object.assign({}, data, options[id]);
     }
@@ -87,7 +89,7 @@ var Instance = function(context) {
     if (typeof Component !== 'undefined') {
         instance = new Component();
     } else {
-        console.log('Component not found: ' + context.component);
+        console.error('Component not found: ' + context.component);
     }
 
     return instance;

@@ -1,0 +1,50 @@
+[data-component='onsend'] {
+    position: relative;
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        right: $size-1x;
+        display: block;
+        width: 16px;
+        height: 16px;
+        margin-top: -8px;
+        border: 3px solid #fff;
+        border-left-color: transparent;
+        border-radius: 50%;
+        opacity: 0;
+        animation: rotateLoading 1s infinite linear;
+    }
+
+    &::after {
+        content: '';
+        display: inline-block;
+        width: 0;
+        transition: width 200ms ease;
+    }
+
+    &._loading {
+        pointer-events: none;
+        cursor: not-allowed;
+
+        &::before {
+            opacity: 1;
+        }
+
+        &::after {
+            width: 16px;
+            margin-left: $size-1x / 2;
+        }
+    }
+}
+
+@keyframes rotateLoading {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(359deg);
+    }
+}
