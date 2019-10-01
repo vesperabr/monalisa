@@ -11,7 +11,7 @@ var rename = require('gulp-rename');
 var cleanCSS = require('gulp-clean-css');
 
 function css() {
-    return gulp.src('src/Monalisa.scss')
+    return gulp.src('src/scss/Monalisa.scss')
         .pipe(plumber({
             errorHandler: notify.onError("Error: <%= error.message %>")
         }))
@@ -25,13 +25,13 @@ function css() {
 
 function scss() {
     return gulp.src([
-            'src/core/variables.scss',
-            'src/core/mixins.scss',
-            'src/core/normalize.css',
-            'src/core/print.scss',
-            'src/core/base.scss',
-            'src/modifiers/*',
-            'src/components/*'
+            'src/scss/core/variables.scss',
+            'src/scss/core/mixins.scss',
+            'src/scss/core/normalize.css',
+            'src/scss/core/print.scss',
+            'src/scss/core/base.scss',
+            'src/scss/modifiers/*',
+            'src/scss/components/*'
         ])
         .pipe(plumber({
             errorHandler: notify.onError("Error: <%= error.message %>")
@@ -40,13 +40,26 @@ function scss() {
         .pipe(gulp.dest('dist/scss'));
 }
 
-function watch() {
-    gulp.watch('src/**/*.scss', gulp.parallel(css, scss));
+function js() {
+    return gulp.src('src/js/Monalisa.js')
+        .pipe(plumber({
+            errorHandler: notify.onError("Error: <%= error.message %>")
+        }))
+        .pipe(gulp.dest('dist/js'))
+        .pipe(uglify())
+        .pipe(rename({ suffix: ".min" }))
+        .pipe(gulp.dest('dist/js'));
 }
 
-var build = gulp.parallel(css, scss);
+function watch() {
+    gulp.watch('src/scss/**/*.scss', gulp.parallel(css, scss));
+    gulp.watch('src/js/**/*.js', gulp.parallel(js));
+}
+
+var build = gulp.parallel(css, scss, js);
 
 exports.css = css;
 exports.scss = scss;
+exports.js = js;
 exports.watch = watch;
 exports.default = build;
