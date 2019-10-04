@@ -403,6 +403,7 @@ body {
 h1, h2, h3, h4, h5, h6 {
   margin: 0 0 24px 0;
   color: #0d0d0e;
+  font-family: Arial, sans-serif;
   font-weight: 700;
   line-height: 1;
   text-rendering: optimizeLegibility;

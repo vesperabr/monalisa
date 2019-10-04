@@ -28,6 +28,7 @@ body {
 h1, h2, h3, h4, h5, h6 {
     margin: 0 0 $margin-bottom 0;
     color: $heading-color;
+    font-family: $heading-font-family;
     font-weight: $heading-font-weight;
     line-height: $heading-line-height;
     text-rendering: optimizeLegibility;
