@@ -594,6 +594,10 @@ button {
   display: block;
 }
 
+._display-inline-block {
+  display: inline-block;
+}
+
 ._invisible {
   visibility: hidden;
 }
